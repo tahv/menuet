@@ -32,6 +32,10 @@ coverage *args:
 serve:
   uv run -m zensical serve
 
+# Build documentation
+docs:
+  uv run zensical build --clean
+
 # Create a news fragment
 news filename="":
     uvx towncrier create --no-edit {{ filename }}
