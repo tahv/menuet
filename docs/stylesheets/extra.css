@@ -4,7 +4,7 @@
 }
 
 /* Mark external links as such in nav */
-a.md-nav__link[href^="https://tahv.codeberg.page/menuet/"]::after {
+a.md-nav__link[href^="https:"]::after {
   -webkit-mask-image: var(--icon-external-link);
   mask-image: var(--icon-external-link);
   background: var(--md-default-fg-color);
