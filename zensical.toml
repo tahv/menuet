@@ -4,7 +4,7 @@
 site_name = "menuet"
 site_description = "Declarative menu builder for DCC applications"
 site_author = "Thibaud Gambier"
-# site_url = "https://tahv.codeberg.page/menuet/"
+site_url = "https://tahv.codeberg.page/menuet"
 copyright = "&copy 2026, Thibaud Gambier"
 nav = [
   { "Home" = "index.md" },
@@ -20,6 +20,7 @@ repo_url = "https://codeberg.org/tahv/menuet"
 edit_uri = "_edit/main/docs/"
 repo_name = "tahv/menuet"
 extra_css = ["stylesheets/extra.css"]
+use_directory_urls = true
 
 # tombi: lint.rules.table-key-required.disabled = true
 [project.theme]
