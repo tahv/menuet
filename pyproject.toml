@@ -1,0 +1,144 @@
+[project]
+name = "menuet"
+description = "Declarative menu builder for DCC applications"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Thibaud Gambier" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+]
+dependencies = [
+  "attrs>=26.1.0",
+  "tomli>=2.3.0; python_version < '3.11'",
+  "typing-extensions>=4.15.0",  # TODO(tga): version marker
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://codeberg.org/tahv/menuet"
+
+[project.optional-dependencies]
+copy = ["copykitten>=2.0.0"]
+qt = ["pyside6>=6.11.0"]
+
+[dependency-groups]
+dev = [
+  "black>=26.3.1",  # required by mkdocstrings-python for separate_signate
+  "coverage>=7.13.5",
+  "griffe-fieldz>=0.5.0",
+  "mkdocstrings-python>=2.0.3",
+  "mypy>=1.19.1",
+  "pytest>=9.0.2",
+  "pytest-qt>=4.5.0",
+  "zensical>=0.0.31",
+]
+
+[build-system]
+requires = ["hatch-vcs", "hatchling"]
+build-backend = "hatchling.build"
+
+[tool.coverage]
+paths.menuet = ["src/ctx", "*/src/ctx", "*\\src\\ctx"]
+run.source_pkgs = ["menuet"]
+run.branch = true
+report.show_missing = true
+report.skip_covered = true
+report.exclude_lines = [
+  "# pragma: no cover",
+  "if (False|0|TYPE_CHECKING):",
+  "if __name__ == ['\"]__main__['\"]:",
+  # Protocol: beginning of line or colon + elipsis + eol or comment
+  "(?::\\s+|^\\s+)\\.\\.\\.(?:\\s+#|$)",
+]
+
+[tool.hatch]
+version.source = "vcs"
+version.raw-options.local_scheme = "no-local-version"
+
+[tool.hed]
+changelog = "CHANGELOG.md"
+capture-start = '^## \[{tag}\]'
+capture-end = "^## "
+diff-url = "https://codeberg.org/tahv/menuet/compare/{pev}...{tag}"
+softbreak = true
+title = "{tag}"
+
+[tool.mypy]
+strict = true
+mypy_path = "src"
+files = ["src", "tests"]
+
+[tool.pytest]
+addopts = ["--doctest-modules"]
+testpaths = ["src", "tests"]
+
+[tool.ruff]
+format.preview = true
+include = ["src/**/*.py", "tests/**/*.py", "**/pyproject.toml"]
+lint.preview = false
+lint.pydocstyle.convention = "google"
+lint.flake8-tidy-imports.ban-relative-imports = "all"
+lint.isort.required-imports = ["from __future__ import annotations"]
+lint.select = ["ALL"]
+lint.ignore = [
+  "D100",  # Missing docstring in public module
+  "D104",  # Missing docstring in public package
+  "D107",  # Missing docstring in `__init__`
+  "D105",  # Missing docstring in magic method
+  "FIX002",  # Line contains TODO, consider resolving the issue
+  "PLR0913",  # Too many arguments in function definition
+  "S101",  # Use of `assert` detected
+  "TD003",  # Missing issue link for this TODO
+]
+src = ["src"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/test_*.py" = [
+  "D103",  # Missing docstring in public function
+]
+
+[tool.rumdl]
+line_length = 80
+flavor = "standard"
+per-file-flavor."docs/**/*.md" = "mkdocs"
+MD013.reflow = true
+MD013.reflow-mode = "semantic-line-breaks"
+per-file-ignores."changelog.d/*.md" = [
+  "MD041",  # First line in file should be a level 1 heading
+]
+per-file-ignores."CONTRIBUTING.md" = [
+  "MD033",  # Inline HTML found
+]
+
+[tool.towncrier]
+directory = "changelog.d"
+filename = "CHANGELOG.md"
+start_string = "<!-- towncrier release notes start -->\n"
+title_format = ""
+issue_format = "[!{issue}](https://codeberg.org/tahv/menuet/pulls/{issue})"
+template = "changelog.d/template.md.jinja"
+type = [
+  # When something public gets removed in a breaking way
+  { name = "Breaking changes", directory = "break" },
+  # New public APIs, new behavior in existing features, non-breaking changes
+  { name = "Enhancements", directory = "feat" },
+  # Undesired behavior that got fixed
+  { name = "Bug fixes", directory = "fix" },
+  # Notable updates to the documentation
+  { name = "Documentation", directory = "doc" },
+  # Internal changes that rewrite/restructure code without changing the API
+  { name = "Other changes", directory = "other" },
+  # Changes that does not affect production code, e.g., modifying `.gitignore`
+  { name = "Miscellaneous changes", directory = "chore" },
+]
+
+[tool.ty]
+analysis.respect-type-ignore-comments = false
+
+[tool.uv]
+default-groups = ["dev"]
+cache-keys = [
+  { file = "pyproject.toml" },
+  { git = { commit = true, tags = true } },
+]

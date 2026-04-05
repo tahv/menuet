@@ -1,1 +1,68 @@
 # menuet
+
+Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
+
+## Features
+
+- Supports Blender, 3ds Max, Maya, MotionBuilder and PySide6.
+- Load menu from a TOML or JSON configuration, from a dict, from entry points,
+  or build it programmatically.
+- Declare one or more menus in a dedicated `.toml` file.
+- Compose menu from multiple `.toml` files.
+- Declare a menu in a `pyproject.toml` directly.
+
+## Installation
+
+```console
+pip install menuet
+```
+
+## Usage
+
+Create a menu configuration in [TOML](https://toml.io/) format.
+
+```toml
+# menu.toml
+[[action]]
+id = "print-hello"
+label = "Print Hello"
+cb = "print('Hello')"
+group = "Some Separator"
+
+[[action]]
+id = "open-gui"
+label = "Open GUI"
+cb = "ep:myapp.gui:open_gui"
+menu = ["Foo", "Bar"]
+```
+
+Load the above configuration into a `Model` and pass
+that model to a Menu Builder to create a menu.
+
+```python
+from pathlib import Path
+from menuet.builders.text import Render, TextMenuBuilder
+from menuet.model import Model, loads
+
+model = Model()
+loads(Path("menu.toml").read_text(), model)
+
+builder = TextMenuBuilder(model, root_menu="Demo", render=Render.UTF8)
+print(builder.build())
+```
+
+```text
+Demo
+├── Foo
+│   └── Bar
+│       └── Open GUI
+├── Some Separator ───
+└── Print Hello
+```
+
+For more advanced pattern, see the documentation.
+
+## Contributing
+
+For guidance on setting up a development environment and contributing, see
+[CONTRIBUTING.md](https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md).

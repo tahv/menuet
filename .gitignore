@@ -1,0 +1,9 @@
+__pycache__/
+*.py[oc]
+build/
+dist/
+site/
+wheels/
+*.egg-info
+.coverage*
+.venv/

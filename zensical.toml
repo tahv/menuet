@@ -1,0 +1,116 @@
+#:schema zensical-schema.json
+
+[project]
+site_name = "menuet"
+site_description = "Declarative menu builder for DCC applications"
+site_author = "Thibaud Gambier"
+# site_url = "https://tahv.codeberg.page/menuet/"
+copyright = "&copy 2026, Thibaud Gambier"
+nav = [
+  { "Home" = "index.md" },
+  { "Configuration" = "configuration.md" },
+  { "Recipes" = "recipes.md" },
+  { "API Reference" = "api.md" },
+  { "Meta" = [
+    { "Changelog" = "https://codeberg.org/tahv/menuet/src/branch/main/CHANGELOG.md" },
+    { "Contributing" = "https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md" },
+  ] },
+]
+repo_url = "https://codeberg.org/tahv/menuet"
+edit_uri = "_edit/main/docs/"
+repo_name = "tahv/menuet"
+extra_css = ["stylesheets/extra.css"]
+
+# tombi: lint.rules.table-key-required.disabled = true
+[project.theme]
+# custom_dir = "overrides"
+favicon = "images/favicon.svg"
+language = "en"
+features = [
+  # "content.code.copy",  # copy code block button
+  "content.tabs.link",  # sync content tabs that have the same titles
+  "navigation.indexes",  # `index.md` at the beginning of a navigation section are attached to the section
+  "navigation.instant",  # site behaves like a Single Page Application
+  "navigation.instant.prefetch",  # start fetching page when user hover over a link
+  "navigation.path",  # render a breadcrumb navigation above the title of each page
+  # "navigation.prune",  # only include the visible navigation items in the rendered HTML
+  "navigation.sections",  # render top-level sections as groups in the sidebar
+  # "navigation.tabs",  # top-level sections are rendered in a menu layer below the header
+  # "navigation.tabs.sticky",  # lock navigation tabs below the header when scrolling down
+  "navigation.top",  # back-to-top button
+  "navigation.tracking",  # update the URL in the address bar with the active anchor
+  "search.highlight",  # highlight search result occurrences
+  # "toc.follow", # automatically scroll sidebar so that the active anchor is always visible.
+  # "toc.integrate",  # integrade TOC to the navigation sidebar on the left.
+]
+icon.logo = "lucide/music-4"
+icon.repo = "fontawesome/brands/git-alt"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/git-alt"
+link = "https://codeberg.org/tahv/menuet"
+
+# tombi: lint.rules.type-mismatch.disabled = true
+[project.markdown_extensions]
+
+# https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
+[project.markdown_extensions.pymdownx.blocks.admonition]
+types = ["example", "warning"]
+
+[project.markdown_extensions.pymdownx.blocks.details]
+
+[project.markdown_extensions.pymdownx.blocks.tab]
+alternate_style = true
+
+# syntax highlighting for code blocks
+# https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+# inline code highlighter
+# https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
+[project.markdown_extensions.pymdownx.inlinehilite]
+
+# insert markdown or HTML snippets into another markdown file
+# https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
+[project.markdown_extensions.pymdownx.snippets]
+
+[project.markdown_extensions.pymdownx.superfences]
+
+# tombi: lint.rules.type-mismatch.disabled = true
+[project.plugins.mkdocstrings.handlers.python]
+inventories = ["https://docs.python.org/3/objects.inv"]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+inherited_members = true
+show_source = false
+show_symbol_type_toc = true
+show_symbol_type_heading = true
+show_signature_annotations = true
+separate_signature = true
+show_if_no_docstring = true
+line_length = 80
+merge_init_into_class = true
+show_root_members_full_path = true
+show_labels = false
+signature_crossrefs = true
+show_bases = false
+
+[[project.plugins.mkdocstrings.handlers.python.options.extensions]]
+griffe_fieldz.remove_fields_from_members = true
