@@ -7,3 +7,5 @@ wheels/
 *.egg-info
 .coverage*
 .venv/
+.cache/
+.rumdl_cache/
