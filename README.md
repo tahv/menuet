@@ -1,10 +1,13 @@
 # menuet
 
+[![Source](https://img.shields.io/badge/Codeberg-%232185D0?logo=codeberg&logoColor=white)](https://codeberg.org/tahv/menuet)
+[![Documentation](https://img.shields.io/badge/Documentation-teal)](https://tahv.codeberg.page/menuet/)
+
 Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 
 ## Features
 
-- Supports Blender, 3ds Max, Maya, MotionBuilder and PySide6.
+- Supports, 3ds Max, Maya, MotionBuilder and other any PySide6 application.
 - Load menu from a TOML or JSON configuration, from a dict, from entry points,
   or build it programmatically.
 - Declare one or more menus in a dedicated `.toml` file.
@@ -60,7 +63,8 @@ Demo
 └── Print Hello
 ```
 
-For more advanced pattern, see the documentation.
+See the [documentation](https://tahv.codeberg.page/menuet/)
+for more advanced patterns.
 
 ## Contributing
 
