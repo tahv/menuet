@@ -13,7 +13,8 @@ nvim *args:
 
 # Build Python wheel and sdist
 build:
-    uv build --no-sources
+    uv build --no-sources --clear --no-create-gitignore
+    uvx check-wheel-contents dist/*.whl
 
 # Run test suite
 [group('test')]
