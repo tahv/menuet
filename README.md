@@ -2,6 +2,7 @@
 
 [![Source](https://img.shields.io/badge/Codeberg-%232185D0?logo=codeberg&logoColor=white)](https://codeberg.org/tahv/menuet)
 [![Documentation](https://img.shields.io/badge/Documentation-teal)](https://tahv.codeberg.page/menuet/)
+[![PyPI](https://img.shields.io/pypi/v/menuet?logo=python&logoColor=white&label=PyPI)](https://pypi.org/project/menuet/)
 
 Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 
