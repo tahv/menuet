@@ -1,8 +1,9 @@
 # menuet
 
-[![Source](https://img.shields.io/badge/Codeberg-%232185D0?logo=codeberg&logoColor=white)](https://codeberg.org/tahv/menuet)
-[![Documentation](https://img.shields.io/badge/Documentation-teal)](https://tahv.codeberg.page/menuet/)
-[![PyPI](https://img.shields.io/pypi/v/menuet?logo=python&logoColor=white&label=PyPI)](https://pypi.org/project/menuet/)
+[![Source](https://img.shields.io/badge/codeberg-%232185D0?logo=codeberg&logoColor=white)](https://codeberg.org/tahv/menuet)
+[![Documentation](https://img.shields.io/badge/documentation-teal)](https://tahv.codeberg.page/menuet/)
+[![PyPI](https://img.shields.io/pypi/v/menuet?logo=python&logoColor=white&label=)](https://pypi.org/project/menuet/)
+[![Pipeline Status](https://ci.codeberg.org/api/badges/16747/status.svg)](https://ci.codeberg.org/repos/16747)
 
 Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 
@@ -31,7 +32,7 @@ Create a menu configuration in [TOML](https://toml.io/) format.
 id = "print-hello"
 label = "Print Hello"
 cb = "print('Hello')"
-group = "Some Separator"
+group = "Separator"
 
 [[action]]
 id = "open-gui"
@@ -60,12 +61,14 @@ Demo
 ├── Foo
 │   └── Bar
 │       └── Open GUI
-├── Some Separator ───
+├── Separator ───
 └── Print Hello
 ```
 
-See the [documentation](https://tahv.codeberg.page/menuet/)
-for more advanced patterns.
+## Documentation
+
+Project documentation is available at
+[tahv.codeberg.page/menuet](https://tahv.codeberg.page/menuet).
 
 ## Contributing
 
