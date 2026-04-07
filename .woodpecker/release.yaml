@@ -1,14 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/woodpecker-ci/woodpecker/main/pipeline/frontend/yaml/linter/schema/schema.json
 
+when:
+  - evaluate: >
+      CI_REPO == "tahv/menuet"
+      && CI_PIPELINE_EVENT == "tag"
+      && CI_COMMIT_BRANCH == CI_REPO_DEFAULT_BRANCH
+
 steps:
   build:
     name: Build Python Package
     image: ghcr.io/astral-sh/uv:python3.14-trixie
-    when:
-      # TODO(tga): push event is for testing only, remove
-      - event: push
-        branch: ${CI_REPO_DEFAULT_BRANCH}
-      - event: tag
     commands:
       - uv build --no-sources --sdist --wheel --no-create-gitignore --out-dir dist
       - uvx check-wheel-contents dist/*.whl
@@ -16,11 +17,6 @@ steps:
   publish:
     name: Publish to PyPI
     image: ghcr.io/astral-sh/uv:0.9.15-alpine
-    when:
-      - evaluate: >
-          CI_REPO == "tahv/menuet"
-          && CI_PIPELINE_EVENT == "tag"
-          && CI_COMMIT_BRANCH == CI_REPO_DEFAULT_BRANCH
     environment:
       UV_PUBLISH_TOKEN:
         from_secret: menuet_pypi
