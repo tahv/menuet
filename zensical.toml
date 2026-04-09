@@ -12,8 +12,10 @@ nav = [
   { "Recipes" = "recipes.md" },
   { "API Reference" = "api.md" },
   { "Meta" = [
+    { "PyPI" = "https://pypi.org/project/menuet" },
     { "Changelog" = "https://codeberg.org/tahv/menuet/src/branch/main/CHANGELOG.md" },
     { "Contributing" = "https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md" },
+    { "Releases" = "https://codeberg.org/tahv/menuet/releases" },
   ] },
 ]
 repo_url = "https://codeberg.org/tahv/menuet"
@@ -31,8 +33,6 @@ features = [
   # "content.code.copy",  # copy code block button
   "content.tabs.link",  # sync content tabs that have the same titles
   "navigation.indexes",  # `index.md` at the beginning of a navigation section are attached to the section
-  # "navigation.instant",  # site behaves like a Single Page Application
-  # "navigation.instant.prefetch",  # start fetching page when user hover over a link
   "navigation.path",  # render a breadcrumb navigation above the title of each page
   # "navigation.prune",  # only include the visible navigation items in the rendered HTML
   "navigation.sections",  # render top-level sections as groups in the sidebar
