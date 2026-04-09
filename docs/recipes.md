@@ -40,7 +40,7 @@ The `root_keys` argument of [`load`][menuet.load]
 and [`loads`][menuet.loads] can be used to parse a menu configuration from a
 sub-table.
 
-```python
+```python { .copy }
 from textwrap import dedent
 
 import menuet
@@ -63,7 +63,7 @@ menuet.loads(
 Loading menu from a sub-table can be used to define a menu in a
 `pyproject.toml`.
 
-```toml title="pyproject.toml"
+```toml  { title="pyproject.toml", .copy }
 [project]
 name = "myapp"
 verion = "1.0.0"
@@ -74,7 +74,7 @@ label = "Print Hello"
 cb = "print('Hello World !')"
 ```
 
-```python
+```python { .copy }
 from pathlib import Path
 
 import menuet
@@ -101,7 +101,7 @@ Hello World
 
 Sub-table may be used to define multiple menus in the same file.
 
-```toml title="menu.toml"
+```toml { title="menu.toml", .copy }
 [[foo.action]]
 id = "print-foo"
 label = "Print Hello Foo"
@@ -117,7 +117,7 @@ cb = "print('Hello from bar')"
 
 /// tab | Loading **foo** menu
 
-```python
+```python { .copy }
 from pathlib import Path
 
 import menuet
@@ -142,7 +142,7 @@ Example
 
 /// tab | Loading **bar** menu
 
-```python
+```python { .copy }
 from pathlib import Path
 
 import menuet
@@ -167,8 +167,7 @@ Example
 
 ## Load multiple files in a Model
 
-
-```python
+```python { .copy }
 from pathlib import Path
 
 import menuet

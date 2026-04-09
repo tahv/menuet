@@ -16,7 +16,7 @@ and `menu` lists.
 
 /// example
 
-```python
+```python { .copy }
 import menuet
 from menuet.builders.text import Render, TextMenuBuilder
 
