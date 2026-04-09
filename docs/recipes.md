@@ -178,5 +178,143 @@ loads(Path("menu.toml").read_text(), model)
 loads(Path("other-menu.toml").read_text(), model)
 ```
 
-<!-- TODO(tga): menu from entrypoints -->
-<!-- TODO(tga): menu from code -->
+## Build model from code
+
+```python { .copy }
+from functools import partial
+from importlib.metadata import version
+from pathlib import Path
+
+import menuet
+
+model = menuet.Model()
+model.add_action(
+    menuet.Action(
+        id="hello-world",
+        label="Hello World",
+        cb="print('Hello World !')",
+    ),
+)
+model.add_action(
+    menuet.Action(
+        id="myapp-version",
+        label=f"myapp, v{version('myapp')}",
+        cb=partial(version, "myapp"),
+        menu=("Version",)
+    ),
+)
+model.add_menu(
+    menuet.Action(
+        label="Version",
+        icon=Path(__file__).parent / "icon.svg",
+    ),
+)
+```
+
+## Build model from Entry Points
+
+In this example, the `myapp` packages build a menu that's populated by plugins,
+discovered through
+[entry points](https://packaging.python.org/en/latest/specifications/entry-points/).
+
+The `main` function initialize the [Model][menuet.Model]
+and lookup the `myapp.menu` entry point group to discover its
+[Actions][menuet.Action].
+
+```python { title="myapp/__main__.py" hl_lines="16 28" .copy }
+from __future__ import annotations
+
+import logging
+from importlib.metadata import entry_points
+
+from PySide6 import QtWidgets
+
+import menuet
+from menuet.builders.qt import QMenuBuilder
+
+logger = logging.getLogger("myapp")
+
+
+def main() -> None:
+    model = menuet.Model()
+    _load_entry_points(model, "myapp.menu")
+
+    app = QtWidgets.QApplication([])
+
+    window = QtWidgets.QMainWindow()
+    builder = QMenuBuilder(model, root_menu="My App")
+    window.menuBar().addMenu(builder.build())
+    window.show()
+
+    app.exec()
+
+
+def _load_entry_points(model: menuet.Model, group: str) -> None:
+    for ep in entry_points(group=group):
+        try:
+            func = ep.load()
+        except Exception:
+            logger.exception("Failed to load entry point: %s", ep)
+            continue
+
+        try:
+            actions = func()
+        except Exception:
+            logger.exception("Failed to call entry point: %s", ep)
+            continue
+
+        if not isinstance(actions, list):
+            logger.error("Expected 'list', found %s: %s", type(actions), ep)
+            continue
+
+        for item in actions:
+            if isinstance(item, menuet.Menu):
+                model.add_menu(item)
+            elif isinstance(item, menuet.Action):
+                model.add_action(item)
+            else:
+                logger.error("Expected 'Action' or 'Menu', got %s: %s", type(item), ep)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+The plugin `myplugin` make its actions available to `myapp` by defining it an
+`myapp.menu` entry point in its`pyproject.toml` file.
+
+```toml { title="pyproject.toml" hl_lines="5-6" .copy }
+[project]
+name = "myplugin"
+verion = "1.0.0"
+
+[project.entry-points."myapp.menu"]
+myplugin = "myplugin.actions:actions"
+```
+
+The `actions` hook function returns a list of [Actions][menuet.Action]
+and [Menus][menuet.Menu] to add to `myapp` menu.
+
+```python { title="myplugin/actions.py" hl_lines="3" .copy }
+import menuet
+
+def actions() -> list[menuet.Menu | menuet.Action]:
+    return [
+        menuet.Action(
+            id="hello-world",
+            label="Hello World",
+            cb="print('Hello World !')",
+        ),
+        menuet.Action(
+            id="open-gui",
+            label="Open GUI",
+            menu=("Sub Menu",),
+            cb=open_dialog,
+        ),
+    ]
+
+def open_dialog() -> None:
+    from PySide6 import QtWidgets
+
+    QtWidgets.QMessageBox.information(None, "Demo", "Example Dialog")
+```
