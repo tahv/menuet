@@ -62,7 +62,8 @@ capture-start = '^## \[{tag}\]'
 capture-end = "^## "
 diff-url = "https://codeberg.org/tahv/menuet/compare/{pev}...{tag}"
 softbreak = true
-title = "{tag}"
+title = "Release Notes"
+top-heading = 2
 
 [tool.mypy]
 strict = true
