@@ -27,6 +27,7 @@ Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 - [**Source Code**](https://codeberg.org/tahv/menuet)
 - [**Changelog**](https://codeberg.org/tahv/menuet/src/branch/main/CHANGELOG.md)
 - [**Contributing**](https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md)
+- [**GitHub Mirror**](https://github.com/tahv/menuet)
 
 ## Installation
 
