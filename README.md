@@ -16,6 +16,18 @@ Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 - Compose menu from multiple `.toml` files.
 - Declare a menu in a `pyproject.toml` directly.
 
+## Project Information
+
+> [!IMPORTANT]
+> Development takes place on Codeberg:
+> [codeberg.org/tahv/menuet](https://codeberg.org/tahv/menuet).
+
+- [**Documentation**](https://tahv.codeberg.page/menuet)
+- [**PyPI**](https://pypi.org/project/menuet/)
+- [**Source Code**](https://codeberg.org/tahv/menuet)
+- [**Changelog**](https://codeberg.org/tahv/menuet/src/branch/main/CHANGELOG.md)
+- [**Contributing**](https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md)
+
 ## Installation
 
 ```console
@@ -64,13 +76,3 @@ Demo
 ├── Separator ───
 └── Print Hello
 ```
-
-## Documentation
-
-Project documentation is available at
-[tahv.codeberg.page/menuet](https://tahv.codeberg.page/menuet).
-
-## Contributing
-
-For guidance on setting up a development environment and contributing, see
-[CONTRIBUTING.md](https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md).
