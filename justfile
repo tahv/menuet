@@ -47,6 +47,6 @@ news filename="":
 changelog version="":
     uvx towncrier build {{ if version == "" { "--draft --version main" } else { "--version " + version } }}
 
-# Output `version` release notes from CHANGELOG.md
-release-notes version:
-    @uv run hed --tag "{{ version }}"
+# Ouptut release notes from `CHANGELOG.md` for `version`
+hed version:
+    @uvx hed --tag {{ version }}
