@@ -27,7 +27,7 @@ steps:
     name: Generate Release Notes
     image: ghcr.io/astral-sh/uv:python3.14-trixie
     commands:
-      - uv run hed --tag "${CI_COMMIT_TAG}" > RELEASE.md
+      - uvx hed --tag "${CI_COMMIT_TAG}" > RELEASE.md
 
   release:
     name: Create Codeberg Release
