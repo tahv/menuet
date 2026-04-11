@@ -77,3 +77,9 @@ that is proposed in pull request `#123`.
 
 See `tool.towncrier.types` in the [`pyproject.toml`](./pyproject.toml)
 for the list of fragment types.
+
+## Mirrors
+
+Active development takes place on Codeberg.
+The `github` branch only contains a `README.md`,
+and commits pushed to this branch are automatically pushed to the GitHub mirror.
