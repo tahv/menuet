@@ -9,12 +9,12 @@ Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 
 ## Features
 
-- Supports, 3ds Max, Maya, MotionBuilder and other any PySide6 application.
 - Load menu from a TOML or JSON configuration, from a dict, from entry points,
   or build it programmatically.
+- Supports, 3ds Max, Maya, MotionBuilder and any PySide6 application.
 - Declare one or more menus in a dedicated `.toml` file.
 - Compose menu from multiple `.toml` files.
-- Declare a menu in a `pyproject.toml` directly.
+- Declare a menu in a `pyproject.toml`.
 
 ## Project Information
 
@@ -77,3 +77,35 @@ Demo
 ├── Separator ───
 └── Print Hello
 ```
+
+For more information and examples,
+visit the documentation at
+[tahv.codeberg.page/menuet](https://tahv.codeberg.page/menuet).
+
+## Contributing
+
+You'd like to use menuet with another application ?
+Feel free to [open an issue](https://codeberg.org/tahv/menuet/issues),
+or read the
+[contribution guidelines](https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md)
+and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
+
+## Alternatives
+
+- [hannesdelbeke/unimenu](https://github.com/hannesdelbeke/unimenu)
+
+<!--
+## Roadmap
+
+- [ ] Builder: maya.cmds.menu
+- [ ] Builder: maya.cmds.popupMenu (marking menu)
+- [ ] Builder: Blender
+- [ ] Builder: 3ds Max Menu System
+- [ ] Builder: 3ds Max Dynamic Menu
+- [ ] Builder: Unreal
+- [ ] Action.visible is unused
+- [ ] Action.enabled is unused
+- [ ] Helper function to get QMainWindow or QMenuBar
+- [ ] Icon path should be relative to file
+
+-->
