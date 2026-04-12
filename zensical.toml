@@ -30,19 +30,13 @@ use_directory_urls = true
 favicon = "images/favicon.svg"
 language = "en"
 features = [
-  # "content.code.copy",  # copy code block button
   "content.tabs.link",  # sync content tabs that have the same titles
   "navigation.indexes",  # `index.md` at the beginning of a navigation section are attached to the section
   "navigation.path",  # render a breadcrumb navigation above the title of each page
-  # "navigation.prune",  # only include the visible navigation items in the rendered HTML
   "navigation.sections",  # render top-level sections as groups in the sidebar
-  # "navigation.tabs",  # top-level sections are rendered in a menu layer below the header
-  # "navigation.tabs.sticky",  # lock navigation tabs below the header when scrolling down
   "navigation.top",  # back-to-top button
   "navigation.tracking",  # update the URL in the address bar with the active anchor
   "search.highlight",  # highlight search result occurrences
-  # "toc.follow", # automatically scroll sidebar so that the active anchor is always visible.
-  # "toc.integrate",  # integrade TOC to the navigation sidebar on the left.
 ]
 icon.logo = "lucide/music-4"
 icon.repo = "fontawesome/brands/git-alt"
