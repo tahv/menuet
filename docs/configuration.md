@@ -4,46 +4,39 @@ icon: lucide/file-cog
 
 # Menu Configuration
 
-The [`deserialize`][menuet.deserialize] function accepts a dict of `action`
-and `menu` lists.
+The [`load`][menuet.load] function takes a dict of
+`#!py3 { "action": [], "menu": [] }`.
 
-```python
-{
-    "action": [],
-    "menu": [],
-}
-```
-
-/// example
-
-```python { .copy }
+```python { title="Example" .copy }
 import menuet
 from menuet.builders.text import Render, TextMenuBuilder
 
 model = menuet.Model()
-menuet.deserialize({
-    "menu": [
-        {
-            "label": "Sub-Menu",
-            "menu": ["My App"],
-            "group": "Separator",
-        },
-    ],
-    "action": [
-        {
-            "id": "open-gui",
-            "label": "Open GUI",
-            "cb": "import myapp; myapp.open_gui()",
-            "menu": ["My App", "Sub-Menu"],
-        },
-        {
-            "id": "print-hello",
-            "label":  "Print Hello",
-            "cb": 'print("Hello")',
-        },
-    ],
+load(
+    {
+        "menu": [
+            {
+                "label": "Sub-Menu",
+                "menu": ["My App"],
+                "group": "Separator",
+            },
+        ],
+        "action": [
+            {
+                "id": "open-gui",
+                "label": "Open GUI",
+                "cb": "import myapp; myapp.open_gui()",
+                "menu": ["My App", "Sub-Menu"],
+            },
+            {
+                "id": "print-hello",
+                "label":  "Print Hello",
+                "cb": 'print("Hello")',
+            },
+        ],
+    },
     model,
-})
+)
 
 builder = TextMenuBuilder(model, root_menu="Example", render=Render.UTF8)
 print(builder.build())
