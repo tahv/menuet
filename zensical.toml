@@ -1,5 +1,3 @@
-#:schema zensical-schema.json
-
 [project]
 site_name = "menuet"
 site_description = "Declarative menu builder for DCC applications"

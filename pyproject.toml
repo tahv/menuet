@@ -113,6 +113,11 @@ per-file-ignores."CONTRIBUTING.md" = [
   "MD033",  # Inline HTML found
 ]
 
+[[tool.tombi.schemas]]
+root = "project"
+path = "https://squidfunk.github.io/mkdocs-material/schema.json"
+include = ["zensical.toml"]
+
 [tool.towncrier]
 directory = "changelog.d"
 filename = "CHANGELOG.md"
