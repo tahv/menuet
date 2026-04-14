@@ -59,8 +59,8 @@ that model to a Menu Builder to create a menu.
 
 ```python
 from pathlib import Path
+from menuet import Model, loads
 from menuet.builders.text import Render, TextMenuBuilder
-from menuet.model import Model, loads
 
 model = Model()
 loads(Path("menu.toml").read_text(), model)
@@ -95,6 +95,7 @@ and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
 - [hannesdelbeke/unimenu](https://github.com/hannesdelbeke/unimenu)
 
 <!--
+
 ## Roadmap
 
 - [ ] Builder: maya.cmds.menu
@@ -107,5 +108,6 @@ and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
 - [ ] Action.enabled is unused
 - [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
+- [ ] Json schema
 
 -->
