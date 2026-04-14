@@ -101,12 +101,14 @@ show_symbol_type_heading = true
 show_signature_annotations = true
 separate_signature = true
 show_if_no_docstring = true
-line_length = 80
+line_length = 60
 merge_init_into_class = true
-show_root_members_full_path = true
+show_root_members_full_path = false
 show_labels = false
 signature_crossrefs = true
 show_bases = false
+show_root_heading = true
+annotations_path = "source"
 
 [[project.plugins.mkdocstrings.handlers.python.options.extensions]]
 griffe_fieldz.remove_fields_from_members = true
