@@ -18,3 +18,8 @@ icon: lucide/code
     options:
       toc_label: "menuet.builders.qt"
       filters: "public"
+
+::: menuet.demo
+    options:
+      toc_label: "menuet.demo"
+      filters: "public"

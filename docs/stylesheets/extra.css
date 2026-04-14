@@ -15,3 +15,11 @@ a.md-nav__link[href^="https:"]::after {
   margin-bottom: auto;
   content: ' ';
 }
+
+/* Center elements */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

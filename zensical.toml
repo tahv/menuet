@@ -7,6 +7,7 @@ copyright = "&copy 2026, Thibaud Gambier"
 nav = [
   { "Home" = "index.md" },
   { "Configuration" = "configuration.md" },
+  { "Examples" = "examples.md" },
   { "Recipes" = "recipes.md" },
   { "API Reference" = "api.md" },
   { "Meta" = [

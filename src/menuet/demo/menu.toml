@@ -1,0 +1,101 @@
+#:schema ../docs/menuet.json
+
+[[action]]
+id = "anim-bake"
+label = "Bake Animation"
+menu = ["Animation"]
+desc = "Bake selected character(s) animation"
+
+[[action]]
+id = "anim-fbx-exporter"
+label = "FBX Animation Exporter"
+menu = ["Animation", "FBX"]
+desc = "Open animation exporter Window"
+
+[[action]]
+id = "anim-fbx-importer"
+label = "FBX Animation Importer"
+menu = ["Animation", "FBX"]
+desc = "Open animation importer Window"
+
+[[action]]
+id = "adjustment-blending"
+label = "Adjustment Blending"
+menu = ["Animation"]
+group = "Edit"
+desc = "Perform Adjustment Blending on selected character(s)"
+
+[[action]]
+id = "tween-machine"
+label = "Tween Machine"
+menu = ["Animation"]
+group = "Edit"
+
+[[action]]
+id = "rig-ctrl-creator"
+label = "Controller Creator"
+menu = ["Rigging"]
+group = "Controller"
+
+[[action]]
+id = "rig-ctrl-editor"
+label = "Controller Editor"
+menu = ["Rigging"]
+group = "Controller"
+
+[[action]]
+id = "rig-joint-tools"
+label = "Joint Tools"
+menu = ["Rigging"]
+
+[[action]]
+id = "rig-skinning-tools"
+label = "Skinning Tools"
+menu = ["Rigging"]
+
+[[action]]
+id = "mesh-mirror"
+label = "Mirror Geometry"
+menu = ["Modeling"]
+
+[[action]]
+id = "mesh-cleaner"
+label = "Mesh Cleaner"
+menu = ["Modeling"]
+
+[[action]]
+id = "mesh-randomizer"
+label = "Mesh Randomizer"
+menu = ["Modeling"]
+
+[[action]]
+id = "dev-debugger"
+label = "Start Debugger"
+menu = ["Development"]
+
+[[action]]
+id = "doc-open"
+label = "Open Documentation"
+cb = "url:https://tahv.codeberg.page/menuet/"
+
+# Demo/
+# ├── Animation/
+# │   ├── Bake Animation
+# │   ├── FBX/
+# │   │   ├── FBX Animation Exporter
+# │   │   └── FBX Animation Importer
+# │   ├── Edit ──
+# │   ├── Adjustment Blending
+# │   └── Tween Machine
+# ├── Rigging/
+# │   ├── Control Creator
+# │   ├── Control Editor
+# │   ├── Joint Tools
+# │   └── Skinning Tools
+# ├── Modeling/
+# │   ├── Mirror Geometry
+# │   ├── Mesh Cleaner
+# │   └── Randomizer
+# ├── Development/
+# │   └── Start Debugger
+# └── Open Documentation
