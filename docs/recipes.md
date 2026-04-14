@@ -26,13 +26,11 @@ menuet.deserialize(
 model.get_action("hello-world").cb()
 ```
 
-<div class="result" markdown>
-
+/// html | div.result
 ```text
 Hello World
 ```
-
-</div>
+///
 
 ## Root keys
 
@@ -89,13 +87,11 @@ menuet.loads(
 model.get_action("hello-world").cb()
 ```
 
-<div class="result" markdown>
-
+/// html | div.result
 ```text
 Hello World
 ```
-
-</div>
+///
 
 ### Multiple menus in the same file
 
@@ -115,7 +111,7 @@ menu = ["Bar Menu"]
 cb = "print('Hello from bar')"
 ```
 
-/// tab | Loading **foo** menu
+//// tab | Loading **foo** menu
 
 ```python { .copy }
 from pathlib import Path
@@ -129,18 +125,17 @@ menuet.loads(Path("menu.toml").read_text(), model, root_keys=("foo",))
 print(TextMenuBuilder(model, root_menu="Example").build())
 ```
 
-<div class="result" markdown>
-
+/// html | div.result
 ```text
 Example
 └── Foo Menu
     └── Print Hello Foo
 ```
-
-</div>
 ///
 
-/// tab | Loading **bar** menu
+////
+
+//// tab | Loading **bar** menu
 
 ```python { .copy }
 from pathlib import Path
@@ -154,16 +149,15 @@ menuet.loads(Path("menu.toml").read_text(), model, root_keys=("bar",))
 print(TextMenuBuilder(model, root_menu="Example").build())
 ```
 
-<div class="result" markdown>
-
+/// html | div.result
 ```text
 Example
 └── Bar Menu
     └── Print Hello Bar
 ```
-
-</div>
 ///
+
+////
 
 ## Load multiple files in a Model
 

@@ -49,7 +49,7 @@ builder = TextMenuBuilder(model, root_menu="Example", render=Render.UTF8)
 print(builder.build())
 ```
 
-<div class="result" markdown>
+/// html | div.result
 
 ```text
 Example
@@ -59,8 +59,6 @@ Example
 │       └── Open GUI
 └── Print Hello
 ```
-
-</div>
 
 ///
 

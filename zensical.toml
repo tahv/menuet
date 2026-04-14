@@ -68,6 +68,8 @@ types = ["example", "warning"]
 [project.markdown_extensions.pymdownx.blocks.tab]
 alternate_style = true
 
+[project.markdown_extensions.pymdownx.blocks.html]
+
 # syntax highlighting for code blocks
 # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
 [project.markdown_extensions.pymdownx.highlight]
