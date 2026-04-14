@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tahv.codeberg.page/menuet/menuet.json",
+  "x-tombi-toml-version": "v1.0.0",
+  "additionalProperties": false,
+  "properties": {
+    "menu": {
+      "title": "Menus",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Display name."
+          },
+          "menu": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Menu",
+            "description": "Menu labels hierarchy."
+          },
+          "group": {
+            "type": "string",
+            "title": "Group",
+            "description": "Group items under the same menu together using separators."
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon",
+            "description": "Path to an icon. Supports `path:` and `res:` schemes; default to `path:` if not specified."
+          },
+          "desc": {
+            "type": "string",
+            "title": "Description",
+            "description": "Short description, displayed as a tooltip."
+          }
+        }
+      }
+    },
+    "action": {
+      "title": "Actions",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Identifier",
+            "description": "Action identifier. Must be unique.",
+            "pattern": "^[a-z](?:[a-z-]*[a-z])?$"
+          },
+          "cb": {
+            "type": "string",
+            "title": "Callback",
+            "description": "Callback to execute when action is requested. Supports `exec:`, `ep:`, `url:` and `copy:` schemes; default to `exec:` if not specified."
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "visible": {
+            "type": "boolean"
+          },
+          "menu": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Menu",
+            "description": "Menu labels hierarchy."
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+            "description": "Display name."
+          },
+          "group": {
+            "type": "string",
+            "title": "Group",
+            "description": "Group items under the same menu together using separators."
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon",
+            "description": "Path to an icon. Supports `path:` and `res:` schemes; default to `path:` if not specified."
+          },
+          "desc": {
+            "type": "string",
+            "title": "Description",
+            "description": "Short description, displayed as a tooltip."
+          }
+        }
+      }
+    }
+  }
+}

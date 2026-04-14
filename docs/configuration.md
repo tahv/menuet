@@ -168,3 +168,43 @@ The following schemes are available:
     ```toml
     cb = "url:https://codeberg.org/tahv/menuet"
     ```
+
+## JSON schema
+
+Menuet provides its own
+[JSON Schema](https://json-schema.org/understanding-json-schema/about).
+If your editor supports TOML schema validation,
+it's recommended to set it up to enable validation diagnostics and auto-complete
+when editing a menu file:
+
+/// tab | Schema Document Directive
+
+Both [tombi](https://tombi-toml.github.io/tombi/docs)
+and [taplo](https://taplo.tamasfe.dev/) supports the `#:schema` directive to
+specify the schema to use for the document.
+
+Add the comment directive at the beginning of the document,
+followed by a blank line.
+
+```toml { title="menu.toml" .copy }
+#:schema https://tahv.codeberg.page/menuet/menuet.json
+
+```
+
+///
+
+/// tab | Sub Schema
+
+Tombi can be [configured](https://tombi-toml.github.io/tombi/docs/configuration)
+with
+[sub schema](https://tombi-toml.github.io/tombi/docs/configuration#sub-schema)
+to apply a schema to a specific part of the TOML document.
+
+```toml { title="tombi.toml" .copy }
+[[schemas]]
+root = "tool.my-menu"
+path = "https://tahv.codeberg.page/menuet/menuet.json"
+include = ["pyproject.toml"]
+```
+
+///
