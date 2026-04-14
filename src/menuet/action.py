@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from importlib.abc import Traversable
 
 
-ID_PATTERN = r"[a-z](?:[a-z-]*[a-z])?"
+ID_PATTERN = r"^[a-z](?:[a-z-]*[a-z])?$"
 
 
 @define(frozen=True, kw_only=True)
