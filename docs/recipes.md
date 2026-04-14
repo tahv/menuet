@@ -6,7 +6,7 @@ icon: lucide/cooking-pot
 
 ## Execute actions programmatically
 
-Access any [`Action`][menuet.Action] in a `Model` with
+Access any [Action][menuet.Action] in a [Model][menuet.Model] with
 [`Model.get_action`][menuet.Model.get_action].
 
 ```python { .copy }
@@ -34,9 +34,9 @@ Hello World
 
 ## Root keys
 
-The `root_keys` argument of [`load`][menuet.load]
-and [`loads`][menuet.loads] can be used to parse a menu configuration from a
-sub-table.
+The [`load`][menuet.load]
+and [`loads`][menuet.loads] functions accepts a `root_keys` argument
+which can be used to parse a menu configuration from a sub-table.
 
 ```python { .copy }
 from textwrap import dedent
