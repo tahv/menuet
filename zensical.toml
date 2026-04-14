@@ -89,8 +89,11 @@ pygments_lang_class = true
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.plugins.mkdocstrings.handlers.python]
-inventories = ["https://docs.python.org/3/objects.inv"]
 paths = ["src"]
+inventories = [
+  "https://docs.python.org/3/objects.inv",
+  "https://doc.qt.io/qtforpython-6/objects.inv",
+]
 
 [project.plugins.mkdocstrings.handlers.python.options]
 docstring_style = "google"
