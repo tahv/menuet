@@ -92,7 +92,6 @@ a `group`, or a `desc`.
 <!-- TODO(tga): path relative to toml config -->
 
 The `icon` option accepts a value in the format `<path>` or `<scheme>:<value>`.
-
 The following schemes are available:
 
 - `path` *(default)*: takes a path to an icon file.
@@ -113,7 +112,6 @@ The following schemes are available:
 ## `cb` Schemes
 
 The `cb` option accepts a value in the format `<script>` or `<scheme>:<value>`.
-
 The following schemes are available:
 
 - `exec` *(default)*: takes a Python script.
