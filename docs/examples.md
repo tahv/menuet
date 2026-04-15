@@ -60,3 +60,45 @@ bpy.types.TOPBAR_MT_editor_menus.append(menu_draw)
 ![Blender](./images/demo-blender.png)
 
 ///
+
+## Text
+
+```python { .copy }
+from menuet.builders.text import Render, TextMenuBuilder
+from menuet.demo import demo_model
+
+model = demo_model()
+builder = TextMenuBuilder(model, root_menu="Demo", render=Render.UTF8)
+menu = builder.build()
+
+print(menu)
+```
+
+/// html | div.result
+
+```text
+Demo
+├── Animation
+│   ├── FBX
+│   │   ├── FBX Animation Exporter
+│   │   └── FBX Animation Importer
+│   ├── Bake Animation
+│   ├── Edit ───
+│   ├── Adjustment Blending
+│   └── Tween Machine
+├── Development
+│   └── Start Debugger
+├── Modeling
+│   ├── Mesh Cleaner
+│   ├── Mesh Randomizer
+│   └── Mirror Geometry
+├── Rigging
+│   ├── Joint Tools
+│   ├── Skinning Tools
+│   ├── Controller ───
+│   ├── Controller Creator
+│   └── Controller Editor
+└── Open Documentation
+```
+
+///
