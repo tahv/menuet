@@ -11,7 +11,7 @@ Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 
 - Load menu from a TOML or JSON configuration, from a dict, from entry points,
   or build it programmatically.
-- Supports, 3ds Max, Maya, MotionBuilder and any PySide6 application.
+- Supports, Blender, 3ds Max, Maya, MotionBuilder and any PySide6 application.
 - Declare one or more menus in a dedicated `.toml` file.
 - Compose menu from multiple `.toml` files.
 - Declare a menu in a `pyproject.toml`.
@@ -59,8 +59,8 @@ that model to a Menu Builder to create a menu.
 
 ```python
 from pathlib import Path
+from menuet import Model, loads
 from menuet.builders.text import Render, TextMenuBuilder
-from menuet.model import Model, loads
 
 model = Model()
 loads(Path("menu.toml").read_text(), model)
@@ -95,11 +95,11 @@ and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
 - [hannesdelbeke/unimenu](https://github.com/hannesdelbeke/unimenu)
 
 <!--
+
 ## Roadmap
 
 - [ ] Builder: maya.cmds.menu
 - [ ] Builder: maya.cmds.popupMenu (marking menu)
-- [ ] Builder: Blender
 - [ ] Builder: 3ds Max Menu System
 - [ ] Builder: 3ds Max Dynamic Menu
 - [ ] Builder: Unreal
@@ -107,5 +107,6 @@ and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
 - [ ] Action.enabled is unused
 - [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
+- [ ] Json schema
 
 -->
