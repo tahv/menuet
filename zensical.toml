@@ -58,7 +58,7 @@ link = "https://codeberg.org/tahv/menuet"
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.markdown_extensions]
-github-callouts = {}
+[project.markdown_extensions.github-callouts]
 
 # https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
 [project.markdown_extensions.pymdownx.blocks.admonition]
