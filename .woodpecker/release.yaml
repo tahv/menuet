@@ -19,7 +19,7 @@ steps:
       UV_PUBLISH_TOKEN:
         from_secret: menuet_pypi
     commands:
-      - uv publish dist
+      - uv publish dist/*
 
   notes:
     name: Generate Release Notes
