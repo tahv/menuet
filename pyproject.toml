@@ -63,8 +63,8 @@ version.raw-options.local_scheme = "no-local-version"
 changelog = "CHANGELOG.md"
 capture-start = '^## \[{tag}\]'
 capture-end = "^## "
-diff-url = "https://codeberg.org/tahv/menuet/compare/{pev}...{tag}"
-softbreak = true
+diff-url = "https://codeberg.org/tahv/menuet/compare/{prev}...{tag}"
+softbreak = false
 title = "Release Notes"
 top-heading = 2
 
