@@ -50,3 +50,11 @@ changelog version="":
 # Ouptut release notes from `CHANGELOG.md` for `version`
 hed version:
     @uvx hed --tag {{ version }}
+
+# Run `ruff` linter
+ruff *files:
+  uvx ruff@latest check --output-format concise {{files}}
+
+# Dry run `ruff` formatter and output diff
+fmt:
+  uvx ruff@latest format --diff
