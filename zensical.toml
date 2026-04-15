@@ -60,6 +60,9 @@ link = "https://codeberg.org/tahv/menuet"
 [project.markdown_extensions]
 [project.markdown_extensions.github-callouts]
 
+[project.markdown_extensions.toc]
+permalink = true
+
 # https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
 [project.markdown_extensions.pymdownx.blocks.admonition]
 types = [
