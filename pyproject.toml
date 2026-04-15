@@ -25,7 +25,9 @@ qt = ["pyside6>=6.11.0"]
 [dependency-groups]
 dev = [
   "black>=26.3.1",  # required by mkdocstrings-python for separate_signate
+  "bpy==5.1.*",
   "coverage>=7.13.5",
+  "fake-bpy-module-5-0>=20260128",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "griffe-fieldz>=0.5.0",
   "markdown-callouts>=0.4.0",
   "mkdocstrings-python>=2.0.3",
@@ -144,8 +146,17 @@ type = [
 analysis.respect-type-ignore-comments = false
 
 [tool.uv]
+dependency-groups.dev = { requires-python = ">=3.13" }
 default-groups = ["dev"]
 cache-keys = [
   { file = "pyproject.toml" },
   { git = { commit = true, tags = true } },
 ]
+
+[tool.uv.sources]
+bpy = { index = "blender" }
+
+[[tool.uv.index]]
+name = "blender"
+url = "https://download.blender.org/pypi/"
+explicit = true

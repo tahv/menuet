@@ -104,6 +104,7 @@ pygments_lang_class = true
 paths = ["src"]
 inventories = [
   "https://docs.python.org/3/objects.inv",
+  "https://docs.blender.org/api/5.1/objects.inv",
   "https://doc.qt.io/qtforpython-6/objects.inv",
 ]
 

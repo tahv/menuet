@@ -19,6 +19,11 @@ icon: lucide/code
       toc_label: "menuet.builders.qt"
       filters: "public"
 
+::: menuet.builders.blender
+    options:
+      toc_label: "menuet.builders.blender"
+      filters: "public"
+
 ::: menuet.demo
     options:
       toc_label: "menuet.demo"
