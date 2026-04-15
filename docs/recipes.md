@@ -27,9 +27,11 @@ model.get_action("hello-world").cb()
 ```
 
 /// html | div.result
+
 ```text
 Hello World
 ```
+
 ///
 
 ## Root keys
@@ -88,9 +90,11 @@ model.get_action("hello-world").cb()
 ```
 
 /// html | div.result
+
 ```text
 Hello World
 ```
+
 ///
 
 ### Multiple menus in the same file
@@ -126,11 +130,13 @@ print(TextMenuBuilder(model, root_menu="Example").build())
 ```
 
 /// html | div.result
+
 ```text
 Example
 └── Foo Menu
     └── Print Hello Foo
 ```
+
 ///
 
 ////
@@ -150,11 +156,13 @@ print(TextMenuBuilder(model, root_menu="Example").build())
 ```
 
 /// html | div.result
+
 ```text
 Example
 └── Bar Menu
     └── Print Hello Bar
 ```
+
 ///
 
 ////
@@ -198,7 +206,7 @@ model.add_action(
     ),
 )
 model.add_menu(
-    menuet.Action(
+    menuet.Menu(
         label="Version",
         icon=Path(__file__).parent / "icon.svg",
     ),
@@ -267,7 +275,11 @@ def _load_entry_points(model: menuet.Model, group: str) -> None:
             elif isinstance(item, menuet.Action):
                 model.add_action(item)
             else:
-                logger.error("Expected 'Action' or 'Menu', got %s: %s", type(item), ep)
+                logger.error(
+                    "Expected 'Action' or 'Menu' type, found %s: %s",
+                    type(item),
+                    ep,
+                )
 
 
 if __name__ == "__main__":
