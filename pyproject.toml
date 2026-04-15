@@ -35,9 +35,7 @@ dev = [
   "pytest-qt>=4.5.0",
   "zensical>=0.0.31",
 ]
-bpy = [
-  "bpy==5.1.*",
-]
+bpy = ["bpy==5.1.*"]
 
 [build-system]
 requires = ["hatch-vcs", "hatchling"]
@@ -148,12 +146,14 @@ type = [
 analysis.respect-type-ignore-comments = false
 
 [tool.uv]
-dependency-groups.dev = { requires-python = ">=3.13" }
 default-groups = ["dev"]
 cache-keys = [
   { file = "pyproject.toml" },
   { git = { commit = true, tags = true } },
 ]
+
+[tool.uv.dependency-groups]
+bpy = { requires-python = ">=3.13" }
 
 [tool.uv.sources]
 bpy = { index = "blender" }
