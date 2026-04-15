@@ -103,10 +103,7 @@ and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
 - [ ] Builder: 3ds Max Menu System
 - [ ] Builder: 3ds Max Dynamic Menu
 - [ ] Builder: Unreal
-- [ ] Action.visible is unused
-- [ ] Action.enabled is unused
 - [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
-- [ ] Json schema
 
 -->
