@@ -31,6 +31,8 @@ app.exec()
 
 /// html | div.result.center
 
+![QApplication on Windows](./images/demo-qt-windows.png)
+
 ![QApplication on MacOs](./images/demo-qt-macos.png)
 
 ///
