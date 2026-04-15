@@ -1,3 +1,7 @@
+"""
+/// version-added | Added in 1.1.0
+///
+"""  # noqa: D205, D212, D415
 from __future__ import annotations
 
 from menuet import Model, loads
