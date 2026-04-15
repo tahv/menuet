@@ -7,7 +7,7 @@ list:
 
 # Sync development environment
 sync:
-    uv sync --all-extras
+    uv sync --all-extras --group dev --group bpy
 
 # Open project in neovim
 nvim *args:

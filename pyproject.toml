@@ -25,7 +25,6 @@ qt = ["pyside6>=6.11.0"]
 [dependency-groups]
 dev = [
   "black>=26.3.1",  # required by mkdocstrings-python for separate_signate
-  "bpy==5.1.*",
   "coverage>=7.13.5",
   "fake-bpy-module-5-0>=20260128",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "griffe-fieldz>=0.5.0",
@@ -35,6 +34,9 @@ dev = [
   "pytest>=9.0.2",
   "pytest-qt>=4.5.0",
   "zensical>=0.0.31",
+]
+bpy = [
+  "bpy==5.1.*",
 ]
 
 [build-system]
