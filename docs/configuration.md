@@ -169,15 +169,15 @@ The following schemes are available:
     cb = "url:https://codeberg.org/tahv/menuet"
     ```
 
-## JSON schema
+///
+
+## JSON Schema
 
 Menuet provides its own
 [JSON Schema](https://json-schema.org/understanding-json-schema/about).
 If your editor supports TOML schema validation,
 it's recommended to set it up to enable validation diagnostics and auto-complete
 when editing a menu file:
-
-/// tab | Schema Document Directive
 
 Both [tombi](https://tombi-toml.github.io/tombi/docs)
 and [taplo](https://taplo.tamasfe.dev/) supports the `#:schema` directive to
@@ -191,9 +191,7 @@ followed by a blank line.
 
 ```
 
-///
-
-/// tab | Sub Schema
+### Sub Schema
 
 Tombi can be [configured](https://tombi-toml.github.io/tombi/docs/configuration)
 with
@@ -206,5 +204,3 @@ root = "tool.my-menu"
 path = "https://tahv.codeberg.page/menuet/menuet.json"
 include = ["pyproject.toml"]
 ```
-
-///
