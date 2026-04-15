@@ -68,8 +68,6 @@ group = "My Group"           # group related menus and actions
 cb = "print('Hello !')"      # action callback
 desc = "Print Hello"         # tooltip
 icon = "icons/my-icon.png"   # path to an icon
-visible = true               # display action in menu
-enables = true               # allow action to be run
 ```
 
 ## Menu Options

@@ -41,12 +41,6 @@ class Action:
     )
     """Callback to execute when action is requested."""
 
-    enabled: bool = field(default=True)  # TODO(tga): unused
-    """Whether the action is enabled."""
-
-    visible: bool = field(default=True)  # TODO(tga): unused
-    """Whether the action is visible in the menu."""
-
     menu: tuple[str, ...] = field(default=(), converter=to_tuple_converter)
     """Menu labels hierarchy.
 
@@ -83,8 +77,6 @@ class Action:
         return cls(
             id=config["id"],
             cb=config.get("cb", passthrough),
-            enabled=config.get("enabled", True),
-            visible=config.get("visible", True),
             menu=config.get("menu", ()),
             label=config.get("label"),
             group=config.get("group"),

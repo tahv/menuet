@@ -180,60 +180,6 @@ def test_parse_action_group(config: str, expected: str | None) -> None:
     ("config", "expected"),
     [
         pytest.param(
-            'action = [{ id = "test" }]',
-            Action(id="test", enabled=True),
-            id="default",
-        ),
-        pytest.param(
-            'action = [{ id = "test", enabled = true }]',
-            Action(id="test", enabled=True),
-            id="true",
-        ),
-        pytest.param(
-            'action = [{ id = "test", enabled = false }]',
-            Action(id="test", enabled=False),
-            id="false",
-        ),
-    ],
-)
-def test_parse_action_enabled(config: str, expected: Action) -> None:
-    model = Model()
-    loads(dedent(config), model)
-    action = model.get_action(expected.id)
-    assert action == expected
-
-
-@pytest.mark.parametrize(
-    ("config", "expected"),
-    [
-        pytest.param(
-            'action = [{ id = "test" }]',
-            Action(id="test", visible=True),
-            id="default",
-        ),
-        pytest.param(
-            'action = [{ id = "test", visible = true }]',
-            Action(id="test", visible=True),
-            id="true",
-        ),
-        pytest.param(
-            'action = [{ id = "test", visible = false }]',
-            Action(id="test", visible=False),
-            id="false",
-        ),
-    ],
-)
-def test_parse_action_visible(config: str, expected: Action) -> None:
-    model = Model()
-    loads(dedent(config), model)
-    action = model.get_action(expected.id)
-    assert action == expected
-
-
-@pytest.mark.parametrize(
-    ("config", "expected"),
-    [
-        pytest.param(
             'action = [{ id = "test", icon = "tests/data/circle.svg" }]',
             Action(id="test", icon=Path("tests/data/circle.svg")),
             id="no-scheme",
@@ -357,6 +303,7 @@ def test_load_fp() -> None:
     load(wrapper.buffer, model)
     action = model.get_action("test")
     assert action.label == "Test Label"
+
 
 def test_menu_is_configured() -> None:
     assert Menu(label="Test").is_configured() is False
