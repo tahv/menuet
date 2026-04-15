@@ -14,8 +14,12 @@
 {%- set t = text.split("\n\n", 1) %}
 {%- set text = [t[0], t[1]|indent(2, true)] | join("\n\n") + "\n" %}
 {% endif %}
+{% if issues %}
 - {{ issues|join(',\n  ') }}:
   {{ text }}
+{% else -%}
+- {{ text }}
+{% endif %}
 {% endfor %}
 {% endfor %}
 
