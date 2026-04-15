@@ -62,7 +62,15 @@ github-callouts = {}
 
 # https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
 [project.markdown_extensions.pymdownx.blocks.admonition]
-types = ["example", "warning"]
+types = [
+  "example",
+  "note",
+  "version-added",
+  "version-changed",
+  "version-removed",
+  "version-deprecated",
+  "warning",
+]
 
 [project.markdown_extensions.pymdownx.blocks.details]
 
