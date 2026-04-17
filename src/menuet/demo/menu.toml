@@ -1,4 +1,4 @@
-#:schema ../docs/menuet.json
+#:schema https://tahv.codeberg.page/menuet/menuet.json
 
 [[action]]
 id = "anim-bake"
@@ -11,12 +11,14 @@ id = "anim-fbx-exporter"
 label = "FBX Animation Exporter"
 menu = ["Animation", "FBX"]
 desc = "Open animation exporter Window"
+icon = "res:menuet.demo:lucide-file-up.svg"
 
 [[action]]
 id = "anim-fbx-importer"
 label = "FBX Animation Importer"
 menu = ["Animation", "FBX"]
 desc = "Open animation importer Window"
+icon = "res:menuet.demo:lucide-file-down.svg"
 
 [[action]]
 id = "adjustment-blending"
@@ -30,6 +32,7 @@ id = "tween-machine"
 label = "Tween Machine"
 menu = ["Animation"]
 group = "Edit"
+icon = "res:menuet.demo:lucide-align-horizontal-space-around.svg"
 
 [[action]]
 id = "rig-ctrl-creator"
@@ -47,21 +50,25 @@ group = "Controller"
 id = "rig-joint-tools"
 label = "Joint Tools"
 menu = ["Rigging"]
+icon = "res:menuet.demo:lucide-bone.svg"
 
 [[action]]
 id = "rig-skinning-tools"
 label = "Skinning Tools"
 menu = ["Rigging"]
+icon = "res:menuet.demo:lucide-paintbrush.svg"
 
 [[action]]
 id = "mesh-mirror"
 label = "Mirror Geometry"
 menu = ["Modeling"]
+icon = "res:menuet.demo:lucide-flip-horizontal-2.svg"
 
 [[action]]
 id = "mesh-cleaner"
 label = "Mesh Cleaner"
 menu = ["Modeling"]
+icon = "res:menuet.demo:lucide-brush-cleaning.svg"
 
 [[action]]
 id = "mesh-randomizer"
@@ -72,30 +79,10 @@ menu = ["Modeling"]
 id = "dev-debugger"
 label = "Start Debugger"
 menu = ["Development"]
+icon = "res:menuet.demo:lucide-bug.svg"
 
 [[action]]
 id = "doc-open"
 label = "Open Documentation"
 cb = "url:https://tahv.codeberg.page/menuet/"
-
-# Demo/
-# ├── Animation/
-# │   ├── Bake Animation
-# │   ├── FBX/
-# │   │   ├── FBX Animation Exporter
-# │   │   └── FBX Animation Importer
-# │   ├── Edit ──
-# │   ├── Adjustment Blending
-# │   └── Tween Machine
-# ├── Rigging/
-# │   ├── Control Creator
-# │   ├── Control Editor
-# │   ├── Joint Tools
-# │   └── Skinning Tools
-# ├── Modeling/
-# │   ├── Mirror Geometry
-# │   ├── Mesh Cleaner
-# │   └── Randomizer
-# ├── Development/
-# │   └── Start Debugger
-# └── Open Documentation
+icon = "res:menuet.demo:lucide-info.svg"
