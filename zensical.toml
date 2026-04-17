@@ -73,6 +73,7 @@ types = [
   "version-removed",
   "version-deprecated",
   "warning",
+  "disclosure",
 ]
 
 [project.markdown_extensions.pymdownx.blocks.details]

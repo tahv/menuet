@@ -79,3 +79,20 @@ a.md-nav__link[href^="https:"]::after {
   background-color: #ffba44;
   mask-image: var(--icon-lucide-tag-minus);
 }
+
+/* Admonition: disclosure */
+:root {
+  /* https://lucide.dev/icons/chevron-up-down */
+  --icon-lucide-chevron-up-down: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up-down-icon lucide-chevrons-up-down"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>');
+}
+.md-typeset details.disclosure {
+  background: transparent;
+  border: 1px solid var(--md-code-bg-color);
+}
+.md-typeset details.disclosure > summary::before {
+  background-color: var(--md-default-fg-color--light);
+  mask-image: var(--icon-lucide-chevron-up-down);
+}
+.md-typeset details.disclosure > summary::after {
+  background-color: var(--md-default-fg-color--light);
+}
