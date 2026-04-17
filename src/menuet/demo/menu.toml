@@ -1,5 +1,21 @@
 #:schema https://tahv.codeberg.page/menuet/menuet.json
 
+[[menu]]
+label = "Animation"
+icon = "res:menuet.demo:lucide-clapperboard.svg"
+
+[[menu]]
+label = "Modeling"
+icon = "res:menuet.demo:lucide-box.svg"
+
+[[menu]]
+label = "Development"
+icon = "res:menuet.demo:lucide-code-xml.svg"
+
+[[menu]]
+label = "Rigging"
+icon = "res:menuet.demo:lucide-bone.svg"
+
 [[action]]
 id = "anim-bake"
 label = "Bake Animation"
@@ -39,12 +55,14 @@ id = "rig-ctrl-creator"
 label = "Controller Creator"
 menu = ["Rigging"]
 group = "Controller"
+icon = "res:menuet.demo:lucide-box.svg"
 
 [[action]]
 id = "rig-ctrl-editor"
 label = "Controller Editor"
 menu = ["Rigging"]
 group = "Controller"
+icon = "res:menuet.demo:lucide-box.svg"
 
 [[action]]
 id = "rig-joint-tools"
@@ -74,6 +92,7 @@ icon = "res:menuet.demo:lucide-brush-cleaning.svg"
 id = "mesh-randomizer"
 label = "Mesh Randomizer"
 menu = ["Modeling"]
+icon = "res:menuet.demo:lucide-shuffle.svg"
 
 [[action]]
 id = "dev-debugger"
