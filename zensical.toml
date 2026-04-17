@@ -26,7 +26,7 @@ use_directory_urls = true
 # tombi: lint.rules.table-key-required.disabled = true
 [project.theme]
 # custom_dir = "overrides"
-favicon = "images/favicon.svg"
+favicon = "assets/favicon.svg"
 language = "en"
 features = [
   "content.tabs.link",  # sync content tabs that have the same titles

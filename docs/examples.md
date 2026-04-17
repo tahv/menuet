@@ -10,53 +10,34 @@ applications.
 ## QApplication
 
 ```python { .copy }
-from PySide6 import QtWidgets
-
-from menuet.builders.qt import QMenuBuilder
-from menuet.demo import demo_model
-
-app = QtWidgets.QApplication([])
-
-model = demo_model()
-builder = QMenuBuilder(model, root_menu="Demo")
-menu = builder.build()
-
-window = QtWidgets.QMainWindow()
-window.menuBar().addMenu(menu)
-window.show()
-
-app.exec()
+--8<-- "docs/assets/demo_qtapp.py"
 ```
 
-/// html | div.result.center
+/// html | div.result
 
-![QApplication on Windows](./images/demo-qt-windows.png)
+**Windows:**
 
-![QApplication on MacOs](./images/demo-qt-macos.png)
+![QApplication on Windows](./assets/demo-qtapp-windows.png)
+
+**macOS:**
+
+![QApplication on macOs](./assets/demo-qtapp-macos.png)
+
+**macOS native:**
+
+![QApplication on macOS in native menubar](./assets/demo-qtapp-macos-native.png)
 
 ///
 
 ## Blender
 
 ```python { .copy }
-import bpy
-
-from menuet.builders.blender import BlenderMenuBuilder
-from menuet.demo import demo_model
-
-model = demo_model()
-builder = BlenderMenuBuilder(model, root_menu="Demo")
-menu = builder.build()
-
-def menu_draw(self: bpy.types.Menu, context: bpy.types.Context) -> None:
-    self.layout.menu(menu.bl_idname)
-
-bpy.types.TOPBAR_MT_editor_menus.append(menu_draw)
+--8<-- "docs/assets/demo_blender.py"
 ```
 
-/// html | div.result.center
+/// html | div.result
 
-![Blender](./images/demo-blender.png)
+![Blender](./assets/demo-blender.png)
 
 ///
 
