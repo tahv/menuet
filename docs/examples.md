@@ -22,8 +22,7 @@ builder = QMenuBuilder(model, root_menu="Demo")
 menu = builder.build()
 
 window = QtWidgets.QMainWindow()
-builder = QMenuBuilder(model, root_menu="Demo")
-window.menuBar().addMenu(builder.build())
+window.menuBar().addMenu(menu)
 window.show()
 
 app.exec()
