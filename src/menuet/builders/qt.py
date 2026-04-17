@@ -93,7 +93,10 @@ def qicon_from_file(file: Traversable | None, size: int = 16) -> QtGui.QIcon:
         logger.debug("failed to load icon file: '%s'", file)
         return QtGui.QIcon()
 
-    pixmap = pixmap.scaled(QtCore.QSize(size, size))
+    pixmap = pixmap.scaled(
+        QtCore.QSize(size, size),
+        mode=QtCore.Qt.TransformationMode.SmoothTransformation,
+    )
     return QtGui.QIcon(pixmap)
 
 
