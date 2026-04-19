@@ -165,8 +165,6 @@ The following schemes are available:
     cb = "url:https://codeberg.org/tahv/menuet"
     ```
 
-///
-
 ## JSON Schema
 
 Menuet provides its own
