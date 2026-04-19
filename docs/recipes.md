@@ -287,16 +287,43 @@ if __name__ == "__main__":
 ```
 
 The plugin `myplugin` make its actions available to `myapp` by defining it an
-`myapp.menu` entry point in its`pyproject.toml` file.
+`myapp.menu` entry point in its `pyproject.toml` (and/or `setup.cfg`,
+`setup.py`) file.
 
-```toml { title="pyproject.toml" hl_lines="5-6" .copy }
-[project]
-name = "myplugin"
-verion = "1.0.0"
+/// tab | pyproject.toml
 
+```toml { .copy }
 [project.entry-points."myapp.menu"]
 myplugin = "myplugin.actions:actions"
 ```
+
+///
+
+/// tab | setup.cfg
+
+```ini { .copy }
+[options.entry_points]
+myapp.menu =
+    myplugin = myplugin.actions:actions
+```
+
+///
+
+/// tab | setup.py
+
+```python { .copy }
+from setuptools import setup
+
+setup(
+    entry_points={
+        'myapp.menu': [
+            'myplugin = myplugin.actions:actions',
+        ]
+    }
+)
+```
+
+///
 
 The `actions` hook function returns a list of [Actions][menuet.Action]
 and [Menus][menuet.Menu] to add to `myapp` menu.
