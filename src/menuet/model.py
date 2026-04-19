@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+from collections.abc import Callable
 from functools import reduce
 from itertools import chain
 from operator import getitem
@@ -18,16 +19,16 @@ else:
     import tomllib
 
 if TYPE_CHECKING:
-    from collections.abc import Callable, Iterable, Iterator
+    from collections.abc import Iterable, Iterator
 
     from _typeshed import SupportsRead, SupportsRichComparison
 
-    MenuSortKey = Callable[[Menu | Action], SupportsRichComparison]
 
 __all__ = (
     "ItemAction",
     "ItemGroup",
     "ItemMenu",
+    "MenuSortKey",
     "Model",
     "deserialize",
     "load",
@@ -143,15 +144,16 @@ class ItemAction(NamedTuple):
         return (*self.inner.menu, self.inner.id)
 
 
+MenuSortKey = Callable[[Menu | Action], "SupportsRichComparison"]
+"""[Mode.iter][menuet.Model.iter] sort [key function](https://docs.python.org/3/howto/sorting.html#key-functions).
+
+Must be a function that accepts a Menu or Action argument
+that is used to extract a comparison key from each element.
+"""
+
+
 def _default_sort_key(node: Menu | Action) -> SupportsRichComparison:
-    """Sort key for `Menu` items.
-
-    Sort, in order:
-
-    1. Sort groups alphabetically
-    2. Menus before actions in the current group
-    3. Finally, sort alphabetically
-    """
+    """Default sort key for `Menu` items."""
     label = (node.label or node.id) if isinstance(node, Action) else node.label
     return (
         (node.group or "").lower(),
@@ -192,6 +194,12 @@ class Model:
         recursive: bool = False,
     ) -> Iterator[ItemGroup | ItemMenu | ItemAction]:
         """Iter menu items.
+
+        By default, menu items are sorted as follow:
+
+        1. Sort groups, alphabetically
+        2. In the current group, place menus above actions
+        3. Sort elements alphabetically
 
         Args:
             menu: The start menu. An empty tuple `()` (the default), starts at the top.
