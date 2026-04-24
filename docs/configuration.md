@@ -7,7 +7,7 @@ icon: lucide/file-cog
 The [`load`][menuet.load] function takes a dict of
 `#!py3 { "action": [], "menu": [] }`.
 
-```python { title="Example" .copy }
+```python { .copy }
 import menuet
 from menuet.builders.text import Render, TextMenuBuilder
 
