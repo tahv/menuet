@@ -24,6 +24,11 @@ icon: lucide/code
       toc_label: "menuet.builders.blender"
       filters: "public"
 
+::: menuet.builders.maya
+    options:
+      toc_label: "menuet.builders.maya"
+      filters: "public"
+
 ::: menuet.demo
     options:
       toc_label: "menuet.demo"

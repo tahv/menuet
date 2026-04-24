@@ -68,6 +68,7 @@ permalink = true
 types = [
   "example",
   "note",
+  "tip",
   "version-added",
   "version-changed",
   "version-removed",

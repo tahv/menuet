@@ -41,6 +41,23 @@ applications.
 
 ///
 
+## Maya
+
+Build menu under Maya main menu bar `"MayaWindow"`.
+
+```python { .copy }
+--8<-- "docs/assets/demo_maya.py"
+```
+
+/// html | div.result
+
+![Maya](./assets/demo-maya.png)
+
+///
+
+/// tip | Maya menus can also be built with [`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
+///
+
 ## Text
 
 ```python { .copy }
