@@ -716,8 +716,19 @@ dev = [
     { name = "mkdocstrings-python" },
     { name = "mypy" },
     { name = "pytest" },
-    { name = "pytest-qt" },
+    { name = "types-maya" },
     { name = "zensical" },
+]
+doc = [
+    { name = "black" },
+    { name = "griffe-fieldz" },
+    { name = "markdown-callouts" },
+    { name = "mkdocstrings-python" },
+    { name = "zensical" },
+]
+test = [
+    { name = "coverage" },
+    { name = "pytest" },
 ]
 
 [package.metadata]
@@ -741,8 +752,19 @@ dev = [
     { name = "mkdocstrings-python", specifier = ">=2.0.3" },
     { name = "mypy", specifier = ">=1.19.1" },
     { name = "pytest", specifier = ">=9.0.2" },
-    { name = "pytest-qt", specifier = ">=4.5.0" },
+    { name = "types-maya", specifier = ">=0.3.0" },
     { name = "zensical", specifier = ">=0.0.31" },
+]
+doc = [
+    { name = "black", specifier = ">=26.3.1" },
+    { name = "griffe-fieldz", specifier = ">=0.5.0" },
+    { name = "markdown-callouts", specifier = ">=0.4.0" },
+    { name = "mkdocstrings-python", specifier = ">=2.0.3" },
+    { name = "zensical", specifier = ">=0.0.31" },
+]
+test = [
+    { name = "coverage", specifier = ">=7.13.5" },
+    { name = "pytest", specifier = ">=9.0.2" },
 ]
 
 [[package]]
@@ -1109,20 +1131,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pytest-qt"
-version = "4.5.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "pluggy" },
-    { name = "pytest" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/d3/61/8bdec02663c18bf5016709b909411dce04a868710477dc9b9844ffcf8dd2/pytest_qt-4.5.0.tar.gz", hash = "sha256:51620e01c488f065d2036425cbc1cbcf8a6972295105fd285321eb47e66a319f", size = 128702, upload-time = "2025-07-01T17:24:39.889Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/cc/d0/8339b888ad64a3d4e508fed8245a402b503846e1972c10ad60955883dcbb/pytest_qt-4.5.0-py3-none-any.whl", hash = "sha256:ed21ea9b861247f7d18090a26bfbda8fb51d7a8a7b6f776157426ff2ccf26eff", size = 37214, upload-time = "2025-07-01T17:24:38.226Z" },
-]
-
-[[package]]
 name = "python-dateutil"
 version = "2.9.0.post0"
 source = { registry = "https://pypi.org/simple" }
@@ -1337,6 +1345,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/12/64/da524626d3b9cc40c168a13da8335fe1c51be12c0a63685cc6db7308daae/tomli-2.4.1-cp314-cp314t-win_amd64.whl", hash = "sha256:2c1c351919aca02858f740c6d33adea0c5deea37f9ecca1cc1ef9e884a619d26", size = 121196, upload-time = "2026-03-25T20:22:01.169Z" },
     { url = "https://files.pythonhosted.org/packages/5a/cd/e80b62269fc78fc36c9af5a6b89c835baa8af28ff5ad28c7028d60860320/tomli-2.4.1-cp314-cp314t-win_arm64.whl", hash = "sha256:eab21f45c7f66c13f2a9e0e1535309cee140182a9cdae1e041d02e47291e8396", size = 100393, upload-time = "2026-03-25T20:22:02.137Z" },
     { url = "https://files.pythonhosted.org/packages/7b/61/cceae43728b7de99d9b847560c262873a1f6c98202171fd5ed62640b494b/tomli-2.4.1-py3-none-any.whl", hash = "sha256:0d85819802132122da43cb86656f8d1f8c6587d54ae7dcaf30e90533028b49fe", size = 14583, upload-time = "2026-03-25T20:22:03.012Z" },
+]
+
+[[package]]
+name = "types-maya"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/14/a92de3b0408bd9e3cf1cae4be5816d6481199ebe551a648c28e7e892cc35/types_maya-0.3.0.tar.gz", hash = "sha256:84462fbe25448dd80a70af3ac872eaad5b6590b9493604fd65b9a349bdaf299a", size = 57116, upload-time = "2026-02-27T09:15:06.683Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bd/13/155d4dbf3ac560fd68d4b88246fd676481e78c8e82d0e51141e4260798a9/types_maya-0.3.0-py3-none-any.whl", hash = "sha256:a0b7d2dfe3ede37444a88f197d86902f5444567e8bcc744aa3f7481405b081ed", size = 37991, upload-time = "2026-02-27T09:15:05.342Z" },
 ]
 
 [[package]]
