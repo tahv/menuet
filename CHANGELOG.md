@@ -12,6 +12,13 @@ directory in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.2.0](https://codeberg.org/tahv/menuet/releases/tag/1.2.0) - 2026-04-24
+
+### Enhancements
+
+- [!5](https://codeberg.org/tahv/menuet/pulls/5):
+  Add `MayaMenuBuilder`; build a menu with `maya.cmds`.
+
 ## [1.1.0](https://codeberg.org/tahv/menuet/releases/tag/1.1.0) - 2026-04-15
 
 ### Enhancements
