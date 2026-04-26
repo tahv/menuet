@@ -7,6 +7,15 @@ icon: lucide/mouse-pointer-click
 This section build the [`demo_model`][menuet.demo.demo_model] in different
 applications.
 
+/// details | menuet/demo/menu.toml
+    type: disclosure
+
+```toml { .copy }
+--8<-- "src/menuet/demo/menu.toml"
+```
+
+///
+
 ## QApplication
 
 ```python { .copy }
