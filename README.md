@@ -98,7 +98,7 @@ and open a [pull request](https://codeberg.org/tahv/menuet/pulls).
 
 ## Roadmap
 
-- [ ] Builder: maya.cmds.menu
+- [ ] Tests: menuet.builders.maya.MayaMenuBuilder
 - [ ] Builder: maya.cmds.popupMenu (marking menu)
 - [ ] Builder: 3ds Max Menu System
 - [ ] Builder: 3ds Max Dynamic Menu
