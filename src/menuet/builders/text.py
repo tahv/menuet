@@ -54,7 +54,16 @@ def _get_item_label(item: ItemMenu | ItemAction | ItemGroup) -> str:
 
 
 class TextMenuBuilder:
-    """Text menu builder."""
+    """Text menu builder.
+
+    Args:
+        model: Model to build.
+        root_menu: Specify a root menu name.
+            If not, the model items whose parent is an empty tuple `()`
+            are printed at the root.
+        sort_key: Customize the sort order of menu items.
+        render: Text render option.
+    """
 
     def __init__(
         self,

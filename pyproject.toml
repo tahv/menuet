@@ -24,11 +24,11 @@ qt = ["pyside6>=6.11.0"]
 
 [dependency-groups]
 dev = [
-  { include-group = "doc" },
-  { include-group = "test" },
   "fake-bpy-module-5-0>=20260128",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "mypy>=1.19.1",
   "types-maya>=0.3.0",
+  { include-group = "doc" },
+  { include-group = "test" },
 ]
 bpy = [
   "bpy==5.1.*",
@@ -82,6 +82,9 @@ strict = true
 mypy_path = "src"
 files = ["src", "tests"]
 
+[tool.pyrefly]
+project-includes = ["src/**/*.py", "tests/**/*.py", "docs/**/*.py"]
+
 [tool.pytest]
 addopts = ["--doctest-modules"]
 testpaths = ["src", "tests"]
@@ -109,6 +112,9 @@ src = ["src"]
 [tool.ruff.lint.per-file-ignores]
 "tests/**/test_*.py" = [
   "D103",  # Missing docstring in public function
+]
+"src/menuet/builders/maya.py" = [
+  "PLC0415", # `import` should be at the top-level of a file
 ]
 
 [tool.rumdl]

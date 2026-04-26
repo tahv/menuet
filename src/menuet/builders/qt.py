@@ -17,7 +17,15 @@ __all__ = ("QMenuBuilder",)
 
 
 class QMenuBuilder:
-    """Qt Menu Builder."""
+    """Qt Menu Builder.
+
+    Args:
+        model: Model to build.
+        root_menu: Menu to populate.
+            All existing actions in the menu are removed during `build`.
+            If a `str` is provided, a new `QMenu` will be created.
+        sort_key: Customize the sort order of menu items.
+    """
 
     def __init__(
         self,
@@ -32,15 +40,13 @@ class QMenuBuilder:
 
     def build(self) -> QtWidgets.QMenu:
         """Build menu."""
-        menus: dict[tuple[str, ...], QtWidgets.QMenu] = {}
-
         if isinstance(self._root_menu, QtWidgets.QMenu):
             root = self._root_menu
             root.clear()
         else:
             root = QtWidgets.QMenu(self._root_menu)
-        menus[()] = root
 
+        menus: dict[tuple[str, ...], QtWidgets.QMenu] = {(): root}
         for item in self._model.iter(sort_key=self._sort_key, recursive=True):
             parent = menus[item.menu]
 
@@ -49,7 +55,7 @@ class QMenuBuilder:
 
             elif isinstance(item, ItemMenu):
                 menu = QtWidgets.QMenu(item.inner.label)
-                menu.setIcon(qicon_from_file(item.inner.icon))
+                menu.setIcon(_qicon_from_file(item.inner.icon))
                 menu.setToolTipsVisible(True)
                 menu.setTearOffEnabled(False)
                 menu.setParent(parent, menu.windowFlags())
@@ -60,7 +66,7 @@ class QMenuBuilder:
                 action = QAction()
                 action.setText(item.inner.label or item.inner.id)
                 action.setIconVisibleInMenu(True)
-                action.setIcon(qicon_from_file(item.inner.icon))
+                action.setIcon(_qicon_from_file(item.inner.icon))
                 action.setToolTip(item.inner.desc or "")
                 action.triggered.connect(item.inner.cb)
                 action.setParent(parent)
@@ -75,7 +81,7 @@ class QMenuBuilder:
         return root
 
 
-def qicon_from_file(file: Traversable | None, size: int = 16) -> QtGui.QIcon:
+def _qicon_from_file(file: Traversable | None, size: int = 16) -> QtGui.QIcon:
     """Initialize `QIcon` from `file` bytes.
 
     If `file` is `None`, or contains an invalid pixmap,

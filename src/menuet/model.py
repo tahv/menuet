@@ -163,7 +163,7 @@ def _default_sort_key(node: Menu | Action) -> SupportsRichComparison:
 
 
 class Model:
-    """The main `Action` and `Menu` storage abstraction."""
+    """The main [`Action`][menuet.Action] and [`Menu`][menuet.Menu] storage abstraction."""  # noqa: E501
 
     def __init__(self) -> None:
         self._actions: dict[str, Action] = {}

@@ -1,4 +1,3 @@
-# ruff: noqa: PLC0415
 """
 /// version-added | Added in 1.2.0
 ///
@@ -24,8 +23,11 @@ class MayaMenuBuilder:
     """Maya Menu Builder.
 
     Args:
+        model: Model to build.
+        root_menu: Root menu name.
         parent: Specify the window or menu that the menu will appear in.
             Default to Maya main menubar.
+        sort_key: Customize the sort order of menu items.
     """
 
     def __init__(
@@ -46,7 +48,7 @@ class MayaMenuBuilder:
         """Delete menu if it exist."""
         from maya import cmds
 
-        if is_menu(self._parent):
+        if _is_menu(self._parent):
             cmds.deleteUI(self._root_long_name, menuItem=True)
         else:
             try:
@@ -62,8 +64,8 @@ class MayaMenuBuilder:
 
         if cmds.menu(self._root_long_name, query=True, exists=True):
             cmds.menu(self._root_long_name, edit=True, deleteAllItems=True)
-        elif is_menu(self._parent):
-            self._root_long_name = cmds.menuItem(
+        elif _is_menu(self._parent):
+            cmds.menuItem(
                 self._root_menu,
                 subMenu=True,
                 tearOff=True,
@@ -72,7 +74,7 @@ class MayaMenuBuilder:
             )
         else:
             # TODO(tga): RuntimeError: Layout must be a menuBarLayout: <parent>
-            self._root_long_name = cmds.menu(
+            cmds.menu(
                 self._root_long_name,
                 tearOff=True,
                 label=self._root_menu,
@@ -84,7 +86,7 @@ class MayaMenuBuilder:
             parent = menus[item.menu]
 
             if isinstance(item, ItemGroup):
-                name = unique_menu_name(item.inner or "divider")
+                name = _unique_menu_name(item.inner or "divider")
                 cmds.menuItem(
                     name,
                     divider=True,
@@ -93,7 +95,7 @@ class MayaMenuBuilder:
                 )
 
             elif isinstance(item, ItemMenu):
-                name = unique_menu_name(item.inner.label)
+                name = _unique_menu_name(item.inner.label)
                 long_name: str = cmds.menuItem(
                     name,
                     subMenu=True,
@@ -104,7 +106,7 @@ class MayaMenuBuilder:
                 menus[item.path] = long_name
 
             elif isinstance(item, ItemAction):
-                name = unique_menu_name(item.inner.label or item.inner.id)
+                name = _unique_menu_name(item.inner.label or item.inner.id)
                 cmds.menuItem(
                     name,
                     label=item.inner.label or item.inner.id,
@@ -123,20 +125,17 @@ class MayaMenuBuilder:
                 raise TypeError(item)
 
 
-# TODO(tga): class MayaMarkingMenuBuilder:
-
-
-def is_menu(path: str) -> bool:
+def _is_menu(path: str) -> bool:
     from maya import cmds
 
     return path in cmds.lsUI(menus=True, long=True)
 
 
-def unique_menu_name(name: str) -> str:
+def _unique_menu_name(name: str) -> str:
     """Returns a unique and legal Maya menu name."""
     from maya import cmds
 
-    name = to_maya_name(name)
+    name = _to_maya_name(name)
 
     # This set ensure a unique name across all existing menu items,
     # and is more restrictive than to Maya native check.
@@ -154,7 +153,7 @@ def unique_menu_name(name: str) -> str:
     return current
 
 
-def to_maya_name(s: str) -> str:
+def _to_maya_name(s: str) -> str:
     """Convert `s` into a legal Maya node name.
 
     Legal node names begin with any character from a-z or A-Z and an underscore,

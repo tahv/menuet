@@ -9,7 +9,7 @@ from __future__ import annotations
 import itertools
 import uuid
 from pathlib import Path
-from typing import TYPE_CHECKING, TypeAlias
+from typing import TYPE_CHECKING, TypeAlias, cast
 
 import bpy
 import bpy.utils.previews
@@ -31,7 +31,13 @@ __all__ = ("BlenderMenuBuilder",)
 
 
 class BlenderMenuBuilder:
-    """Blender Menu Builder."""
+    """Blender Menu Builder.
+
+    Args:
+        model: Model to build.
+        root_menu: Root menu name.
+        sort_key: Customize the sort order of menu items.
+    """
 
     def __init__(
         self,
@@ -128,14 +134,17 @@ def _menu_factory(
     ) -> None:  # pragma: no cover
         pass
 
-    cls = type(
-        f"MenuetMenu_{uid}",
-        (bpy.types.Menu,),
-        {
-            "bl_idname": idname,
-            "bl_label": menu.label,
-            "draw": draw,
-        },
+    cls = cast(
+        "type[bpy.types.Menu]",
+        type(
+            f"MenuetMenu_{uid}",
+            (bpy.types.Menu,),
+            {
+                "bl_idname": idname,
+                "bl_label": menu.label,
+                "draw": draw,
+            },
+        ),
     )
 
     return (cls, menu_draw)
@@ -166,15 +175,18 @@ def _operator_factory(
         action.cb()
         return {"FINISHED"}
 
-    cls = type(
-        f"MenuetOperator_{uid}",
-        (bpy.types.Operator,),
-        {
-            "bl_idname": idname,
-            "bl_label": action.label or action.id,
-            "__doc__": action.desc,
-            "execute": execute,
-        },
+    cls = cast(
+        "type[bpy.types.Operator]",
+        type(
+            f"MenuetOperator_{uid}",
+            (bpy.types.Operator,),
+            {
+                "bl_idname": idname,
+                "bl_label": action.label or action.id,
+                "__doc__": action.desc,
+                "execute": execute,
+            },
+        ),
     )
 
     return (cls, menu_draw)
