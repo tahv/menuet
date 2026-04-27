@@ -12,6 +12,18 @@ directory in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.3.0](https://codeberg.org/tahv/menuet/releases/tag/1.3.0) - 2026-04-27
+
+### Enhancements
+
+- [!6](https://codeberg.org/tahv/menuet/pulls/6):
+  Add `menuet.builders.unreal.UnrealMenuBuilder`.
+
+### Bug fixes
+
+- Fix `MayaMenuBuilder`: creating menu in main menu bar would fail
+  because menu long name was incorrect.
+
 ## [1.2.0](https://codeberg.org/tahv/menuet/releases/tag/1.2.0) - 2026-04-24
 
 ### Enhancements
