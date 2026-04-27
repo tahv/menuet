@@ -67,6 +67,20 @@ Build menu under Maya main menu bar `"MayaWindow"`.
 /// tip | Maya menus can also be built with [`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
 ///
 
+## Unreal
+
+Build menu under Maya main menu bar `"MayaWindow"`.
+
+```python { .copy }
+--8<-- "docs/assets/demo_unreal.py"
+```
+
+/// html | div.result
+
+![Unreal](./assets/demo-unreal.png)
+
+///
+
 ## Text
 
 ```python { .copy }

@@ -108,6 +108,7 @@ inventories = [
   "https://docs.python.org/3/objects.inv",
   "https://docs.blender.org/api/5.1/objects.inv",
   "https://doc.qt.io/qtforpython-6/objects.inv",
+  "https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/objects.inv"
 ]
 
 [project.plugins.mkdocstrings.handlers.python.options]

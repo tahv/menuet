@@ -29,6 +29,11 @@ icon: lucide/code
       toc_label: "menuet.builders.maya"
       filters: "public"
 
+::: menuet.builders.unreal
+    options:
+      toc_label: "menuet.builders.unreal"
+      filters: "public"
+
 ::: menuet.demo
     options:
       toc_label: "menuet.demo"
