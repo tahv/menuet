@@ -75,7 +75,7 @@ class MayaMenuBuilder:
         else:
             # TODO(tga): RuntimeError: Layout must be a menuBarLayout: <parent>
             cmds.menu(
-                self._root_long_name,
+                self._root_menu,
                 tearOff=True,
                 label=self._root_menu,
                 parent=self._parent,
