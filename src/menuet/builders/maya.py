@@ -163,37 +163,37 @@ def _to_maya_name(s: str) -> str:
         Returned string is a **legal** name but may not be unique.
 
     Example:
-        >>> to_maya_name("abc")
+        >>> _to_maya_name("abc")
         'abc'
-        >>> to_maya_name("Abc")
+        >>> _to_maya_name("Abc")
         'Abc'
-        >>> to_maya_name("_abc")
+        >>> _to_maya_name("_abc")
         '_abc'
-        >>> to_maya_name("abc_")
+        >>> _to_maya_name("abc_")
         'abc_'
-        >>> to_maya_name("1abc")
+        >>> _to_maya_name("1abc")
         'abc'
-        >>> to_maya_name("a-bc")
+        >>> _to_maya_name("a-bc")
         'a_bc'
-        >>> to_maya_name("a--bc")
+        >>> _to_maya_name("a--bc")
         'a__bc'
-        >>> to_maya_name("ab*c")
+        >>> _to_maya_name("ab*c")
         'ab_c'
-        >>> to_maya_name("abc*")
+        >>> _to_maya_name("abc*")
         'abc_'
-        >>> to_maya_name("a")
+        >>> _to_maya_name("a")
         'a'
-        >>> to_maya_name("12a3")
+        >>> _to_maya_name("12a3")
         'a3'
-        >>> to_maya_name("123")
+        >>> _to_maya_name("123")
         Traceback (most recent call last):
             ...
         ValueError: can't convert '123' to a legal Maya node name
-        >>> to_maya_name("1")
+        >>> _to_maya_name("1")
         Traceback (most recent call last):
             ...
         ValueError: can't convert '1' to a legal Maya node name
-        >>> to_maya_name("")
+        >>> _to_maya_name("")
         Traceback (most recent call last):
             ...
         ValueError: empty string
