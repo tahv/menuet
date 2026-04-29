@@ -6,7 +6,12 @@ requires-python = ">=3.10"
 license = "MIT"
 authors = [{ name = "Thibaud Gambier" }]
 classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
+  "Topic :: Software Development",
+  "Typing :: Typed",
 ]
 dependencies = [
   "attrs>=26.1.0",
@@ -31,7 +36,9 @@ dev = [
   { include-group = "test" },
 ]
 bpy = [
-  "bpy==5.1.*",
+  "bpy==4.0.*; python_version == '3.10'",  # >=3.1
+  "bpy==5.0.*; python_version == '3.11'",
+  "bpy==5.1.*; python_version == '3.13'",
 ]
 doc = [
   "black>=26.3.1",  # required by mkdocstrings-python for separate_signate
@@ -86,18 +93,24 @@ files = ["src", "tests"]
 project-includes = ["src/**/*.py", "tests/**/*.py", "docs/**/*.py"]
 
 [tool.pytest]
-addopts = ["--doctest-modules"]
+addopts = [
+  "--doctest-modules",
+  "--durations-min=0.005",
+  "--durations=0",
+]
+minversion = "9.0"
 testpaths = ["src", "tests"]
 
 [tool.ruff]
 format.preview = true
-include = ["src/**/*.py", "tests/**/*.py", "**/pyproject.toml"]
+include = ["src/**/*.py", "tests/**/*.py", "docs/**/*.py", "**/pyproject.toml"]
 lint.preview = false
 lint.pydocstyle.convention = "google"
 lint.flake8-tidy-imports.ban-relative-imports = "all"
 lint.isort.required-imports = ["from __future__ import annotations"]
 lint.select = ["ALL"]
 lint.ignore = [
+  "COM812",  # Trailing comma missing
   "D100",  # Missing docstring in public module
   "D104",  # Missing docstring in public package
   "D107",  # Missing docstring in `__init__`
@@ -112,9 +125,16 @@ src = ["src"]
 [tool.ruff.lint.per-file-ignores]
 "tests/**/test_*.py" = [
   "D103",  # Missing docstring in public function
+  "PLR2004",  # Magic value used in comparison, consider replacing with a constant variable
 ]
 "src/menuet/builders/maya.py" = [
-  "PLC0415", # `import` should be at the top-level of a file
+  "PLC0415",  # `import` should be at the top-level of a file
+]
+"docs/assets/*.py" = [
+  "INP001",  # File is part of an implicit namespace package. Add an `__init__.py`
+  "ARG001",  # Unused function argument
+  "D103",  # Missing docstring in public function
+  "I002",  # Missing required import
 ]
 
 [tool.rumdl]
@@ -166,9 +186,6 @@ cache-keys = [
   { file = "pyproject.toml" },
   { git = { commit = true, tags = true } },
 ]
-
-[tool.uv.dependency-groups]
-bpy = { requires-python = ">=3.13" }
 
 [tool.uv.sources]
 bpy = { index = "blender" }
