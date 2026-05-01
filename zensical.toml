@@ -12,13 +12,13 @@ nav = [
   { "API Reference" = "api.md" },
   { "Meta" = [
     { "PyPI" = "https://pypi.org/project/menuet" },
-    { "Changelog" = "gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
+    { "Changelog" = "https://gitlab.com/tahv/menuet/-/blob/main/CHANGELOG.md" },
     { "Contributing" = "https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
     { "Releases" = "https://gitlab.com/tahv/menuet/-/releases" },
   ] },
 ]
 repo_url = "https://gitlab.com/tahv/menuet"
-edit_uri = "_edit/main/docs/"
+# edit_uri = "_edit/main/docs/"
 repo_name = "tahv/menuet"
 extra_css = ["stylesheets/extra.css"]
 use_directory_urls = true

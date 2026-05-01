@@ -81,5 +81,4 @@ for the list of fragment types.
 ## Mirrors
 
 Active development takes place on GitLab.
-The `github` branch only contains a `README.md`
-and commits pushed to it are automatically pushed to the GitHub mirror.
+The `main` branch is automatically pushed to the GitHub mirror.
