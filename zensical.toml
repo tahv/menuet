@@ -2,7 +2,7 @@
 site_name = "menuet"
 site_description = "Declarative menu builder for DCC applications"
 site_author = "Thibaud Gambier"
-site_url = "https://tahv.codeberg.page/menuet"
+site_url = "https://tahv.gitlab.io/menuet"
 copyright = "&copy 2026, Thibaud Gambier"
 nav = [
   { "Home" = "index.md" },
@@ -12,12 +12,12 @@ nav = [
   { "API Reference" = "api.md" },
   { "Meta" = [
     { "PyPI" = "https://pypi.org/project/menuet" },
-    { "Changelog" = "https://codeberg.org/tahv/menuet/src/branch/main/CHANGELOG.md" },
-    { "Contributing" = "https://codeberg.org/tahv/menuet/src/branch/main/CONTRIBUTING.md" },
-    { "Releases" = "https://codeberg.org/tahv/menuet/releases" },
+    { "Changelog" = "gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
+    { "Contributing" = "https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
+    { "Releases" = "https://gitlab.com/tahv/menuet/-/releases" },
   ] },
 ]
-repo_url = "https://codeberg.org/tahv/menuet"
+repo_url = "https://gitlab.com/tahv/menuet"
 edit_uri = "_edit/main/docs/"
 repo_name = "tahv/menuet"
 extra_css = ["stylesheets/extra.css"]
@@ -54,7 +54,7 @@ toggle.name = "Switch to light mode"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/git-alt"
-link = "https://codeberg.org/tahv/menuet"
+link = "https://gitlab.com/tahv/menuet"
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.markdown_extensions]

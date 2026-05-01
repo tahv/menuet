@@ -134,7 +134,8 @@ package:
   stage: build
   rules:
     - *rule-on-tag
-    - *rule-default-branch-manual
+    - <<: *rule-default-branch-manual
+      needs: []
   image: ghcr.io/astral-sh/uv:python3.14-trixie
   interruptible: true
   variables:
@@ -194,14 +195,12 @@ gitlab-release:
     - *rule-on-tag
   needs: ["pypi"]
   image: registry.gitlab.com/gitlab-org/cli:latest # alpine
-  variables:
-    RELEASE_FILE: RELEASE.md
   script:
     - apk update && apk add --no-cache git curl
     - curl -LsSf https://astral.sh/uv/install.sh | sh
     - source $HOME/.local/bin/env
-    - uvx hed --tag $CI_COMMIT_TAG > $RELEASE_FILE
+    - uvx hed --softbreak --tag "$CI_COMMIT_TAG" > RELEASE.md
   release:
     tag_name: "$CI_COMMIT_TAG"
     name: "$CI_COMMIT_TAG"
-    description: "$RELEASE_FILE"
+    description: "RELEASE.md"

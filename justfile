@@ -51,10 +51,14 @@ changelog version="":
 hed version:
     @uvx hed --tag {{ version }}
 
+# Generate '.github/README.md'
+github-readme:
+    uv run scripts/github-readme.py > .github/README.md
+
 # Run `ruff` linter
 ruff *files:
   uvx ruff@latest check --output-format concise {{files}}
 
 # Dry run `ruff` formatter and output diff
 fmt:
-  uvx ruff@latest format --diff
+  uvx ruff@latest format --check

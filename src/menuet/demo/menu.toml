@@ -1,4 +1,4 @@
-#:schema https://tahv.codeberg.page/menuet/menuet.json
+#:schema https://tahv.gitlab.io/menuet/menuet.json
 
 [[menu]]
 label = "Animation"
@@ -103,5 +103,5 @@ icon = "res:menuet.demo:lucide-bug.svg"
 [[action]]
 id = "doc-open"
 label = "Open Documentation"
-cb = "url:https://tahv.codeberg.page/menuet/"
+cb = "url:https://tahv.gitlab.io/menuet/"
 icon = "res:menuet.demo:lucide-info.svg"
