@@ -69,8 +69,6 @@ Build menu under Maya main menu bar `"MayaWindow"`.
 
 ## Unreal
 
-Build menu under Maya main menu bar `"MayaWindow"`.
-
 ```python { .copy }
 --8<-- "docs/assets/demo_unreal.py"
 ```
