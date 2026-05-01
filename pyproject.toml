@@ -21,7 +21,9 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Repository = "https://codeberg.org/tahv/menuet"
+Changelog = "https://gitlab.com/tahv/menuet/-/blob/main/CHANGELOG.md"
+Documentation = "https://tahv.gitlab.io/menuet"
+Source = "https://gitlab.com/tahv/menuet"
 
 [project.optional-dependencies]
 copy = ["copykitten>=2.0.0"]
@@ -79,9 +81,9 @@ version.raw-options.local_scheme = "no-local-version"
 changelog = "CHANGELOG.md"
 capture-start = '^## \[{tag}\]'
 capture-end = "^## "
-diff-url = "https://codeberg.org/tahv/menuet/compare/{prev}...{tag}"
-softbreak = false
-title = "Release Notes"
+diff-url = "https://gitlab.com/tahv/menuet/-/compare/{prev}...{tag}"
+softbreak = true
+title = "{tag}"
 top-heading = 2
 
 [tool.mypy]
@@ -160,7 +162,7 @@ directory = "changelog.d"
 filename = "CHANGELOG.md"
 start_string = "<!-- towncrier release notes start -->\n"
 title_format = ""
-issue_format = "[!{issue}](https://codeberg.org/tahv/menuet/pulls/{issue})"
+issue_format = "[!{issue}](https://gitlab.com/tahv/menuet/-/merge_requests/{issue})"
 template = "changelog.d/template.md.jinja"
 type = [
   # When something public gets removed in a breaking way

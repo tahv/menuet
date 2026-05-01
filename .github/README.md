@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> Development takes place on GitLab:
+> [gitlab.com/tahv/menuet](https://gitlab.com/tahv/menuet).
+
 # menuet
 
 [![Source](https://img.shields.io/badge/source-%23fc6d25?logo=gitlab&logoColor=white)](https://gitlab.com/tahv/menuet)

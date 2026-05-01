@@ -162,7 +162,7 @@ The following schemes are available:
 - `url`: takes a URL and open it in the default browser.
 
     ```toml
-    cb = "url:https://codeberg.org/tahv/menuet"
+    cb = "url:https://tahv.gitlab.io/menuet"
     ```
 
 ## JSON Schema
@@ -181,7 +181,7 @@ Add the comment directive at the beginning of the document,
 followed by a blank line.
 
 ```toml { title="menu.toml" .copy }
-#:schema https://tahv.codeberg.page/menuet/menuet.json
+#:schema https://tahv.gitlab.io/menuet/menuet.json
 
 ```
 
@@ -195,6 +195,6 @@ to apply a schema to a specific part of the TOML document.
 ```toml { title="tombi.toml" .copy }
 [[schemas]]
 root = "tool.my-menu"
-path = "https://tahv.codeberg.page/menuet/menuet.json"
+path = "https://tahv.gitlab.io/menuet/menuet.json"
 include = ["pyproject.toml"]
 ```

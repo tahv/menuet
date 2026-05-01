@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  push:
+    tags: ["*"]
+
+jobs:
+  github-release:
+    name: GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+      - run: uvx hed --no-softbreak --title "Release Notes" --tag "${{ github.ref_name }}" > RELEASE_NOTES.md
+      - uses: softprops/action-gh-release@v3
+        with:
+          body_path: 'RELEASE_NOTES.md'

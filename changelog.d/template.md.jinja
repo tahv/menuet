@@ -1,7 +1,7 @@
 {%- if versiondata["version"] == "main" -%}
 ## Changes for the Upcoming Release
 {% else -%}
-## [{{ versiondata["version"] }}](https://codeberg.org/tahv/menuet/releases/tag/{{ versiondata["version"] }}) - {{ versiondata["date"] }}
+## [{{ versiondata["version"] }}](https://gitlab.com/tahv/menuet/-/releases/{{ versiondata["version"] }}) - {{ versiondata["date"] }}
 {% endif %}
 {% for section, _ in sections.items() %}
 {% if sections[section] %}

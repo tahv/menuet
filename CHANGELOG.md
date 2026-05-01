@@ -7,47 +7,42 @@ This file is managed by [towncrier](https://towncrier.readthedocs.io),
 and its format is based on [keep a changelog](https://keepachangelog.com).
 
 Changes for the upcoming release can be found in the
-[changelog.d](https://codeberg.org/tahv/menuet/src/branch/main/changelog.d)
-directory in the repo.
+[changelog.d](https://gitlab.com/tahv/menuet/-/tree/main/changelog.d) directory
+in the repo.
 
 <!-- towncrier release notes start -->
 
-## [1.3.0](https://codeberg.org/tahv/menuet/releases/tag/1.3.0) - 2026-04-27
+## [1.3.0](https://gitlab.com/tahv/menuet/-/releases/1.3.0) - 2026-04-27
 
 ### Enhancements
 
-- [!6](https://codeberg.org/tahv/menuet/pulls/6):
-  Add `menuet.builders.unreal.UnrealMenuBuilder`.
+- Add `menuet.builders.unreal.UnrealMenuBuilder`.
 
 ### Bug fixes
 
 - Fix `MayaMenuBuilder`: creating menu in main menu bar would fail
   because menu long name was incorrect.
 
-## [1.2.0](https://codeberg.org/tahv/menuet/releases/tag/1.2.0) - 2026-04-24
+## [1.2.0](https://gitlab.com/tahv/menuet/-/releases/1.2.0) - 2026-04-24
 
 ### Enhancements
 
-- [!5](https://codeberg.org/tahv/menuet/pulls/5):
-  Add `MayaMenuBuilder`; build a menu with `maya.cmds`.
+- Add `MayaMenuBuilder`; build a menu with `maya.cmds`.
 
-## [1.1.0](https://codeberg.org/tahv/menuet/releases/tag/1.1.0) - 2026-04-15
+## [1.1.0](https://gitlab.com/tahv/menuet/-/releases/1.1.0) - 2026-04-15
 
 ### Enhancements
 
-- [!3](https://codeberg.org/tahv/menuet/pulls/3):
-  Add `BlenderMenuBuilder`.
+- Add `BlenderMenuBuilder`.
 
 ### Documentation
 
-- [!2](https://codeberg.org/tahv/menuet/pulls/2):
-  Add JSON schema `https://tahv.codeberg.page/menuet/menuet.json`.
+- Add JSON schema `https://tahv.gitlab.io/menuet/menuet.json`.
 - Add `menuet.demo` module and **Examples** page.
 - Add recipes for building model with code and entry points.
 
-## [1.0.0](https://codeberg.org/tahv/menuet/releases/tag/1.0.0) - 2026-04-06
+## [1.0.0](https://gitlab.com/tahv/menuet/-/releases/1.0.0) - 2026-04-06
 
 ### Enhancements
 
-- [!1](https://codeberg.org/tahv/menuet/pulls/1):
-  Initial release.
+- Initial release.

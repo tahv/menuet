@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://tahv.codeberg.page/menuet/menuet.json",
+  "$id": "https://tahv.gitlab.io/menuet/menuet.json",
   "x-tombi-toml-version": "v1.0.0",
   "additionalProperties": false,
   "properties": {

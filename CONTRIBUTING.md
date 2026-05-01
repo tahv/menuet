@@ -80,6 +80,6 @@ for the list of fragment types.
 
 ## Mirrors
 
-Active development takes place on Codeberg.
-The `github` branch only contains a `README.md`,
-and commits pushed to this branch are automatically pushed to the GitHub mirror.
+Active development takes place on GitLab.
+The `github` branch only contains a `README.md`
+and commits pushed to it are automatically pushed to the GitHub mirror.
