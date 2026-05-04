@@ -80,9 +80,8 @@ visit the documentation at
 
 ## Contributing
 
-You'd like to use menuet with another application ?
-Feel free to [open an issue](https://gitlab.com/tahv/menuet/-/issues),
-or read the
+Contributions of any kind are welcome.
+Please [open an issue](https://gitlab.com/tahv/menuet/-/issues), or read the
 [contribution guidelines](https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md)
 and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 
