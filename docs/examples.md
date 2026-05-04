@@ -79,6 +79,20 @@ Build menu under Maya main menu bar `"MayaWindow"`.
 
 ///
 
+## 3ds Max
+
+Build menu under 3ds Max main menu bar.
+
+```python { .copy }
+--8<-- "docs/assets/demo_max.py"
+```
+
+/// html | div.result
+
+![3ds Max](./assets/demo-max.png)
+
+///
+
 ## Text
 
 ```python { .copy }
