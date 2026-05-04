@@ -133,6 +133,9 @@ src = ["src"]
 "src/menuet/builders/maya.py" = [
   "PLC0415",  # `import` should be at the top-level of a file
 ]
+"src/menuet/builders/max.py" = [
+  "PLC0415",  # `import` should be at the top-level of a file
+]
 "docs/assets/*.py" = [
   "INP001",  # File is part of an implicit namespace package. Add an `__init__.py`
   "ARG001",  # Unused function argument

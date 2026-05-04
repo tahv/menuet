@@ -95,9 +95,9 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 
 - [ ] Tests: menuet.builders.maya.MayaMenuBuilder
 - [ ] Tests: menuet.builders.unreal.UnrealMenuBuilder
+- [ ] Tests: menuet.builders.max.MaxDynamicMenuBuilder
 - [ ] Builder: maya.cmds.popupMenu (marking menu)
-- [ ] Builder: 3ds Max Menu System
-- [ ] Builder: 3ds Max Dynamic Menu
+- [ ] Builder: 3ds Max MenuMan System
 - [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
 

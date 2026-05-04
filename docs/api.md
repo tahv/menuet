@@ -34,6 +34,11 @@ icon: lucide/code
       toc_label: "menuet.builders.unreal"
       filters: "public"
 
+::: menuet.builders.max
+    options:
+      toc_label: "menuet.builders.max"
+      filters: "public"
+
 ::: menuet.demo
     options:
       toc_label: "menuet.demo"
