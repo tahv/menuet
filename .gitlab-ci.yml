@@ -157,7 +157,15 @@ pypi:
   id_tokens:
     PYPI_ID_TOKEN:
       aud: pypi
-  script: uv publish
+  script:
+    - apk update && apk add --no-cache curl jq
+    - uv publish
+    - RESPONSE=$( curl https://pypi.org/pypi/menuet/json )
+    - echo "URL_SDIST=$( echo $RESPONSE | jq -r '.releases."$CI_COMMIT_TAG".[] | select(.packagetype=="sdist")'.url )" > pypi.env
+    - echo "URL_WHEEL=$( echo $RESPONSE | jq -r '.releases."$CI_COMMIT_TAG".[] | select(.packagetype=="bdist_wheel")'.url )" > pypi.env
+  artifacts:
+    reports:
+      dotenv: pypi.env
 
 test-pypi:
   stage: publish
@@ -204,3 +212,11 @@ gitlab-release:
     tag_name: "$CI_COMMIT_TAG"
     name: "$CI_COMMIT_TAG"
     description: "RELEASE.md"
+    assets:
+      links:
+        - name: bdist_wheel
+          link_type: package
+          url: $URL_WHEEL
+        - name: sdist
+          link_type: package
+          url: $URL_SDIST
