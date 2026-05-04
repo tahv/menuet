@@ -19,12 +19,10 @@ build:
     uvx check-wheel-contents dist/*.whl
 
 # Run test suite
-[group('test')]
 test *args:
     uv run -m pytest {{ args }}
 
 # Run test suite and report coverage
-[group('test')]
 coverage *args:
     uv run -m coverage erase
     uv run -m coverage run --parallel -m pytest {{ args }}
