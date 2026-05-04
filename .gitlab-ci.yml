@@ -178,7 +178,9 @@ pages:
   stage: publish
   rules:
     - <<: *rule-on-tag
-      needs: ["pypi"]
+      needs:
+        - job: "pypi"
+          artifacts: false
     - <<: *rule-default-branch-manual
       allow_failure: true
   needs: []
