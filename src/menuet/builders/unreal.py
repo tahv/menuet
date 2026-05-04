@@ -4,6 +4,12 @@
 ///
 """  # noqa: D205, D212, D415
 
+# References:
+# https://blog.l0v0.com/posts/513f9ff.html
+# https://blog.l0v0.com/posts/cad78e0d.html
+# https://forums.unrealengine.com/t/set-icon-how-to-use-python/627847/4
+# https://sergicarrion.com/articles/extending-ue-menus-with-python/
+
 from __future__ import annotations
 
 from textwrap import dedent
