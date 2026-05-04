@@ -15,14 +15,8 @@ stages:
   - "pyproject.toml"
   - "uv.lock"
 
-.rule:code-merge-request-manual: &rule-code-merge-request-manual
+.rule:merge-request-manual: &rule-merge-request-manual
   if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-  changes: *code-patterns
-  when: manual
-
-.rule:code-default-branch-manual: &rule-code-default-branch-manual
-  if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-  changes: *code-patterns
   when: manual
 
 .rule:default-branch-manual: &rule-default-branch-manual
@@ -40,8 +34,8 @@ lint:
   stage: test
   image: ghcr.io/astral-sh/ruff:alpine
   rules:
-    - *rule-code-merge-request-manual
-    - *rule-code-default-branch-manual
+    - *rule-merge-request-manual
+    - *rule-default-branch-manual
   dependencies: []
   interruptible: true
   allow_failure: true
@@ -58,8 +52,8 @@ lint:
 format:
   stage: test
   rules:
-    - *rule-code-merge-request-manual
-    - *rule-code-default-branch-manual
+    - *rule-merge-request-manual
+    - *rule-default-branch-manual
   image: ghcr.io/astral-sh/ruff:alpine
   dependencies: []
   interruptible: true
@@ -81,8 +75,8 @@ test:
     matrix:
       - PYTHON_VERSION: ["3.10", "3.13"]
   rules:
-    - *rule-code-merge-request-manual
-    - *rule-code-default-branch-manual
+    - *rule-merge-request-manual
+    - *rule-default-branch-manual
   dependencies: []
   interruptible: true
   variables:
@@ -113,8 +107,8 @@ coverage:
   stage: test
   image: ghcr.io/astral-sh/uv:python3.14-alpine
   rules:
-    - *rule-code-merge-request-manual
-    - *rule-code-default-branch-manual
+    - *rule-merge-request-manual
+    - *rule-default-branch-manual
   needs: ["test"]
   interruptible: true
   allow_failure: true
