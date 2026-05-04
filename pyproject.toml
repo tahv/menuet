@@ -32,10 +32,10 @@ qt = ["pyside6>=6.11.0"]
 
 [dependency-groups]
 dev = [
+  { include-group = "docs" },
   "fake-bpy-module-5-0>=20260128",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "mypy>=1.19.1",
   "types-maya>=0.3.0",
-  { include-group = "doc" },
   { include-group = "test" },
 ]
 bpy = [
@@ -43,7 +43,7 @@ bpy = [
   "bpy==5.0.*; python_version == '3.11'",
   "bpy==5.1.*; python_version == '3.13'",
 ]
-doc = [
+docs = [
   "black>=26.3.1",  # required by mkdocstrings-python for separate_signate
   "griffe-fieldz>=0.5.0",
   "markdown-callouts>=0.4.0",
