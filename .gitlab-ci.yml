@@ -20,8 +20,6 @@ stages:
 
 # jobs ------------------------------------------------------------------------
 
-# TOOD(tga): type checking (test)
-
 lint:
   stage: test
   image: ghcr.io/astral-sh/ruff:alpine
