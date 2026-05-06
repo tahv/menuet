@@ -177,12 +177,6 @@ pypi:
   script:
     - apk update && apk add --no-cache curl jq
     - uv publish
-    - RESPONSE=$( curl https://pypi.org/pypi/menuet/json )
-    - echo "URL_SDIST=$( echo $RESPONSE | jq -r '.releases."$CI_COMMIT_TAG".[] | select(.packagetype=="sdist")'.url )" > pypi.env
-    - echo "URL_WHEEL=$( echo $RESPONSE | jq -r '.releases."$CI_COMMIT_TAG".[] | select(.packagetype=="bdist_wheel")'.url )" > pypi.env
-  artifacts:
-    reports:
-      dotenv: pypi.env
 
 test-pypi:
   stage: publish
@@ -227,6 +221,9 @@ gitlab-release:
     - curl -LsSf https://astral.sh/uv/install.sh | sh
     - source $HOME/.local/bin/env
     - uvx hed --softbreak --tag "$CI_COMMIT_TAG" > RELEASE.md
+    - RESPONSE=$( curl https://pypi.org/pypi/menuet/json )
+    - URL_SDIST=$( echo $RESPONSE | jq -r '.releases."$CI_COMMIT_TAG".[] | select(.packagetype=="sdist").url' )
+    - URL_WHEEL=$( echo $RESPONSE | jq -r '.releases."$CI_COMMIT_TAG".[] | select(.packagetype=="bdist_wheel").url' )
   release:
     tag_name: "$CI_COMMIT_TAG"
     name: "$CI_COMMIT_TAG"
@@ -235,7 +232,7 @@ gitlab-release:
       links:
         - name: bdist_wheel
           link_type: package
-          url: $URL_WHEEL
+          url: "$URL_WHEEL"
         - name: sdist
           link_type: package
-          url: $URL_SDIST
+          url: "$URL_SDIST"
