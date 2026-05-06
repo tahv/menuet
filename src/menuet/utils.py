@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING, Any, Final, TypeVar
 
 if TYPE_CHECKING:
     from collections.abc import Callable
-    from importlib.abc import Traversable
+    from importlib.resources.abc import Traversable
 
 _T = TypeVar("_T")
 
