@@ -12,6 +12,13 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.4.0](https://gitlab.com/tahv/menuet/-/releases/1.4.0) - 2026-05-06
+
+### Enhancements
+
+- [!5](https://gitlab.com/tahv/menuet/-/merge_requests/5):
+  Add `MaxDynamicMenuBuilder`.
+
 ## [1.3.0](https://gitlab.com/tahv/menuet/-/releases/1.3.0) - 2026-04-27
 
 ### Enhancements
