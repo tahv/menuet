@@ -10,6 +10,53 @@
 
 Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 
+<table width="100%">
+  <tr>
+    <th>Blender</th>
+    <th>3ds Max</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-blender.png" />
+    </td>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-max.png" />
+    </td>
+  </tr>
+  <tr>
+    <th>Maya</th>
+    <th>macOS Native</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya.png" />
+    </td>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-macos-native.png" />
+    </td>
+  </tr>
+  <tr>
+    <th>macOS</th>
+    <th>Windows</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-macos.png" />
+    </td>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-windows.png" />
+    </td>
+  </tr>
+  <tr>
+    <th>Unreal</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-unreal.png" />
+    </td>
+  </tr>
+</table>
+
 ## Features
 
 - Load menu from a TOML or JSON configuration, from a dict, from entry points,
