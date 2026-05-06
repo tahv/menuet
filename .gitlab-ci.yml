@@ -7,14 +7,6 @@ stages:
 
 # rules -----------------------------------------------------------------------
 
-.code-patterns: &code-patterns
-  - "src/**/*"
-  - "tests/**/*"
-  - ".gitlab-ci.yml"
-  - "conftest.py"
-  - "pyproject.toml"
-  - "uv.lock"
-
 .rule:merge-request-manual: &rule-merge-request-manual
   if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
   when: manual
