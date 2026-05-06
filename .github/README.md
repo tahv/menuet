@@ -5,7 +5,7 @@
 # menuet
 
 [![Source](https://img.shields.io/badge/source-%23fc6d25?logo=gitlab&logoColor=white)](https://gitlab.com/tahv/menuet)
-[![Documentation](https://img.shields.io/badge/documentation-teal)](https://tahv.gitlab.io/menuet)
+[![Documentation](https://img.shields.io/badge/documentation-teal?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiA3djE0Ii8%2BPHBhdGggZD0iTTMgMThhMSAxIDAgMCAxLTEtMVY0YTEgMSAwIDAgMSAxLTFoNWE0IDQgMCAwIDEgNCA0IDQgNCAwIDAgMSA0LTRoNWExIDEgMCAwIDEgMSAxdjEzYTEgMSAwIDAgMS0xIDFoLTZhMyAzIDAgMCAwLTMgMyAzIDMgMCAwIDAtMy0zeiIvPjwvc3ZnPg%3D%3D)](https://tahv.gitlab.io/menuet)
 [![PyPI](https://img.shields.io/pypi/v/menuet?logo=python&logoColor=white&label=)](https://pypi.org/project/menuet)
 
 Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
@@ -84,9 +84,8 @@ visit the documentation at
 
 ## Contributing
 
-You'd like to use menuet with another application ?
-Feel free to [open an issue](https://gitlab.com/tahv/menuet/-/issues),
-or read the
+Contributions of any kind are welcome.
+Please [open an issue](https://gitlab.com/tahv/menuet/-/issues), or read the
 [contribution guidelines](https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md)
 and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 
@@ -100,10 +99,14 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 
 - [ ] Tests: menuet.builders.maya.MayaMenuBuilder
 - [ ] Tests: menuet.builders.unreal.UnrealMenuBuilder
+- [ ] Tests: menuet.builders.max.MaxDynamicMenuBuilder
 - [ ] Builder: maya.cmds.popupMenu (marking menu)
-- [ ] Builder: 3ds Max Menu System
-- [ ] Builder: 3ds Max Dynamic Menu
+- [ ] Builder: 3ds Max MenuMan System
 - [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
 
 -->
+
+---
+
+<a href="https://www.buymeacoffee.com/tgambier"><img alt="Buy Me a Coffee" style="height: 50px;" height="50" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"></a>
