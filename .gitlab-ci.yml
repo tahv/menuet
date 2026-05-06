@@ -206,6 +206,8 @@ gitlab-release:
     - *rule-on-tag
   needs: ["pypi"]
   image: registry.gitlab.com/gitlab-org/cli:latest # alpine
+  variables:
+    GIT_DEPTH: 0  # find previous tag
   script:
     - apk update && apk add --no-cache git curl
     - curl -LsSf https://astral.sh/uv/install.sh | sh
