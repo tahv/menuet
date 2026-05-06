@@ -105,4 +105,4 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 
 ---
 
-<a href="https://www.buymeacoffee.com/tgambier"><img alt="Buy Me a Coffee" style="height: 60px;" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"></a>
+<a href="https://www.buymeacoffee.com/tgambier"><img alt="Buy Me a Coffee" style="height: 50px;" height="50" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"></a>
