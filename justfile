@@ -60,3 +60,7 @@ ruff *files:
 # Dry run `ruff` formatter and output diff
 fmt:
   uvx ruff@latest format --check
+
+# Perform type-checking with `mypy`
+mypy:
+    uv run -m mypy

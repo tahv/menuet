@@ -8,7 +8,7 @@ from typing_extensions import Self
 from menuet.utils import to_icon_converter, to_tuple_converter
 
 if TYPE_CHECKING:
-    from importlib.abc import Traversable
+    from importlib.resources.abc import Traversable
 
 
 @define(frozen=True, kw_only=True)

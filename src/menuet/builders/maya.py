@@ -62,7 +62,7 @@ class MayaMenuBuilder:
         """Build menu."""
         from maya import cmds
 
-        if cmds.menu(self._root_long_name, query=True, exists=True):
+        if cmds.menu(self._root_long_name, exists=True):
             cmds.menu(self._root_long_name, edit=True, deleteAllItems=True)
         elif _is_menu(self._parent):
             cmds.menuItem(
@@ -112,7 +112,7 @@ class MayaMenuBuilder:
                     label=item.inner.label or item.inner.id,
                     command=item.inner.cb,
                     # TODO(tga): dragMenuCommand: must be a str & work across sessions
-                    annotation=item.inner.desc,
+                    annotation=item.inner.desc or "",
                     image=(
                         str(item.inner.icon)
                         if isinstance(item.inner.icon, Path)

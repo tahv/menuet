@@ -124,6 +124,29 @@ coverage:
         coverage_format: cobertura
         path: coverage.xml
 
+mypy:
+  stage: test
+  rules:
+    - *rule-merge-request-manual
+    - *rule-default-branch-manual
+  image: ghcr.io/astral-sh/uv:python3.14-trixie
+  dependencies: []
+  interruptible: true
+  allow_failure: true
+  variables:
+    FORCE_COLOR: 1
+    SETUPTOOLS_SCM_PRETEND_VERSION: "0.0.0"
+    TERM: ansi # https://github.com/python/mypy/issues/13817
+  script:
+    - uv sync --group dev --extra copy --extra qt
+    - uv run --no-sync -m mypy --output json > mypy-report.json || true
+    - uvx mypy-gitlab-code-quality < mypy-report.json > codequality.json
+    - uv run --no-sync -m mypy
+  artifacts:
+    when: always
+    reports:
+      codequality: codequality.json
+
 package:
   stage: build
   rules:

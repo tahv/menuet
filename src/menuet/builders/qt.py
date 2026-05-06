@@ -9,7 +9,7 @@ from menuet.model import ItemAction, ItemGroup, ItemMenu
 from menuet.utils import logger
 
 if TYPE_CHECKING:
-    from importlib.abc import Traversable
+    from importlib.resources.abc import Traversable
 
     from menuet.model import MenuSortKey, Model
 
