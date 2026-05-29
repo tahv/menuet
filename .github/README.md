@@ -2,13 +2,28 @@
 > Development takes place on GitLab:
 > [gitlab.com/tahv/menuet](https://gitlab.com/tahv/menuet).
 
-# menuet
+<div align="center">
+  <h1>menuet</h1>
+  <p>
+    <a href="https://pypi.org/project/menuet">
+      <img alt="PyPI" src="https://img.shields.io/pypi/v/menuet?style=for-the-badge&logo=python&logoColor=white">
+    </a>
+    <a href="https://www.buymeacoffee.com/tgambier">
+      <img alt="Buy Me a Coffee" style="height: 28px;" height="28" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png">
+    </a>
+  </p>
+  <p><b>Declarative menu builder for DCC applications</b></p>
+  <p>
+    <a href="https://tahv.gitlab.io/menuet/">Documentation</a>
+    • <a href="https://pypi.org/project/menuet">PyPI</a>
+    • <a href="https://gitlab.com/tahv/menuet">GitLab</a>
+    • <a href="https://github.com/tahv/menuet">GitHub</a>
+    • <a href="https://gitlab.com/tahv/menuet/-/blob/main/CHANGELOG.md">Changelog</a>
+    • <a href="https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md">Contributing</a>
+  </p>
+</div>
 
-[![Source](https://img.shields.io/badge/source-%23fc6d25?logo=gitlab&logoColor=white)](https://gitlab.com/tahv/menuet)
-[![Documentation](https://img.shields.io/badge/documentation-teal?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiA3djE0Ii8%2BPHBhdGggZD0iTTMgMThhMSAxIDAgMCAxLTEtMVY0YTEgMSAwIDAgMSAxLTFoNWE0IDQgMCAwIDEgNCA0IDQgNCAwIDAgMSA0LTRoNWExIDEgMCAwIDEgMSAxdjEzYTEgMSAwIDAgMS0xIDFoLTZhMyAzIDAgMCAwLTMgMyAzIDMgMCAwIDAtMy0zeiIvPjwvc3ZnPg%3D%3D)](https://tahv.gitlab.io/menuet)
-[![PyPI](https://img.shields.io/pypi/v/menuet?logo=python&logoColor=white&label=)](https://pypi.org/project/menuet)
-
-Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
+---
 
 <table width="100%">
   <tr>
@@ -66,15 +81,6 @@ Menuet (`/mə.nɥɛ/`) is a declarative menu builder for DCC applications.
 - Declare one or more menus in a dedicated `.toml` file.
 - Compose menu from multiple `.toml` files.
 - Declare a menu in a `pyproject.toml`.
-
-## Project Information
-
-- [**Documentation**](https://tahv.gitlab.io/menuet)
-- [**PyPI**](https://pypi.org/project/menuet/)
-- [**Source Code**](https://gitlab.com/tahv/menuet)
-- [**Changelog**](https://gitlab.com/tahv/menuet/-/blob/main/CHANGELOG.md)
-- [**Contributing**](https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md)
-- [**GitHub Mirror**](https://github.com/tahv/menuet)
 
 ## Installation
 
@@ -153,7 +159,3 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 - [ ] Icon path should be relative to file
 
 -->
-
----
-
-<a href="https://www.buymeacoffee.com/tgambier"><img alt="Buy Me a Coffee" style="height: 50px;" height="50" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"></a>
