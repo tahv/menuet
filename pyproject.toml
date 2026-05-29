@@ -74,8 +74,8 @@ report.exclude_lines = [
   "# pragma: no cover",
   "if (False|0|TYPE_CHECKING):",
   "if __name__ == ['\"]__main__['\"]:",
-  # Protocol: beginning of line or colon + elipsis + eol or comment
-  "(?::\\s+|^\\s+)\\.\\.\\.(?:\\s+#|$)",
+  # Protocol: beginning of line or colon + elipsis + comment or eol
+  '(^|:) *\.{3} *(#|$)',
 ]
 
 [tool.hatch]
@@ -93,7 +93,7 @@ top-heading = 2
 
 [tool.mypy]
 strict = true
-mypy_path = "src"
+mypy_path = ["src"]
 files = ["src", "tests"]
 
 [[tool.mypy.overrides]]
@@ -131,25 +131,23 @@ lint.ignore = [
   "S101",  # Use of `assert` detected
   "TD003",  # Missing issue link for this TODO
 ]
-src = ["src"]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**/test_*.py" = [
+lint.per-file-ignores."tests/**/test_*.py" = [
   "D103",  # Missing docstring in public function
   "PLR2004",  # Magic value used in comparison, consider replacing with a constant variable
 ]
-"src/menuet/builders/maya.py" = [
+lint.per-file-ignores."src/menuet/builders/maya.py" = [
   "PLC0415",  # `import` should be at the top-level of a file
 ]
-"src/menuet/builders/max.py" = [
+lint.per-file-ignores."src/menuet/builders/max.py" = [
   "PLC0415",  # `import` should be at the top-level of a file
 ]
-"docs/assets/*.py" = [
+lint.per-file-ignores."docs/assets/*.py" = [
   "INP001",  # File is part of an implicit namespace package. Add an `__init__.py`
   "ARG001",  # Unused function argument
   "D103",  # Missing docstring in public function
   "I002",  # Missing required import
 ]
+src = ["src"]
 
 [tool.rumdl]
 line_length = 80
