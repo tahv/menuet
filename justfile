@@ -49,9 +49,18 @@ changelog version="":
 hed version:
     @uvx hed --tag {{ version }}
 
-# Generate '.github/README.md'
+# Generate `.github/README.md`
+[script("uv", "run", "--script")]
 github-readme:
-    uv run scripts/github-readme.py > .github/README.md
+  import sys, pathlib
+  header = """\
+  > [!IMPORTANT]
+  > Development takes place on GitLab:
+  > [gitlab.com/tahv/menuet](https://gitlab.com/tahv/menuet).
+
+  """
+  body = pathlib.Path('README.md').read_text()
+  pathlib.Path(".github/README.md").write_text(f"{header}{body}")
 
 # Run `ruff` linter
 ruff *files:
