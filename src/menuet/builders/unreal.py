@@ -12,7 +12,6 @@
 
 from __future__ import annotations
 
-from textwrap import dedent
 from typing import TYPE_CHECKING
 
 from menuet import ItemGroup
@@ -25,45 +24,7 @@ if TYPE_CHECKING:
 
     from menuet.model import MenuSortKey, Model
 
-__all__ = (
-    "UnrealMenuBuilder",
-    "model_reference_to_string_command",
-)
-
-
-def model_reference_to_string_command(reference: str) -> Callable[[str], str]:
-    """Generate the `to_string_command` argument from a [`Model`][menuet.Model] reference.
-
-    Args:
-        reference: Points to a Callable returning a [`Model`][menuet.Model]
-            in the form `importable.module:function`.
-
-    Example:
-        ```python
-        >>> func = model_reference_to_string_command('menuet.demo:demo_model')
-        >>> print(func('anim-bake'))
-        import menuet
-        from menuet.utils import load_entry_point
-        model = load_entry_point('menuet.demo:demo_model')
-        if not isinstance(model, menuet.Model):
-            raise TypeError(f"Expected 'Model', found '{type(model)}'")
-        model.get_action('anim-bake').cb()
-
-        ```
-    """  # noqa: E501
-
-    def inner(action: str) -> str:
-        return dedent(
-            f"""\
-            import menuet
-            from menuet.utils import load_entry_point
-            model = load_entry_point('{reference}')
-            if not isinstance(model, menuet.Model):
-                raise TypeError(f"Expected 'Model', found '{{type(model)}}'")
-            model.get_action('{action}').cb()""",
-        )
-
-    return inner
+__all__ = ("UnrealMenuBuilder",)
 
 
 class UnrealMenuBuilder:
