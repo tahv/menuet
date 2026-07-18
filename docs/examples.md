@@ -50,6 +50,36 @@ applications.
 
 ///
 
+## Houdini
+
+The following example generates a Houdini `XML` menu configuration in a
+[Houdini startup script](https://www.sidefx.com/docs/houdini/hom/locations.html#startup)
+and adds it to `HOUDINI_MENU_PATH`.
+
+/// tip
+
+The `startup/` directory must be added to the
+[`HOUDINI_PATH`](https://www.sidefx.com/docs/houdini/basics/houdinipath.html) variable.
+
+```console
+export HOUDINI_PATH="/path/to/startup:&"
+```
+
+The `&` [special characters](https://www.sidefx.com/docs/houdini/basics/config_env.html#special-characters-in-path-variables)
+expands to the *default* path.
+
+///
+
+```python { .copy }
+--8<-- "docs/assets/demo_houdini.py"
+```
+
+/// html | div.result
+
+![Houdini](./assets/demo-houdini.png)
+
+///
+
 ## Maya
 
 Build menu under Maya main menu bar `"MayaWindow"`.

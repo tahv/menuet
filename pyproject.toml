@@ -56,6 +56,7 @@ test = [
 types = [
   "fake-bpy-module-5-0>=20260128",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "mypy>=1.19.1",
+  "types-houdini>=21.0.512.3",
   "types-maya>=0.5.0",
   "types-pyside6>=6.10.1.1",
 ]

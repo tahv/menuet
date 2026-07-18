@@ -60,10 +60,14 @@
   </tr>
   <tr>
     <th>Unreal</th>
+    <th>Houdini</th>
   </tr>
   <tr>
     <td width="50%" style="padding: 5px;">
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-unreal.png" />
+    </td>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-houdini.png" />
     </td>
   </tr>
 </table>
@@ -73,7 +77,7 @@
 - Load menu from a TOML or JSON configuration, from a dict, from entry points,
   or build it programmatically.
 - Supports, Blender, 3ds Max, Maya, MotionBuilder,
-  Unreal and any PySide6 application.
+  Unreal, Houdini and any PySide6 application.
 - Declare one or more menus in a dedicated `.toml` file.
 - Compose menu from multiple `.toml` files.
 - Declare a menu in a `pyproject.toml`.

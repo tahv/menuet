@@ -33,6 +33,11 @@ icon: lucide/code
       toc_label: "menuet.builders.blender"
       filters: "public"
 
+::: menuet.builders.houdini
+    options:
+      toc_label: "menuet.builders.houdini"
+      filters: "public"
+
 ::: menuet.builders.maya
     options:
       toc_label: "menuet.builders.maya"
