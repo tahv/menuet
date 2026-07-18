@@ -6,13 +6,12 @@ import webbrowser
 from collections.abc import Iterable
 from functools import partial
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Final, TypeVar
+from typing import TYPE_CHECKING, Any, Final
 
 if TYPE_CHECKING:
     from collections.abc import Callable
     from importlib.resources.abc import Traversable
 
-_T = TypeVar("_T")
 
 logger: Final[logging.Logger] = logging.getLogger("menuet")
 
@@ -109,11 +108,3 @@ def to_icon_converter(value: Any) -> Traversable | None:  # noqa: ANN401
             return None
 
     raise TypeError(type(value))
-
-
-def skip_n(iterable: Iterable[_T], *, n: int = 1) -> Iterable[_T]:
-    """Drops `n` elements from the `iterable`."""
-    it = iterable.__iter__()
-    for _ in range(n):
-        next(it)
-    yield from it
