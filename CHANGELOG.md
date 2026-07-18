@@ -12,6 +12,19 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.5.0](https://gitlab.com/tahv/menuet/-/releases/1.5.0) - 2026-07-18
+
+### Breaking changes
+
+- [!9](https://gitlab.com/tahv/menuet/-/merge_requests/9):
+  Remove helper function
+  `menuet.builders.unreal.model_reference_to_string_command`.
+
+### Enhancements
+
+- [!8](https://gitlab.com/tahv/menuet/-/merge_requests/8):
+  Add `menuet.builders.houdini.HoudiniXmlMainMenuBuilder`.
+
 ## [1.4.0](https://gitlab.com/tahv/menuet/-/releases/1.4.0) - 2026-05-06
 
 ### Enhancements
