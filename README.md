@@ -70,14 +70,34 @@
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-houdini.png" />
     </td>
   </tr>
+  <tr>
+    <th>Substance Painter</th>
+    <th>Substance Designer</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-painter.png" />
+    </td>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-designer.png" />
+    </td>
+  </tr>
+  <tr>
+    <th>MotionBuilder</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-motionbuilder.png" />
+    </td>
+  </tr>
 </table>
 
 ## Features
 
 - Load menu from a TOML or JSON configuration, from a dict, from entry points,
   or build it programmatically.
-- Supports, Blender, 3ds Max, Maya, MotionBuilder,
-  Unreal, Houdini and any PySide6 application.
+- Supports, Blender, 3ds Max, Maya, MotionBuilder, Unreal, Houdini,
+  Substance Designer, Substance Painter, and any PySide6 application.
 - Declare one or more menus in a dedicated `.toml` file.
 - Compose menu from multiple `.toml` files.
 - Declare a menu in a `pyproject.toml`.
@@ -131,8 +151,7 @@ Demo
 └── Print Hello
 ```
 
-For more information and examples,
-visit the documentation at
+For more information and examples, visit the documentation at
 [tahv.gitlab.io/menuet](https://tahv.gitlab.io/menuet).
 
 ## Contributing

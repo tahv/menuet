@@ -59,13 +59,15 @@ and adds it to `HOUDINI_MENU_PATH`.
 /// tip
 
 The `startup/` directory must be added to the
-[`HOUDINI_PATH`](https://www.sidefx.com/docs/houdini/basics/houdinipath.html) variable.
+[`HOUDINI_PATH`](https://www.sidefx.com/docs/houdini/basics/houdinipath.html)
+variable.
 
 ```console
 export HOUDINI_PATH="/path/to/startup:&"
 ```
 
-The `&` [special characters](https://www.sidefx.com/docs/houdini/basics/config_env.html#special-characters-in-path-variables)
+The `&`
+[special character](https://www.sidefx.com/docs/houdini/basics/config_env.html#special-characters-in-path-variables)
 expands to the *default* path.
 
 ///
@@ -94,7 +96,57 @@ Build menu under Maya main menu bar `"MayaWindow"`.
 
 ///
 
-/// tip | Maya menus can also be built with [`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
+/// tip | Maya menus can also be built with the [`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
+
+```python { .copy }
+--8<-- "docs/assets/demo_mayaqt.py"
+```
+
+///
+
+## MotionBuilder
+
+Build menu under MotionBuilder main menu bar with the
+[`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
+
+```python { .copy }
+--8<-- "docs/assets/demo_motionbuilder.py"
+```
+
+/// html | div.result
+
+![MotionBuilder](./assets/demo-motionbuilder.png)
+
+///
+
+## Substance Designer
+
+Build menu under Substance Designer main menu bar with the
+[`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
+
+```python { .copy }
+--8<-- "docs/assets/demo_designer.py"
+```
+
+/// html | div.result
+
+![Substance Designer](./assets/demo-designer.png)
+
+///
+
+## Substance Painter
+
+Build menu under Substance Painter main menu bar with the
+[`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
+
+```python { .copy }
+--8<-- "docs/assets/demo_painter.py"
+```
+
+/// html | div.result
+
+![Substance Painer](./assets/demo-painter.png)
+
 ///
 
 ## Unreal
