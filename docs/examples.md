@@ -16,25 +16,17 @@ applications.
 
 ///
 
-## QApplication
+## 3ds Max
+
+Build menu under 3ds Max main menu bar.
 
 ```python { .copy }
---8<-- "docs/assets/demo_qtapp.py"
+--8<-- "docs/assets/demo_max.py"
 ```
 
 /// html | div.result
 
-**Windows:**
-
-![QApplication on Windows](./assets/demo-qtapp-windows.png)
-
-**macOS:**
-
-![QApplication on macOs](./assets/demo-qtapp-macos.png)
-
-**macOS native:**
-
-![QApplication on macOS in native menubar](./assets/demo-qtapp-macos-native.png)
+![3ds Max](./assets/demo-max.png)
 
 ///
 
@@ -119,6 +111,28 @@ Build menu under MotionBuilder main menu bar with the
 
 ///
 
+## QApplication
+
+```python { .copy }
+--8<-- "docs/assets/demo_qtapp.py"
+```
+
+/// html | div.result
+
+**Windows:**
+
+![QApplication on Windows](./assets/demo-qtapp-windows.png)
+
+**macOS:**
+
+![QApplication on macOs](./assets/demo-qtapp-macos.png)
+
+**macOS native:**
+
+![QApplication on macOS in native menubar](./assets/demo-qtapp-macos-native.png)
+
+///
+
 ## Substance Designer
 
 Build menu under Substance Designer main menu bar with the
@@ -146,32 +160,6 @@ Build menu under Substance Painter main menu bar with the
 /// html | div.result
 
 ![Substance Painer](./assets/demo-painter.png)
-
-///
-
-## Unreal
-
-```python { .copy }
---8<-- "docs/assets/demo_unreal.py"
-```
-
-/// html | div.result
-
-![Unreal](./assets/demo-unreal.png)
-
-///
-
-## 3ds Max
-
-Build menu under 3ds Max main menu bar.
-
-```python { .copy }
---8<-- "docs/assets/demo_max.py"
-```
-
-/// html | div.result
-
-![3ds Max](./assets/demo-max.png)
 
 ///
 
@@ -214,5 +202,17 @@ Demo
 │   └── Controller Editor
 └── Open Documentation
 ```
+
+///
+
+## Unreal
+
+```python { .copy }
+--8<-- "docs/assets/demo_unreal.py"
+```
+
+/// html | div.result
+
+![Unreal](./assets/demo-unreal.png)
 
 ///
