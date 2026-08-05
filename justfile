@@ -3,7 +3,7 @@ set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 # List available recipes
 [default]
 list:
-    @just --list
+    @just --list --list-heading "" --list-prefix ""
 
 # Sync development environment
 sync:
