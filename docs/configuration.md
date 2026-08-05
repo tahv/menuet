@@ -136,9 +136,9 @@ The following schemes are available:
   Value is in the form `ep:importable.module:callable`.
 
     ```toml
-    cb = "res:myapp.my_module:open_gui"
+    cb = "ep:myapp.my_module:open_gui"
 
-    cb = "res:myapp:my_function"
+    cb = "ep:myapp:my_function"
     ```
 
 - `copy`: copy its value to the clipboard.
