@@ -71,11 +71,11 @@ The `[[action]]` tables accepts the following options:
 [[action]]                   # `action` is an array of action tables
 id = "my-action"             # unique identifier [required]
 label = "My Action"          # display name
-menu = ["Menu", "Sub-Menu"]  # parent menus hierarchy
-group = "My Group"           # group related menus and actions
+menu = ["Menu", "Sub-Menu"]  # menus hierarchy leading to this action
+group = "My Group"           # groups related menus and actions together
 cb = "print('Hello !')"      # action callback
 desc = "Print Hello"         # tooltip
-icon = "icons/my-icon.png"   # path to an icon
+icon = "icons/my-icon.png"   # action icon
 ```
 
 ## Menu Options
@@ -86,14 +86,13 @@ The `[[menu]]` tables accepts the following options:
 [[menu]]                    # `menu` is an array of menu tables
 label = "My Menu"           # display name [required]
 desc = "My App Scripts"     # tooltip
-menu = ["Parent Menu"]      # parent menus hierarchy
-group = "My Group"          # group related menus and actions
-icon = "icons/my-icon.png"  # path to an icon
+menu = ["Parent Menu"]      # menus hierarchy leading to this menu
+group = "My Group"          # groups related menus and actions together
+icon = "icons/my-icon.png"  # menu icon
 ```
 
 Menus defined in `[[action]]` tables are created automatically.
-The only reason to configure `[[menu]]` explicitly is to set an `icon`,
-a `group`, or a `desc`.
+Declare a `[[menu]]` explicitly to configure its `icon`, `group` or `desc`.
 
 ## `icon` Schemes
 
@@ -114,7 +113,7 @@ The following schemes are available:
   Value is in the form `res:importable.module:file.ext`.
 
     ```toml
-    icon = "res:myapp.data:logo.svg" 
+    icon = "res:myapp.data:logo.svg"
     ```
 
 ## `cb` Schemes
@@ -195,8 +194,7 @@ followed by a blank line.
 
 ### Sub Schema
 
-Tombi can be [configured](https://tombi-toml.github.io/tombi/docs/configuration)
-with
+[tombi](https://tombi-toml.github.io/tombi/docs) can be configured with
 [sub schema](https://tombi-toml.github.io/tombi/docs/configuration#sub-schema)
 to apply a schema to a specific part of the TOML document.
 
