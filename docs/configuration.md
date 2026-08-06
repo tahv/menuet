@@ -4,43 +4,51 @@ icon: lucide/file-cog
 
 # Menu Configuration
 
-The [`load`][menuet.load] function takes a dict of
+A menuet configuration is composed of a dict of
 `#!py3 { "action": [], "menu": [] }`.
+The configuration must be loaded to a [`Model`][menuet.Model] via one of the
+following functions:
+
+- [`menuet.loads`][menuet.loads] : takes a `str` document.
+- [`menuet.load`][menuet.load] : takes a `bytes` stream document.
+- [`menuet.deserialize`][menuet.deserialize] : takes a `dict`.
+
+By default, the [`loads`][menuet.loads]
+and [`load`][menuet.load] functions expect a TOML document,
+but both functions accept a `parser` argument to parse other file formats such
+as JSON or YAML.
+
+/// tab | TOML
 
 ```python { .copy }
-import menuet
-from menuet.builders.text import Render, TextMenuBuilder
-
-model = menuet.Model()
-load(
-    {
-        "menu": [
-            {
-                "label": "Sub-Menu",
-                "menu": ["My App"],
-                "group": "Separator",
-            },
-        ],
-        "action": [
-            {
-                "id": "open-gui",
-                "label": "Open GUI",
-                "cb": "import myapp; myapp.open_gui()",
-                "menu": ["My App", "Sub-Menu"],
-            },
-            {
-                "id": "print-hello",
-                "label":  "Print Hello",
-                "cb": 'print("Hello")',
-            },
-        ],
-    },
-    model,
-)
-
-builder = TextMenuBuilder(model, root_menu="Example", render=Render.UTF8)
-print(builder.build())
+--8<-- "docs/assets/config_toml.py"
 ```
+
+///
+
+/// tab | JSON
+
+```python { .copy }
+--8<-- "docs/assets/config_json.py"
+```
+
+///
+
+/// tab | YAML
+
+```python { .copy }
+--8<-- "docs/assets/config_yaml.py"
+```
+
+///
+
+/// tab | Python
+
+```python { .copy }
+--8<-- "docs/assets/config_python.py"
+```
+
+///
 
 /// html | div.result
 

@@ -775,6 +775,7 @@ dev = [
     { name = "mypy" },
     { name = "pytest" },
     { name = "pytest-qt" },
+    { name = "pyyaml" },
     { name = "types-houdini" },
     { name = "types-maya" },
     { name = "types-pyside6" },
@@ -791,6 +792,7 @@ test = [
     { name = "coverage" },
     { name = "pytest" },
     { name = "pytest-qt" },
+    { name = "pyyaml" },
 ]
 types = [
     { name = "fake-bpy-module-5-0" },
@@ -826,6 +828,7 @@ dev = [
     { name = "mypy", specifier = ">=1.19.1" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "pytest-qt", specifier = ">=4.4.0" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "types-houdini", specifier = ">=21.0.512.3" },
     { name = "types-maya", specifier = ">=0.5.0" },
     { name = "types-pyside6", specifier = ">=6.10.1.1" },
@@ -842,6 +845,7 @@ test = [
     { name = "coverage", specifier = ">=7.13.5" },
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "pytest-qt", specifier = ">=4.4.0" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
 ]
 types = [
     { name = "fake-bpy-module-5-0", specifier = ">=20260128" },

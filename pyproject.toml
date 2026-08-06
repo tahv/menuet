@@ -52,6 +52,7 @@ test = [
   "coverage>=7.13.5",
   "pytest>=9.0.2",
   "pytest-qt>=4.4.0",
+  "pyyaml>=6.0.3",
 ]
 types = [
   "fake-bpy-module-5-0>=20260128",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
@@ -148,6 +149,7 @@ lint.per-file-ignores."docs/assets/*.py" = [
   "ARG001",  # Unused function argument
   "D103",  # Missing docstring in public function
   "I002",  # Missing required import
+  "T201",  # `print` found
 ]
 src = ["src"]
 
