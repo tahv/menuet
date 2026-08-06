@@ -5,7 +5,7 @@ from collections.abc import Callable
 from functools import reduce
 from itertools import chain
 from operator import getitem
-from typing import TYPE_CHECKING, Any, NamedTuple
+from typing import IO, TYPE_CHECKING, Any, NamedTuple
 
 import attr
 from attrs import define, field
@@ -14,14 +14,14 @@ from menuet.action import Action
 from menuet.menu import Menu
 
 if sys.version_info < (3, 11):
-    import tomli as tomllib  # ty: ignore[unresolved-import]
+    import tomli as tomllib
 else:
     import tomllib
 
 if TYPE_CHECKING:
     from collections.abc import Iterable, Iterator
 
-    from _typeshed import SupportsRead, SupportsRichComparison
+    from _typeshed import SupportsRichComparison
 
 
 __all__ = (
@@ -51,34 +51,53 @@ class _ActionNode:
 
 
 def load(
-    fp: SupportsRead[bytes],
+    fp: IO[bytes],
     model: Model,
     root_keys: tuple[str, ...] | None = None,
+    *,
+    parser: Callable[[IO[bytes]], dict[str, Any]] | None = None,
 ) -> None:
-    """Load `fp` and deserialize its content to [`model`][menuet.Model].
+    """Parse `fp` and deserialize its content to [`model`][menuet.Model].
 
     Args:
-        fp: a `.read()`-supporting file-like object containing a TOML document.
+        fp: A `.read()`-supporting file-like object containing
+            a menuet configuration document.
         model: Target model.
         root_keys: The sequence of keys that lead to the root configuration structure.
             For example, a `[tool.myapp.mymenu]` table (`("tool", "myapp", "mymenu")`)
             in `pyproject.toml`.
+        parser: A callable that takes a binary file document and parses it into a dict.
+            Default to [`tomllib.load`][tomllib.load] if not specified.
+            Other examples includes [`json.load`][json.load] or `yaml.safe_load`
+            from the [PyYAML](https://pypi.org/project/PyYAML/) library.
     """
-    config = tomllib.load(fp)
+    parser = parser or tomllib.load
+    config = parser(fp)
     deserialize(config, model, root_keys)
 
 
-def loads(s: str, model: Model, root_keys: tuple[str, ...] | None = None) -> None:
-    """Load `s` and deserialize its content to [`model`][menuet.Model].
+def loads(
+    s: str,
+    model: Model,
+    root_keys: tuple[str, ...] | None = None,
+    *,
+    parser: Callable[[str], dict[str, Any]] | None = None,
+) -> None:
+    """Parse `s` and deserialize its content to [`model`][menuet.Model].
 
     Args:
-        s: a `str` containing a TOML document.
+        s: A `str` containing a menuet configuration document.
         model: Target model.
         root_keys: The sequence of keys that lead to the root configuration structure.
             For example, a `[tool.myapp.mymenu]` table (`("tool", "myapp", "mymenu")`)
             in `pyproject.toml`.
+        parser: A callable that takes a `str` document and parses it into a dict.
+            Default to [`tomllib.loads`][tomllib.loads] if not specified.
+            Other examples includes [`json.loads`][json.loads] or `yaml.safe_load`
+            from the [PyYAML](https://pypi.org/project/PyYAML/) library.
     """
-    config = tomllib.loads(s)
+    parser = parser or tomllib.loads
+    config = parser(s)
     deserialize(config, model, root_keys)
 
 
