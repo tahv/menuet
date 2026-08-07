@@ -70,6 +70,12 @@ def load(
             Default to [`tomllib.load`][tomllib.load] if not specified.
             Other examples includes [`json.load`][json.load] or `yaml.safe_load`
             from the [PyYAML](https://pypi.org/project/PyYAML/) library.
+
+    /// version-changed | Changed in 1.6.0
+
+    The `parser` parameter was added.
+
+    ///
     """
     parser = parser or tomllib.load
     config = parser(fp)
@@ -95,6 +101,12 @@ def loads(
             Default to [`tomllib.loads`][tomllib.loads] if not specified.
             Other examples includes [`json.loads`][json.loads] or `yaml.safe_load`
             from the [PyYAML](https://pypi.org/project/PyYAML/) library.
+
+    /// version-changed | Changed in 1.6.0
+
+    The `parser` parameter was added.
+
+    ///
     """
     parser = parser or tomllib.loads
     config = parser(s)
