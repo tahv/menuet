@@ -18,37 +18,11 @@ and [`load`][menuet.load] functions expect a TOML document,
 but both functions accept a `parser` argument to parse other file formats such
 as JSON or YAML.
 
-/// tab | TOML
+//// tab | TOML
 
 ```python { .copy }
 --8<-- "docs/assets/config_toml.py"
 ```
-
-///
-
-/// tab | JSON
-
-```python { .copy }
---8<-- "docs/assets/config_json.py"
-```
-
-///
-
-/// tab | YAML
-
-```python { .copy }
---8<-- "docs/assets/config_yaml.py"
-```
-
-///
-
-/// tab | Python
-
-```python { .copy }
---8<-- "docs/assets/config_python.py"
-```
-
-///
 
 /// html | div.result
 
@@ -62,6 +36,82 @@ Example
 ```
 
 ///
+
+////
+
+//// tab | JSON
+
+```python { .copy }
+--8<-- "docs/assets/config_json.py"
+```
+
+/// html | div.result
+
+```text
+Example
+├── My App
+│   ├── Separator ───
+│   └── Sub-Menu
+│       └── Open GUI
+└── Print Hello
+```
+
+///
+
+////
+
+//// tab | YAML
+
+/// warning
+
+The `pyyaml` package is required.
+
+```console { .copy }
+pip install pyyaml
+```
+
+///
+
+```python { .copy }
+--8<-- "docs/assets/config_yaml.py"
+```
+
+/// html | div.result
+
+```text
+Example
+├── My App
+│   ├── Separator ───
+│   └── Sub-Menu
+│       └── Open GUI
+└── Print Hello
+```
+
+///
+
+////
+
+//// tab | Python
+
+```python { .copy }
+--8<-- "docs/assets/config_python.py"
+```
+
+/// html | div.result
+
+```text
+Example
+├── My App
+│   ├── Separator ───
+│   └── Sub-Menu
+│       └── Open GUI
+└── Print Hello
+```
+
+///
+
+////
+
 
 ## Action Options
 
@@ -125,14 +175,20 @@ The following schemes are available:
 
     ```toml
     cb = "print('Hello !')"
+    ```
 
+    ```toml
     cb = "exec:import myapp; myapp.open_gui()"
+    ```
 
+    ```toml
     cb = """\
     from importlib.metadata import version
     print(version("myapp"))
     """
+    ```
 
+    ```toml
     cb = """exec:\
     import myapp
     myapp.open_gui()
@@ -144,7 +200,9 @@ The following schemes are available:
 
     ```toml
     cb = "ep:myapp.my_module:open_gui"
+    ```
 
+    ```toml
     cb = "ep:myapp:my_function"
     ```
 
