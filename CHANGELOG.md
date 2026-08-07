@@ -12,6 +12,27 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.6.0](https://gitlab.com/tahv/menuet/-/releases/1.6.0) - 2026-08-07
+
+### Enhancements
+
+- [!11](https://gitlab.com/tahv/menuet/-/merge_requests/11):
+  The `load` and `loads` functions accepts a `parser` parameter
+  which can be used to load configuration from JSON or YAML files.
+  If no `parser` is provided,
+  the functions default to loading a TOML document for backward compatibility.
+
+### Documentation
+
+- [!10](https://gitlab.com/tahv/menuet/-/merge_requests/10):
+  Substance Designer `QMenuBuilder` example.
+- [!10](https://gitlab.com/tahv/menuet/-/merge_requests/10):
+  Substance Painter `QMenuBuilder` example.
+- [!10](https://gitlab.com/tahv/menuet/-/merge_requests/10):
+  MotionBuilder `QMenuBuilder` example.
+- [!10](https://gitlab.com/tahv/menuet/-/merge_requests/10):
+  Maya `QMenuBuilder` example.
+
 ## [1.5.0](https://gitlab.com/tahv/menuet/-/releases/1.5.0) - 2026-07-18
 
 ### Breaking changes
