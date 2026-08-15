@@ -89,6 +89,8 @@
   <tr>
     <td width="50%" style="padding: 5px;">
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-motionbuilder.png" />
+    </td>
+    <td width="50%" style="padding: 5px;">
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya-marking-menu.png" />
     </td>
   </tr>
