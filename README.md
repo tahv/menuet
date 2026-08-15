@@ -84,10 +84,12 @@
   </tr>
   <tr>
     <th>MotionBuilder</th>
+    <th>Maya Marking Menu</th>
   </tr>
   <tr>
     <td width="50%" style="padding: 5px;">
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-motionbuilder.png" />
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya-marking-menu.png" />
     </td>
   </tr>
 </table>
@@ -172,7 +174,6 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 - [ ] Tests: menuet.builders.maya.MayaMenuBuilder
 - [ ] Tests: menuet.builders.unreal.UnrealMenuBuilder
 - [ ] Tests: menuet.builders.max.MaxDynamicMenuBuilder
-- [ ] Builder: maya.cmds.popupMenu (marking menu)
 - [ ] Builder: 3ds Max MenuMan System
 - [ ] Icon path should be relative to file
 - [ ] Error: passthrough expected 0 argument, received 1 argument

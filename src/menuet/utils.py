@@ -3,7 +3,7 @@ from __future__ import annotations
 import importlib.resources
 import logging
 import webbrowser
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from functools import partial
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
@@ -108,3 +108,11 @@ def to_icon_converter(value: Any) -> Traversable | None:  # noqa: ANN401
             return None
 
     raise TypeError(type(value))
+
+
+def extra_factory() -> Mapping[str, object]:
+    """Extra user data."""
+    # Assigning `extra = field(factory=dict)`
+    # causes mkdocstring (griffe_fieldz) to get its doc from `dict`,
+    # this wrapper ensure we get the docstring and default from this function instead.
+    return {}

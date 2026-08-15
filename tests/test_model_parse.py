@@ -312,3 +312,13 @@ def test_menu_is_configured() -> None:
     assert Menu(label="Test", group="Test Group").is_configured() is True
     assert Menu(label="Test", icon="test/icon.png").is_configured() is True
     assert Menu(label="Test", desc="Test Description").is_configured() is True
+
+
+def test_menu_extra() -> None:
+    assert Menu(label="Test", extra={"foo": "bar"}).extra == {"foo": "bar"}
+    assert Menu(label="Test").extra == {}
+
+
+def test_action_extra() -> None:
+    assert Action(id="test", extra={"foo": "bar"}).extra == {"foo": "bar"}
+    assert Action(id="test").extra == {}

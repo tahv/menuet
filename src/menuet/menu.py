@@ -5,9 +5,10 @@ from typing import TYPE_CHECKING, Any
 from attrs import define, field
 from typing_extensions import Self
 
-from menuet.utils import to_icon_converter, to_tuple_converter
+from menuet.utils import extra_factory, to_icon_converter, to_tuple_converter
 
 if TYPE_CHECKING:
+    from collections.abc import Mapping
     from importlib.resources.abc import Traversable
 
 
@@ -43,6 +44,9 @@ class Menu:
     Displayed as a menu tooltip.
     """
 
+    extra: Mapping[str, object] = field(factory=extra_factory)
+    """Extra user data."""
+
     @classmethod
     def deserialize(cls, config: dict[str, Any]) -> Self:
         """Deserialize `config` into a new instance."""
@@ -52,6 +56,7 @@ class Menu:
             group=config.get("group"),
             icon=config.get("icon"),
             desc=config.get("desc"),
+            extra=config.get("extra", {}),
         )
 
     def is_configured(self) -> bool:

@@ -96,6 +96,21 @@ Build menu under Maya main menu bar `"MayaWindow"`.
 
 ///
 
+## Maya Marking Menu
+
+Build a Maya Marking Menu triggered by holding `Ctrl-Shift-LeftMouseButton` in
+the `"viewPanes"`.
+
+```python { .copy }
+--8<-- "docs/assets/demo_maya_marking_menu.py"
+```
+
+/// html | div.result
+
+![Maya](./assets/demo-maya-marking-menu.png)
+
+///
+
 ## MotionBuilder
 
 Build menu under MotionBuilder main menu bar with the
