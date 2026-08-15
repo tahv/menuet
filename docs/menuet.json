@@ -41,6 +41,16 @@
             "type": "string",
             "title": "Description",
             "description": "Short description, displayed as a tooltip."
+          },
+          "extra": {
+            "type": "object",
+            "title": "Extra",
+            "description": "Extra user data.",
+            "patternProperties": {
+              "^[a-zA-Z](?:[a-z0-9-]*[a-z0-9])?$": {
+                "type": "string"
+              }
+            }
           }
         }
       }
@@ -99,6 +109,16 @@
             "type": "string",
             "title": "Description",
             "description": "Short description, displayed as a tooltip."
+          },
+          "extra": {
+            "type": "object",
+            "title": "Extra",
+            "description": "Extra user data.",
+            "patternProperties": {
+              "^[a-zA-Z](?:[a-z0-9-]*[a-z0-9])?$": {
+                "type": "string"
+              }
+            }
           }
         }
       }

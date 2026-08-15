@@ -6,6 +6,7 @@ from attrs import define, field, validators
 from typing_extensions import Self
 
 from menuet.utils import (
+    extra_factory,
     passthrough,
     to_cb_converter,
     to_icon_converter,
@@ -13,7 +14,7 @@ from menuet.utils import (
 )
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
+    from collections.abc import Callable, Mapping
     from importlib.resources.abc import Traversable
 
 
@@ -69,7 +70,8 @@ class Action:
     Displayed as a menu tooltip.
     """
 
-    # TODO(tga): extra: Mapping[str, object]
+    extra: Mapping[str, object] = field(factory=extra_factory)
+    """Extra user data."""
 
     @classmethod
     def deserialize(cls, config: dict[str, Any]) -> Self:
@@ -82,4 +84,5 @@ class Action:
             group=config.get("group"),
             icon=config.get("icon"),
             desc=config.get("desc"),
+            extra=config.get("extra", {}),
         )

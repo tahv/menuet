@@ -3,10 +3,12 @@
 [[menu]]
 label = "Animation"
 icon = "res:menuet.demo:lucide-clapperboard.svg"
+extra.radial-position = "SW"
 
 [[menu]]
 label = "Modeling"
 icon = "res:menuet.demo:lucide-box.svg"
+extra.radial-position = "SE"
 
 [[menu]]
 label = "Development"
@@ -15,6 +17,7 @@ icon = "res:menuet.demo:lucide-code-xml.svg"
 [[menu]]
 label = "Rigging"
 icon = "res:menuet.demo:lucide-bone.svg"
+extra.radial-position = "S"
 
 [[action]]
 id = "anim-bake"
