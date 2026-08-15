@@ -203,11 +203,14 @@ pages:
 gitlab-release:
   stage: publish
   rules:
-    - *rule-on-tag
+    # delay job execution so the packages show up in PyPI API
+    - <<: *rule-on-tag
+      when: delayed
+      start_in: 5 minutes
   needs: ["pypi"]
   image: registry.gitlab.com/gitlab-org/cli:latest # alpine
   variables:
-    GIT_DEPTH: 0  # find previous tag
+    GIT_DEPTH: 0  # hed must find previous tag
   script:
     - apk update && apk add --no-cache git curl
     - curl -LsSf https://astral.sh/uv/install.sh | sh
