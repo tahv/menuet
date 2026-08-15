@@ -12,6 +12,16 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.7.0](https://gitlab.com/tahv/menuet/-/releases/1.7.0) - 2026-08-15
+
+### Enhancements
+
+- [!12](https://gitlab.com/tahv/menuet/-/merge_requests/12):
+  Add `Menu.extra` and `Action.extra`.
+  Store a map of user data in actions and menus.
+- [!12](https://gitlab.com/tahv/menuet/-/merge_requests/12):
+  Add `menuet.builders.maya.MayaMarkingMenuBuilder`.
+
 ## [1.6.0](https://gitlab.com/tahv/menuet/-/releases/1.6.0) - 2026-08-07
 
 ### Enhancements
