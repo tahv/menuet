@@ -63,7 +63,7 @@
     </td>
   </tr>
   <tr>
-    <th>Unreal</th>
+    <th>Unreal Engine</th>
     <th>Houdini</th>
   </tr>
   <tr>
@@ -88,23 +88,25 @@
   </tr>
   <tr>
     <th>MotionBuilder</th>
+    <th>Maya Marking Menu</th>
   </tr>
   <tr>
     <td width="50%" style="padding: 5px;">
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-motionbuilder.png" />
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya-marking-menu.png" />
     </td>
   </tr>
 </table>
 
 ## Features
 
-- Load menu from a TOML or JSON configuration, from a dict, from entry points,
-  or build it programmatically.
+- Load menu from a TOML, JSON, YAML, from a Python dict, from entry points,
+  or build it programmatically
 - Supports, Blender, 3ds Max, Maya, MotionBuilder, Unreal, Houdini,
-  Substance Designer, Substance Painter, and any PySide6 application.
-- Declare one or more menus in a dedicated `.toml` file.
-- Compose menu from multiple `.toml` files.
-- Declare a menu in a `pyproject.toml`.
+  Substance Designer, Substance Painter, and any PySide6 application
+- Declare one or more menus in a dedicated `.toml`, `.json` or `.yaml` file
+- Compose menu from multiple files
+- Declare menu in a `pyproject.toml`
 
 ## Installation
 
@@ -176,9 +178,8 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 - [ ] Tests: menuet.builders.maya.MayaMenuBuilder
 - [ ] Tests: menuet.builders.unreal.UnrealMenuBuilder
 - [ ] Tests: menuet.builders.max.MaxDynamicMenuBuilder
-- [ ] Builder: maya.cmds.popupMenu (marking menu)
 - [ ] Builder: 3ds Max MenuMan System
-- [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
+- [ ] Error: passthrough expected 0 argument, received 1 argument
 
 -->
