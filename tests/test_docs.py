@@ -18,6 +18,7 @@ DOCS_DIRECTORY = Path(__file__).parent.parent / "docs"
         DOCS_DIRECTORY / "assets" / "config_json.py",
         DOCS_DIRECTORY / "assets" / "config_yaml.py",
         DOCS_DIRECTORY / "assets" / "config_python.py",
+        DOCS_DIRECTORY / "assets" / "config_python_code.py",
     ],
     ids=lambda p: p.name,
 )

@@ -91,7 +91,7 @@ Example
 
 ////
 
-//// tab | Python
+//// tab | Python dict
 
 ```python { .copy }
 --8<-- "docs/assets/config_python.py"
@@ -112,6 +112,26 @@ Example
 
 ////
 
+//// tab | Python code
+
+```python { .copy }
+--8<-- "docs/assets/config_python_code.py"
+```
+
+/// html | div.result
+
+```text
+Example
+├── My App
+│   ├── Separator ───
+│   └── Sub-Menu
+│       └── Open GUI
+└── Print Hello
+```
+
+///
+
+////
 
 ## Action Options
 
