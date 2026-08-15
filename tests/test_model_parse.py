@@ -101,6 +101,7 @@ def test_parse_action_no_cb() -> None:
     )
     action = model.get_action("test")
     assert action.cb is passthrough
+    assert action.cb() is None
 
 
 def test_parse_action_cp_ep(capfd: pytest.CaptureFixture[str]) -> None:
