@@ -174,7 +174,7 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 - [ ] Tests: menuet.builders.max.MaxDynamicMenuBuilder
 - [ ] Builder: maya.cmds.popupMenu (marking menu)
 - [ ] Builder: 3ds Max MenuMan System
-- [ ] Helper function to get QMainWindow or QMenuBar
 - [ ] Icon path should be relative to file
+- [ ] Error: passthrough expected 0 argument, received 1 argument
 
 -->
