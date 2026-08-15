@@ -96,13 +96,13 @@
 
 ## Features
 
-- Load menu from a TOML or JSON configuration, from a dict, from entry points,
-  or build it programmatically.
+- Load menu from a TOML, JSON, YAML, from a Python dict, from entry points,
+  or build it programmatically
 - Supports, Blender, 3ds Max, Maya, MotionBuilder, Unreal, Houdini,
-  Substance Designer, Substance Painter, and any PySide6 application.
-- Declare one or more menus in a dedicated `.toml` file.
-- Compose menu from multiple `.toml` files.
-- Declare a menu in a `pyproject.toml`.
+  Substance Designer, Substance Painter, and any PySide6 application
+- Declare one or more menus in a dedicated `.toml`, `.json` or `.yaml` file
+- Compose menu from multiple files
+- Declare menu in a `pyproject.toml`
 
 ## Installation
 
