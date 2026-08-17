@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Literal, TypeAlias
 
 from menuet.model import ItemAction, ItemGroup, ItemMenu, Model
+from menuet.utils import complete
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -265,7 +266,8 @@ class MayaMarkingMenuBuilder:
                 cmds.menuItem(
                     name,
                     label=item.inner.label or item.inner.id,
-                    command=item.inner.cb,
+                    # Maya pass a bool `False` argument when calling the command
+                    command=complete(item.inner.cb),
                     annotation=item.inner.desc or "",
                     parent=parent,
                     image=_to_maya_image(item.inner.icon),

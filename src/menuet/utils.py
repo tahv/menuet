@@ -72,6 +72,15 @@ def passthrough() -> None:
     """Callable that does nothing."""
 
 
+def complete(func: Callable[[], Any]) -> Callable[..., Any]:
+    """Return a new function object which when called will ignore any args & kwargs."""
+
+    def inner(*args: object, **kwargs: object) -> object:  # noqa: ARG001
+        return func()
+
+    return inner
+
+
 def to_cb_converter(value: Any) -> Callable[[], Any]:  # noqa: ANN401
     """Convert `value` to a Callable that takes no argument."""
     if callable(value):

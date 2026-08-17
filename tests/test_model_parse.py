@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 from pathlib import Path
 from textwrap import dedent
+from unittest.mock import Mock
 
 import copykitten
 import pytest
@@ -11,7 +12,7 @@ from menuet import load
 from menuet.action import Action
 from menuet.menu import Menu
 from menuet.model import ItemAction, ItemGroup, ItemMenu, Model, loads
-from menuet.utils import passthrough
+from menuet.utils import complete, passthrough
 
 # TODO(tga): def test_parse_action_cb_url() -> None:
 
@@ -322,3 +323,20 @@ def test_menu_extra() -> None:
 def test_action_extra() -> None:
     assert Action(id="test", extra={"foo": "bar"}).extra == {"foo": "bar"}
     assert Action(id="test").extra == {}
+
+
+@pytest.mark.parametrize(
+    ("args", "kwargs"),
+    [
+        pytest.param(("foo", "bar"), {}, id="args"),
+        pytest.param((), {"foo": "bar", "baz": 1}, id="kwargs"),
+        pytest.param(("foo", "bar"), {"foo": "bar", "baz": 1}, id="args-kwargs"),
+    ],
+)
+def test_complete_swallow_args(
+    args: tuple[object, ...],
+    kwargs: dict[str, object],
+) -> None:
+    mocked = Mock()
+    complete(mocked)(*args, **kwargs)
+    mocked.assert_called_once_with()
