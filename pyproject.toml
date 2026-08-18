@@ -183,18 +183,16 @@ title_format = ""
 issue_format = "[!{issue}](https://gitlab.com/tahv/menuet/-/merge_requests/{issue})"
 template = "changelog.d/template.md.jinja"
 type = [
-  # When something public gets removed in a breaking way
-  { name = "Breaking changes", directory = "break" },
-  # New public APIs, new behavior in existing features, non-breaking changes
-  { name = "Enhancements", directory = "feat" },
-  # Undesired behavior that got fixed
-  { name = "Bug fixes", directory = "fix" },
-  # Notable updates to the documentation
-  { name = "Documentation", directory = "doc" },
-  # Internal changes that rewrite/restructure code without changing the API
-  { name = "Other changes", directory = "other" },
-  # Changes that does not affect production code, e.g., modifying `.gitignore`
-  { name = "Miscellaneous changes", directory = "chore" },
+  { directory = "break", name = "Breaking changes", showcontent = true },
+  { directory = "feat", name = "Features", showcontent = true },
+  { directory = "fix", name = "Bug fixes", showcontent = true },
+  { directory = "docs", name = "Documentation", showcontent = true },
+  { directory = "refactor", name = "Refactorings", showcontent = true },
+  { directory = "style", name = "Miscellaneous", showcontent = true },
+  { directory = "chore", name = "Miscellaneous", showcontent = true },
+  { directory = "ci", name = "Miscellaneous", showcontent = true },
+  # { directory = "revert", name = "Miscellaneous", showcontent = true },
+  # { directory = "test", name = "Miscellaneous", showcontent = true },
 ]
 
 [tool.ty]
