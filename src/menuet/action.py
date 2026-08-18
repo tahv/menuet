@@ -16,7 +16,7 @@ from menuet.utils import (
 
 if TYPE_CHECKING:
     from collections.abc import Callable, Mapping
-    from importlib.resources.abc import Traversable
+    from importlib.abc import Traversable
 
 
 ID_PATTERN = r"^[a-z](?:[a-z-]*[a-z])?$"
