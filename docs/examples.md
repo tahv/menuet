@@ -107,7 +107,7 @@ the `"viewPanes"`.
 
 /// html | div.result
 
-![Maya](./assets/demo-maya-marking-menu.png)
+![Maya Marking Menu](./assets/demo-maya-marking-menu.png)
 
 ///
 
