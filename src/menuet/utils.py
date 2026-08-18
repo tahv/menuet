@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING, Any, Final
 
 if TYPE_CHECKING:
     from collections.abc import Callable
-    from importlib.resources.abc import Traversable
+    from importlib.abc import Traversable
 
 
 logger: Final[logging.Logger] = logging.getLogger("menuet")

@@ -9,7 +9,7 @@ from menuet.utils import extra_factory, to_icon_converter, to_tuple_converter
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
-    from importlib.resources.abc import Traversable
+    from importlib.abc import Traversable
 
 
 @define(frozen=True, kw_only=True)
