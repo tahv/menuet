@@ -142,6 +142,8 @@ package:
   stage: build
   rules:
     - *rule-on-tag
+    # TODO: empty needs cannot be applied via `rules.needs`:
+    # https://gitlab.com/gitlab-org/gitlab/-/work_items/421004
     - <<: *rule-default-branch-manual
       needs: []
   image: ghcr.io/astral-sh/uv:python3.14-trixie
