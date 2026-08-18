@@ -68,8 +68,25 @@ def is_iterable(obj: Any) -> bool:  # noqa: ANN401
     return not isinstance(obj, str) and isinstance(obj, Iterable)
 
 
-def passthrough() -> None:
-    """Callable that does nothing."""
+class _Passthrough:
+    """Callable that does nothing.
+
+    Exposed as a class to control `repr` display in API documentation.
+
+    Example:
+        >>> assert passthrough() is None
+        >>> assert repr(passthrough) == 'no-op'
+    """
+
+    def __call__(self) -> None:
+        pass
+
+    def __repr__(self) -> str:
+        return "no-op"
+
+
+passthrough = _Passthrough()
+"""Callable that does nothing."""
 
 
 def complete(func: Callable[[], Any]) -> Callable[..., Any]:
