@@ -66,4 +66,9 @@ class Menu:
 
     def is_configured(self) -> bool:
         """Whether this menu has any configuration beside `menu` and `label`."""
-        return self.icon is not None or self.group is not None or self.desc is not None
+        return (
+            self.icon is not None
+            or self.group is not None
+            or self.desc is not None
+            or bool(self.extra)
+        )
