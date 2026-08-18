@@ -16,7 +16,7 @@ You may check boxes that don't apply to your merge request
 to indicate that there isn't anything left to do.
 -->
 
-<!-- - [ ] This merge request has a **label**. -->
+- [ ] This merge request has a **label**.
 - [ ] There's **tests** for new and changed code.
 - [ ] The **documentation** has been updated.
 - [ ] Changes have **news fragments** in `changelog.d`.
