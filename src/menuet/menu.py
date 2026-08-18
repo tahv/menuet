@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 
 from attrs import define, field
+from attrs.validators import deep_iterable, instance_of
 from typing_extensions import Self
 
 from menuet.utils import extra_factory, to_icon_converter, to_tuple_converter
@@ -19,7 +20,11 @@ class Menu:
     label: str = field()
     """Display name."""
 
-    menu: tuple[str, ...] = field(default=(), converter=to_tuple_converter)
+    menu: tuple[str, ...] = field(
+        default=(),
+        converter=to_tuple_converter,
+        validator=deep_iterable(member_validator=instance_of(str)),
+    )
     """Menu labels hierarchy.
 
     The root menu is represented by an empty tuple `()`.
