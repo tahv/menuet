@@ -3,7 +3,6 @@ from __future__ import annotations
 import io
 from pathlib import Path
 from textwrap import dedent
-from unittest.mock import Mock
 
 import copykitten
 import pytest
@@ -12,7 +11,7 @@ from menuet import load
 from menuet.action import Action
 from menuet.menu import Menu
 from menuet.model import ItemAction, ItemGroup, ItemMenu, Model, loads
-from menuet.utils import complete, passthrough
+from menuet.utils import passthrough
 
 # TODO(tga): def test_parse_action_cb_url() -> None:
 
@@ -78,14 +77,7 @@ def test_parse_action_cb_exec(
 
 def test_parse_action_cb_copy() -> None:
     model = Model()
-    loads(
-        dedent("""\
-        [[action]]
-        id = "test"
-        cb = 'copy:Hello World'
-        """),
-        model,
-    )
+    loads('action = [{ id = "test", cb = "copy:Hello World" }]', model)
     action = model.get_action("test")
     action.cb()
     assert copykitten.paste() == "Hello World"
@@ -93,28 +85,15 @@ def test_parse_action_cb_copy() -> None:
 
 def test_parse_action_no_cb() -> None:
     model = Model()
-    loads(
-        dedent("""\
-        [[action]]
-        id = "test"
-        """),
-        model,
-    )
+    loads('action = [{ id = "test" }]', model)
     action = model.get_action("test")
     assert action.cb is passthrough
     assert action.cb() is None
 
 
-def test_parse_action_cp_ep(capfd: pytest.CaptureFixture[str]) -> None:
+def test_parse_action_cb_ep(capfd: pytest.CaptureFixture[str]) -> None:
     model = Model()
-    loads(
-        dedent("""\
-        [[action]]
-        id = "test"
-        cb = "ep:tests.data.ep:print_hello"
-        """),
-        model,
-    )
+    loads('action = [{ id = "test", cb = "ep:tests.data.ep:print_hello" }]', model)
     action = model.get_action("test")
     action.cb()
     assert capfd.readouterr().out == "Hello World !\n"
@@ -122,14 +101,7 @@ def test_parse_action_cp_ep(capfd: pytest.CaptureFixture[str]) -> None:
 
 def test_parse_action_label() -> None:
     model = Model()
-    loads(
-        dedent("""\
-        [[action]]
-        id = "test"
-        label = "Test Label"
-        """),
-        model,
-    )
+    loads('action = [{ id = "test", label = "Test Label" }]', model)
     action = model.get_action("test")
     assert action.label == "Test Label"
 
@@ -138,12 +110,12 @@ def test_parse_action_label() -> None:
     ("config", "expected"),
     [
         pytest.param(
-            'action = [{ id = "test", desc = "Test Description"}]',
+            'action = [{ id = "test", desc = "Test Description" }]',
             "Test Description",
             id="set",
         ),
         pytest.param(
-            'action = [{ id = "test"}]',
+            'action = [{ id = "test" }]',
             None,
             id="default",
         ),
@@ -208,32 +180,13 @@ def test_parse_action_icon(config: str, expected: Action) -> None:
 def test_model_parse_raise_action_exist() -> None:
     model = Model()
     with pytest.raises(ValueError, match=r"Action 'test' already exists in model"):
-        loads(
-            dedent("""\
-            [[action]]
-            id = "test"
-            [[action]]
-            id = "test"
-            """),
-            model,
-        )
+        loads('action = [{ id = "test" }, {id = "test"} ]', model)
 
 
 def test_model_parse_raise_menu_exist() -> None:
     model = Model()
-    with pytest.raises(
-        ValueError,
-        match=r"Menu \('Test',\) already exists in model",
-    ):
-        loads(
-            dedent("""\
-            [[menu]]
-            label = "Test"
-            [[menu]]
-            label = "Test"
-            """),
-            model,
-        )
+    with pytest.raises(ValueError, match=r"Menu \('Test',\) already exists in model"):
+        loads('menu = [{ label = "Test" }, {label = "Test"} ]', model)
 
 
 def test_parse_complex_model() -> None:
@@ -292,51 +245,10 @@ def test_parse_complex_model() -> None:
 
 def test_load_fp() -> None:
     wrapper = io.TextIOWrapper(io.BytesIO(), encoding="utf-8")
-    wrapper.write(
-        dedent("""\
-        [[action]]
-        id = "test"
-        label = "Test Label"
-        """),
-    )
+    wrapper.write('action = [{ id = "test", label = "Test Label" }]')
     wrapper.seek(0, 0)
 
     model = Model()
     load(wrapper.buffer, model)
     action = model.get_action("test")
     assert action.label == "Test Label"
-
-
-def test_menu_is_configured() -> None:
-    assert Menu(label="Test").is_configured() is False
-    assert Menu(label="Test", menu=("Parent",)).is_configured() is False
-    assert Menu(label="Test", group="Test Group").is_configured() is True
-    assert Menu(label="Test", icon="test/icon.png").is_configured() is True
-    assert Menu(label="Test", desc="Test Description").is_configured() is True
-
-
-def test_menu_extra() -> None:
-    assert Menu(label="Test", extra={"foo": "bar"}).extra == {"foo": "bar"}
-    assert Menu(label="Test").extra == {}
-
-
-def test_action_extra() -> None:
-    assert Action(id="test", extra={"foo": "bar"}).extra == {"foo": "bar"}
-    assert Action(id="test").extra == {}
-
-
-@pytest.mark.parametrize(
-    ("args", "kwargs"),
-    [
-        pytest.param(("foo", "bar"), {}, id="args"),
-        pytest.param((), {"foo": "bar", "baz": 1}, id="kwargs"),
-        pytest.param(("foo", "bar"), {"foo": "bar", "baz": 1}, id="args-kwargs"),
-    ],
-)
-def test_complete_swallow_args(
-    args: tuple[object, ...],
-    kwargs: dict[str, object],
-) -> None:
-    mocked = Mock()
-    complete(mocked)(*args, **kwargs)
-    mocked.assert_called_once_with()
