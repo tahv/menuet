@@ -218,7 +218,7 @@ gitlab-release:
     - uvx hed --softbreak --tag "$CI_COMMIT_TAG" > RELEASE.md
     - FILES=$( curl https://pypi.org/pypi/menuet/json | jq -r --arg tag  "$CI_COMMIT_TAG" '.releases.[$tag].[]' )
     - echo $FILES | jq -r 'select(.packagetype=="sdist").url' > URL_SDIST.txt
-    - echo $FILES | jq -r 'select(.packagetype=="bdist_wheel").url' > URL_WHEEL.exe
+    - echo $FILES | jq -r 'select(.packagetype=="bdist_wheel").url' > URL_WHEEL.txt
   release:
     tag_name: "$CI_COMMIT_TAG"
     name: "$CI_COMMIT_TAG"
@@ -227,7 +227,7 @@ gitlab-release:
       links:
         - name: bdist_wheel
           link_type: package
-          url: "$(cat $URL_WHEEL.txt)"
+          url: "$(cat URL_WHEEL.txt)"
         - name: sdist
           link_type: package
-          url: "$(cat $URL_SDIST.txt)"
+          url: "$(cat URL_SDIST.txt)"
