@@ -10,12 +10,17 @@ from menuet.model import ItemAction, ItemGroup, ItemMenu, Model
 from menuet.utils import complete
 
 if TYPE_CHECKING:
+    import sys
     from collections.abc import Callable
-    from importlib.resources.abc import Traversable
 
     from menuet.action import Action
     from menuet.menu import Menu
     from menuet.model import MenuSortKey, Model
+
+    if sys.version_info < (3, 11):
+        from importlib.abc import Traversable
+    else:
+        from importlib.resources.abc import Traversable
 
 
 __all__ = (
