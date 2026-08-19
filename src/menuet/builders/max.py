@@ -1,9 +1,3 @@
-# ruff: noqa: A002 N803 N815
-"""
-/// version-added | Added in 1.4.0
-///
-"""  # noqa: D205, D212, D415
-
 from __future__ import annotations
 
 import itertools
@@ -31,6 +25,9 @@ class MaxDynamicMenuBuilder:
         model: Model to build.
         root_menu: Root menu name.
         sort_key: Customize the sort order of menu items.
+
+    /// version-added | Added in 1.4.0
+    ///
     """
 
     def __init__(
@@ -47,7 +44,7 @@ class MaxDynamicMenuBuilder:
 
     def build(self) -> None:
         """Build menu."""
-        import pymxs
+        import pymxs  # noqa: PLC0415
 
         actions: dict[int, Action] = {}
         # inject handlers in the global maxscript namespace so we can call them from mxs
@@ -98,7 +95,7 @@ class MaxDynamicMenuBuilder:
 
 def _register_menu(menu_name: str, action_identifier: str) -> None:
     """Register the menu and its items Max main menu bar."""
-    import pymxs
+    import pymxs  # noqa: PLC0415
 
     menu_man = pymxs.runtime.callbacks.notificationparam()
     menu_bar = menu_man.mainmenubar
@@ -167,11 +164,11 @@ def _hex_to_ascii_lowercase(s: str) -> str:
 class _DynamicMenu(Protocol):
     def additem(
         self,
-        id: int,
+        id: int,  # noqa: A002
         label: str,
         *,
-        iconName: str | None = None,
-        toolTip: str | None = None,
+        iconName: str | None = None,  # noqa: N803
+        toolTip: str | None = None,  # noqa: N803
     ) -> None: ...
     def addseparator(self) -> None: ...
     def addsubmenu(self, label: str) -> _DynamicMenu: ...
@@ -188,4 +185,4 @@ class _StandardMenu(Protocol):
 
 
 class _StandardAction(Protocol):
-    isFlat: bool
+    isFlat: bool  # noqa: N815

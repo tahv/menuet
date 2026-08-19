@@ -1,8 +1,3 @@
-"""
-/// version-added | Added in 1.5.0
-///
-"""  # noqa: D205, D212, D415
-
 from __future__ import annotations
 
 from collections.abc import Callable
@@ -70,6 +65,9 @@ class HoudiniXmlMainMenuBuilder:
             expect a `<scriptCode>` tag containing a Python script.
         sort_key: Customize the sort order of menu items.
         position: Insert menu at position.
+
+    /// version-added | Added in 1.5.0
+    ///
     """
 
     def __init__(

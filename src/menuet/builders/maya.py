@@ -57,7 +57,7 @@ class MayaMenuBuilder:
 
     def delete(self) -> None:
         """Delete menu if it exist."""
-        from maya import cmds
+        from maya import cmds  # noqa: PLC0415
 
         if _is_menu(self._parent):
             cmds.deleteUI(self._root_long_name, menuItem=True)
@@ -71,7 +71,7 @@ class MayaMenuBuilder:
 
     def build(self) -> None:
         """Build menu."""
-        from maya import cmds
+        from maya import cmds  # noqa: PLC0415
 
         if cmds.menu(self._root_long_name, exists=True):
             cmds.menu(self._root_long_name, edit=True, deleteAllItems=True)
@@ -206,7 +206,7 @@ class MayaMarkingMenuBuilder:
 
     def delete(self) -> None:
         """Delete menu if it exist."""
-        from maya import cmds
+        from maya import cmds  # noqa: PLC0415
 
         try:
             cmds.deleteUI(self._name, menu=True)
@@ -217,7 +217,7 @@ class MayaMarkingMenuBuilder:
 
     def build(self) -> None:
         """Build menu."""
-        from maya import cmds
+        from maya import cmds  # noqa: PLC0415
 
         cmds.popupMenu(
             self._name,
@@ -232,7 +232,7 @@ class MayaMarkingMenuBuilder:
         )
 
     def _post_menu_command(self, parent: str, _: str) -> None:
-        from maya import cmds
+        from maya import cmds  # noqa: PLC0415
 
         menus: dict[tuple[str, ...], str] = {(): parent}
         for item in self._model.iter(sort_key=self._sort_key, recursive=True):
@@ -283,14 +283,14 @@ def _to_maya_image(icon: Traversable | None) -> str:
 
 
 def _is_menu(path: str) -> bool:
-    from maya import cmds
+    from maya import cmds  # noqa: PLC0415
 
     return path in cmds.lsUI(menus=True, long=True)
 
 
 def _unique_menu_name(name: str) -> str:
     """Returns a unique and legal Maya menu name."""
-    from maya import cmds
+    from maya import cmds  # noqa: PLC0415
 
     name = _to_maya_name(name)
 

@@ -1,15 +1,3 @@
-# ruff: noqa: PLC0415
-"""
-/// version-added | Added in 1.3.0
-///
-"""  # noqa: D205, D212, D415
-
-# References:
-# https://blog.l0v0.com/posts/513f9ff.html
-# https://blog.l0v0.com/posts/cad78e0d.html
-# https://forums.unrealengine.com/t/set-icon-how-to-use-python/627847/4
-# https://sergicarrion.com/articles/extending-ue-menus-with-python/
-
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -42,6 +30,9 @@ class UnrealMenuBuilder:
             Unreal menu entry expect a
             [string command][unreal.ToolMenuEntry.set_string_command].
         sort_key: Customize the sort order of menu items.
+
+    /// version-added | Added in 1.3.0
+    ///
     """
 
     def __init__(
@@ -63,14 +54,14 @@ class UnrealMenuBuilder:
 
     def unregister(self) -> None:
         """Unregister menu, if it exist."""
-        import unreal
+        import unreal  # noqa: PLC0415
 
         tool_menus = unreal.ToolMenus.get()
         tool_menus.unregister_owner_by_name(unreal.Name(self._root_name))
 
     def build(self) -> unreal.ToolMenu:
         """Build menu."""
-        import unreal
+        import unreal  # noqa: PLC0415
 
         self.unregister()
 

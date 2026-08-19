@@ -1,9 +1,4 @@
 # ruff: noqa: ARG001 ARG005
-"""
-/// version-added | Added in 1.1.0
-///
-"""  # noqa: D205, D212, D415
-
 from __future__ import annotations
 
 import itertools
@@ -37,6 +32,9 @@ class BlenderMenuBuilder:
         model: Model to build.
         root_menu: Root menu name.
         sort_key: Customize the sort order of menu items.
+
+    /// version-added | Added in 1.1.0
+    ///
     """
 
     def __init__(

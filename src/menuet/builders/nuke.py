@@ -1,4 +1,3 @@
-# ruff: noqa: N802 N803 PLR0917 FBT001 FBT002
 from __future__ import annotations
 
 from pathlib import Path
@@ -34,10 +33,12 @@ class NukeMenu(Protocol):
     and [nuke.ToolBar](https://learn.foundry.com/nuke/developers/16.0/pythondevguide/_autosummary/nuke.ToolBar.html)
     """
 
+    # ruff: disable[N802, N803, FBT001, FBT002]
+
     def addAction(self, action: QAction) -> bool:
         """Adds the [QAction][PySide6.QtGui.QAction] to the menu."""
 
-    def addCommand(
+    def addCommand(  # noqa: PLR0917
         self,
         name: str,
         command: str | Callable[[], Any] | None = None,
@@ -77,6 +78,8 @@ class NukeMenu(Protocol):
 
         If the containing menu becomes empty, it will be removed too.
         """
+
+    # ruff: enable[N802, N803, FBT001, FBT002]
 
 
 class NukeMenuBuilder:
