@@ -12,6 +12,23 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.8.0](https://gitlab.com/tahv/menuet/-/releases/1.8.0) - 2026-08-19
+
+### Features
+
+- [!14](https://gitlab.com/tahv/menuet/-/merge_requests/14):
+  Validate `Action.menu` and `Menu.menu` items are instances of `str`.
+- [!17](https://gitlab.com/tahv/menuet/-/merge_requests/17):
+  Add `menuet.builders.nuke.NukeMenuBuilder`.
+
+### Bug fixes
+
+- [!13](https://gitlab.com/tahv/menuet/-/merge_requests/13):
+  Error when calling `Action.cb` through Maya Marking Menu:
+  *function takes 0 positional arguments but 1 was given*
+- [!15](https://gitlab.com/tahv/menuet/-/merge_requests/15):
+  Menu is considered configured if `Menu.extra` is not empty.
+
 ## [1.7.0](https://gitlab.com/tahv/menuet/-/releases/1.7.0) - 2026-08-15
 
 ### Enhancements
