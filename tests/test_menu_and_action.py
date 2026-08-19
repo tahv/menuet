@@ -124,3 +124,8 @@ def test_menu_icon_conversion_raise_type_error() -> None:
 def test_action_icon_conversion_raise_type_error() -> None:
     with pytest.raises(TypeError):
         Action(id="test", icon=1)
+
+
+def test_action_cb_conversion_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Action(id="test", cb=1)
