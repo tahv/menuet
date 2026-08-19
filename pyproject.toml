@@ -68,8 +68,7 @@ requires = ["hatch-vcs", "hatchling"]
 build-backend = "hatchling.build"
 
 [tool.coverage]
-paths.menuet = ["src/ctx", "*/src/ctx", "*\\src\\ctx"]
-run.source_pkgs = ["menuet"]
+run.source = ["src"]
 run.branch = true
 report.show_missing = true
 report.skip_covered = true
@@ -77,8 +76,7 @@ report.exclude_lines = [
   "# pragma: no cover",
   "if (False|0|TYPE_CHECKING):",
   "if __name__ == ['\"]__main__['\"]:",
-  # Protocol: beginning of line or colon + elipsis + comment or eol
-  '(^|:) *\.{3} *(#|$)',
+  '(^|:) *\.{3} *(#|$)',  # protocol elipsis, e.g., '...' or ': ...'
 ]
 
 [tool.hatch]
