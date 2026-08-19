@@ -59,6 +59,7 @@ types = [
   "mypy>=1.19.1",
   "types-houdini>=21.0.512.3",
   "types-maya>=0.5.0",
+  "types-nuke>=13.2.8.0",
   "types-pyside6>=6.10.1.1",
 ]
 

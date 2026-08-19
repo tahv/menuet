@@ -126,6 +126,18 @@ Build menu under MotionBuilder main menu bar with the
 
 ///
 
+## Nuke
+
+```python { .copy }
+--8<-- "docs/assets/demo_nuke.py"
+```
+
+/// html | div.result
+
+![Nuke](./assets/demo-nuke.png)
+
+///
+
 ## QApplication
 
 ```python { .copy }

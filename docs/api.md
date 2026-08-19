@@ -53,6 +53,11 @@ icon: lucide/code
       toc_label: "menuet.builders.max"
       filters: "public"
 
+::: menuet.builders.nuke
+    options:
+      toc_label: "menuet.builders.nuke"
+      filters: "public"
+
 ::: menuet.demo
     options:
       toc_label: "menuet.demo"

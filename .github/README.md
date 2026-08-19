@@ -98,6 +98,14 @@
       <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya-marking-menu.png" />
     </td>
   </tr>
+  <tr>
+    <th>Nuke</th>
+  </tr>
+  <tr>
+    <td width="50%" style="padding: 5px;">
+      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-nuke.png" />
+    </td>
+  </tr>
 </table>
 
 ## Features
