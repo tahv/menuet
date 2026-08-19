@@ -39,7 +39,7 @@ def copy_to_clipboard(value: str, /) -> None:
     """Copy `value` into the clipboard."""
     try:
         import copykitten  # noqa: PLC0415
-    except ImportError as exc:
+    except ImportError as exc:  # pragma: no cover
         msg = "Unable to import 'copykitten', install extra 'menuet[copy]'"
         raise RuntimeError(msg) from exc
 
