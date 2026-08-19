@@ -7,14 +7,19 @@ from typing import TYPE_CHECKING, Any, Literal, Protocol, cast
 from menuet.model import ItemAction, ItemGroup, ItemMenu, Model
 
 if TYPE_CHECKING:
+    import sys
     from collections.abc import Callable
-    from importlib.abc import Traversable
 
     import nuke
     from PySide6.QtGui import QAction
 
     from menuet import Action
     from menuet.model import MenuSortKey, Model
+
+    if sys.version_info < (3, 11):
+        from importlib.abc import Traversable
+    else:
+        from importlib.resources.abc import Traversable
 
 
 __all__ = ("NukeMenuBuilder",)

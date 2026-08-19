@@ -9,8 +9,13 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
 
 if TYPE_CHECKING:
+    import sys
     from collections.abc import Callable
-    from importlib.abc import Traversable
+
+    if sys.version_info < (3, 11):
+        from importlib.abc import Traversable
+    else:
+        from importlib.resources.abc import Traversable
 
 
 logger: Final[logging.Logger] = logging.getLogger("menuet")

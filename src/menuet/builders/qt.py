@@ -9,9 +9,14 @@ from menuet.model import ItemAction, ItemGroup, ItemMenu
 from menuet.utils import logger
 
 if TYPE_CHECKING:
-    from importlib.resources.abc import Traversable
+    import sys
 
     from menuet.model import MenuSortKey, Model
+
+    if sys.version_info < (3, 11):
+        from importlib.abc import Traversable
+    else:
+        from importlib.resources.abc import Traversable
 
 __all__ = ("QMenuBuilder",)
 

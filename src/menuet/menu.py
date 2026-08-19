@@ -9,8 +9,13 @@ from typing_extensions import Self
 from menuet.utils import extra_factory, to_icon_converter, to_tuple_converter
 
 if TYPE_CHECKING:
+    import sys
     from collections.abc import Mapping
-    from importlib.abc import Traversable
+
+    if sys.version_info < (3, 11):
+        from importlib.abc import Traversable
+    else:
+        from importlib.resources.abc import Traversable
 
 
 @define(frozen=True, kw_only=True)

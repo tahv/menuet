@@ -15,8 +15,13 @@ from menuet.utils import (
 )
 
 if TYPE_CHECKING:
+    import sys
     from collections.abc import Callable, Mapping
-    from importlib.abc import Traversable
+
+    if sys.version_info < (3, 11):
+        from importlib.abc import Traversable
+    else:
+        from importlib.resources.abc import Traversable
 
 
 ID_PATTERN = r"^[a-z](?:[a-z-]*[a-z])?$"
