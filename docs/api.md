@@ -18,16 +18,6 @@ icon: lucide/code
       toc_label: "menuet"
       filters: "public"
 
-::: menuet.builders.text
-    options:
-      toc_label: "menuet.builders.text"
-      filters: "public"
-
-::: menuet.builders.qt
-    options:
-      toc_label: "menuet.builders.qt"
-      filters: "public"
-
 ::: menuet.builders.blender
     options:
       toc_label: "menuet.builders.blender"
@@ -38,24 +28,34 @@ icon: lucide/code
       toc_label: "menuet.builders.houdini"
       filters: "public"
 
-::: menuet.builders.maya
-    options:
-      toc_label: "menuet.builders.maya"
-      filters: "public"
-
-::: menuet.builders.unreal
-    options:
-      toc_label: "menuet.builders.unreal"
-      filters: "public"
-
 ::: menuet.builders.max
     options:
       toc_label: "menuet.builders.max"
       filters: "public"
 
+::: menuet.builders.maya
+    options:
+      toc_label: "menuet.builders.maya"
+      filters: "public"
+
 ::: menuet.builders.nuke
     options:
       toc_label: "menuet.builders.nuke"
+      filters: "public"
+
+::: menuet.builders.qt
+    options:
+      toc_label: "menuet.builders.qt"
+      filters: "public"
+
+::: menuet.builders.text
+    options:
+      toc_label: "menuet.builders.text"
+      filters: "public"
+
+::: menuet.builders.unreal
+    options:
+      toc_label: "menuet.builders.unreal"
       filters: "public"
 
 ::: menuet.demo
