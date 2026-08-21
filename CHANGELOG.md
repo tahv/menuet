@@ -12,6 +12,21 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.9.0](https://gitlab.com/tahv/menuet/-/releases/1.9.0) - 2026-08-21
+
+### Features
+
+- [!18](https://gitlab.com/tahv/menuet/-/merge_requests/18):
+  Add `to_drag_menu_command`
+  and `to_drag_double_click_command` arguments to `MayaMenuBuilder`.
+  Generate `dragMenuCommand` and `dragDoubleClickCommand` dynamically
+  when a menu item is added to a shelf.
+
+### Documentation
+
+- [!19](https://gitlab.com/tahv/menuet/-/merge_requests/19):
+  Add section "Creating a custom menu builder".
+
 ## [1.8.0](https://gitlab.com/tahv/menuet/-/releases/1.8.0) - 2026-08-19
 
 ### Features
