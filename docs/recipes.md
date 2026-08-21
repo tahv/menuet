@@ -357,7 +357,7 @@ def open_dialog() -> None:
 If your application is not supported,
 `menuet` provides all the tools necessary to create your own menu builder.
 
-/// tip | Please consider opening a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests) to share your builder.
+/// tip | Please, consider opening a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests) to share your builder !
 
 ///
 
