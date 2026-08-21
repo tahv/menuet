@@ -21,12 +21,14 @@ def to_string_command_factory(model: str) -> Callable[[str], str]:
     """Generate `to_string_command` argument from a `Model` reference."""
 
     def inner(action: str) -> str:
-        return f"""\
+        from textwrap import dedent
+
+        return dedent(f"""\
         from importlib.metadata import EntryPoint
         model_loader = EntryPoint(name="", group="", value='{model}').load()
         model = model_loader()
         model.get_action('{action}').cb()
-        """
+        """)
 
     return inner
 
