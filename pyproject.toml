@@ -185,8 +185,8 @@ type = [
   { directory = "style", name = "Miscellaneous", showcontent = true },
   { directory = "chore", name = "Miscellaneous", showcontent = true },
   { directory = "ci", name = "Miscellaneous", showcontent = true },
-  # { directory = "revert", name = "Miscellaneous", showcontent = true },
-  # { directory = "test", name = "Miscellaneous", showcontent = true },
+  { directory = "test", name = "Miscellaneous", showcontent = false },
+  { directory = "revert", name = "Revert", showcontent = true },
 ]
 
 [tool.ty]
