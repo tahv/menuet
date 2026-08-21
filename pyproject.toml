@@ -178,7 +178,7 @@ issue_format = "[!{issue}](https://gitlab.com/tahv/menuet/-/merge_requests/{issu
 template = "changelog.d/template.md.jinja"
 type = [
   { directory = "break", name = "Breaking changes", showcontent = true },
-  { directory = "feat", name = "Features", showcontent = true },
+  { directory = "feat", name = "Enhancements", showcontent = true },
   { directory = "fix", name = "Bug fixes", showcontent = true },
   { directory = "docs", name = "Documentation", showcontent = true },
   { directory = "refactor", name = "Refactorings", showcontent = true },
