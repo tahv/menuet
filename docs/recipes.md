@@ -351,3 +351,53 @@ def open_dialog() -> None:
 
     QtWidgets.QMessageBox.information(None, "Demo", "Example Dialog")
 ```
+
+## Creating a custom menu builder
+
+If your application is not supported,
+`menuet` provides all the tools necessary to create your own menu builder.
+
+/// tip | Please consider opening a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests) to share your builder.
+
+///
+
+With [Model.iter][menuet.Model.iter],
+iterate over the [ItemGroup][menuet.ItemGroup],
+[ItemMenu][menuet.ItemMenu] and [ItemAction][menuet.ItemAction] of your model.
+Build and parent them via the API of your application.
+The build function should generally follow this structure:
+
+```python
+from typing import Any, TypeAlias
+
+import menuet
+
+MenuType: TypeAlias = Any
+
+
+def example_builder(model: menuet.Model, root: MenuType) -> None:
+    menus: dict[tuple[str, ...], MenuType] = {(): root}
+
+    for item in model.iter(recursive=True):
+        parent = menus[item.menu]
+
+        if isinstance(item, menuet.ItemGroup):
+            # Build the separator
+            ...
+
+        elif isinstance(item, menuet.ItemMenu):
+            # Build the menu and add it to `menus`
+            menu = ...
+            menus[item.path] = menu
+
+        elif isinstance(item, menuet.ItemAction):
+            # Build the action
+            ...
+
+        else:
+            raise TypeError(item)
+```
+
+You will find plenty of examples in the
+[menuet/builders](https://gitlab.com/tahv/menuet/-/tree/main/src/menuet/builders?ref_type=heads)
+directory.
