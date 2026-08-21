@@ -88,6 +88,24 @@ Build menu under Maya main menu bar `"MayaWindow"`.
 
 ///
 
+Maya menu builder can create `dragMenuCommand`
+and `dragDoubleClickCommand` dynamically.
+
+```python { .copy }
+--8<-- "docs/assets/demo_maya_shelf.py"
+```
+
+/// html | div.result
+
+To add a menu item to a shelf,
+switch to the shelf where you want to add the menu item,
+open the menu containing the item you want,
+then `Ctrl + Shift + Click` the menu item.
+
+![Maya Shelf](./assets/demo-maya-shelf.gif)
+
+///
+
 /// tip | Maya menus can also be built with the [`QMenuBuilder`][menuet.builders.qt.QMenuBuilder].
 
 ```python { .copy }

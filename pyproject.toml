@@ -142,6 +142,7 @@ lint.per-file-ignores."docs/assets/*.py" = [
   "ARG001",  # Unused function argument
   "D103",  # Missing docstring in public function
   "I002",  # Missing required import
+  "PLC0415",  # `import` should be at the top-level of a file
   "T201",  # `print` found
 ]
 src = ["src"]

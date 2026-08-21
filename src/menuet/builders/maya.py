@@ -3,6 +3,7 @@ from __future__ import annotations
 import enum
 import itertools
 import string
+from functools import partial
 from pathlib import Path
 from typing import TYPE_CHECKING, Literal, TypeAlias
 
@@ -41,8 +42,22 @@ class MayaMenuBuilder:
         parent: Specify the window or menu that the menu will appear in.
             Default to Maya main menubar.
         sort_key: Customize the sort order of menu items.
+        to_drag_menu_command: Callable that accept an `Action.id`
+            and return a callback.
+            When called, the callback should return a string command
+            that will be invoked when the shelf button is **clicked**.
+        to_drag_double_click_command: Callable that accept an `Action.id`
+            and return a callback.
+            When called, the callback should return a string command
+            that will be invoked when the shelf button is **double clicked**.
 
     /// version-added | Added in 1.2.0
+    ///
+
+    /// version-changed | Changed in 1.9.0
+
+    Added `to_drag_menu_command` and `to_drag_double_click_command` arguments.
+
     ///
     """
 
@@ -53,12 +68,18 @@ class MayaMenuBuilder:
         root_menu: str,
         parent: str = "MayaWindow",
         sort_key: MenuSortKey | None = None,
+        to_drag_menu_command: Callable[[str], str] | None = None,
+        to_drag_double_click_command: Callable[[str], str] | None = None,
     ) -> None:
         self._model: Model = model
         self._sort_key = sort_key
         self._parent = parent
         self._root_menu = root_menu
         self._root_long_name = f"{self._parent}|{self._root_menu}"
+        self._to_drag_menu_command = to_drag_menu_command or _default_drag_menu_command
+        self._to_drag_double_click_command = (
+            to_drag_double_click_command or _default_drag_menu_command
+        )
 
     def delete(self) -> None:
         """Delete menu if it exist."""
@@ -128,10 +149,19 @@ class MayaMenuBuilder:
                     name,
                     label=item.inner.label or item.inner.id,
                     command=item.inner.cb,
-                    # TODO(tga): dragMenuCommand: must be a str & work across sessions
                     annotation=item.inner.desc or "",
                     image=_to_maya_image(item.inner.icon),
                     parent=parent,
+                    # The dragMenuCommand will be executed immediately
+                    # and that command is expected to return a string containing
+                    # the actual command that will be put on the shelf button.
+                    dragMenuCommand=partial(self._to_drag_menu_command, item.inner.id),
+                    # The dragDoubleClickCommand works differently,
+                    # it's the string that will be put on the shelf button,
+                    # no intermediate callback.
+                    dragDoubleClickCommand=self._to_drag_double_click_command(
+                        item.inner.id
+                    ),
                 )
 
             else:  # pragma: no cover
@@ -313,6 +343,15 @@ def _unique_menu_name(name: str) -> str:
         current = name + str(next(counter))
 
     return current
+
+
+def _default_drag_menu_command(_: str) -> Callable[[], str]:
+    """Returns a Callable that itself returns an empty string."""
+
+    def inner() -> str:
+        return ""
+
+    return inner
 
 
 def _to_maya_name(s: str) -> str:
