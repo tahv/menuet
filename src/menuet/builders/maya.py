@@ -43,13 +43,13 @@ class MayaMenuBuilder:
             Default to Maya main menubar.
         sort_key: Customize the sort order of menu items.
         to_drag_menu_command: Callable that accept an `Action.id`
-            and return a callback.
-            When called, the callback should return a string command
-            that will be invoked when the shelf button is **clicked**.
+            and return an executable string.
+            The string script will be executed when the shelf button
+            is **clicked** and should call the `Action.cb`.
         to_drag_double_click_command: Callable that accept an `Action.id`
-            and return a callback.
-            When called, the callback should return a string command
-            that will be invoked when the shelf button is **double clicked**.
+            and return an executable string.
+            The string script will be executed when the shelf button
+            is **double clicked** and should call the `Action.cb`.
 
     /// version-added | Added in 1.2.0
     ///
