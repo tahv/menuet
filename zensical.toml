@@ -113,7 +113,7 @@ inventories = [
 
 [project.plugins.mkdocstrings.handlers.python.options]
 docstring_style = "google"
-docstring_section_style = "spacy"
+docstring_section_style = "list"
 inherited_members = true
 show_source = false
 show_symbol_type_toc = true
