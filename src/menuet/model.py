@@ -210,7 +210,7 @@ class Model:
         self._add_menu(menu)
 
     def get_action(self, id: str) -> Action:  # noqa: A002
-        """Return `Action` with given `id` in model.
+        """Return [`Action`][menuet.Action] with given `id` in model.
 
         Raises:
             KeyError: `id` not found.
