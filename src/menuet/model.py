@@ -39,7 +39,6 @@ __all__ = (
 @define
 class _MenuNode:
     inner: Menu
-    parent: _MenuNode | None
     menus: dict[str, _MenuNode] = field(factory=dict, init=False)
     actions: dict[str, _ActionNode] = field(factory=dict, init=False)
 
@@ -47,7 +46,6 @@ class _MenuNode:
 @define
 class _ActionNode:
     inner: Action = field(on_setattr=attr.setters.frozen)
-    parent: _MenuNode
 
 
 def load(
@@ -199,7 +197,7 @@ class Model:
     def __init__(self) -> None:
         self._actions: dict[str, Action] = {}
         self._menus: dict[tuple[str, ...], _MenuNode] = {}
-        self._menus[()] = _MenuNode(Menu(label="", menu=()), parent=None)
+        self._menus[()] = _MenuNode(Menu(label="", menu=()))
 
     def add_action(self, action: Action) -> None:
         """Add `action` to model."""
@@ -283,7 +281,7 @@ class Model:
                 )
         else:
             parent = self._menus[()]
-        node = _ActionNode(action, parent=parent)
+        node = _ActionNode(action)
         parent.actions[action.id] = node
 
         # add to map
@@ -308,7 +306,7 @@ class Model:
         # add leaf to tree
         node = parent.menus.get(menu.label)
         if node is None:
-            node = _MenuNode(menu, parent=parent)
+            node = _MenuNode(menu)
             parent.menus[menu.label] = node
         elif menu.is_configured() and not node.inner.is_configured():
             node.inner = menu
