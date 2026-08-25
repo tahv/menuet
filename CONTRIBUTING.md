@@ -71,7 +71,8 @@ Alternatively, you don't need to install towncrier,
 you just have to abide by a few simple rules:
 
 For each merge request, add a new file into the `changelog.d` directory with a
-filename adhering to the schema: `mr#.(break|feat|fix|doc|other|chore).md`.
+filename adhering to the schema:
+`mr#.(break|feat|fix|docs|refactor|style|chore|ci|test|revert).md`.
 For example, `changelog.d/123.feat.md` for a feature
 that is proposed in pull request `#123`.
 
