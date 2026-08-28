@@ -5,32 +5,23 @@
 from __future__ import annotations
 
 import os
+from functools import partial
 from pathlib import Path
-from typing import TYPE_CHECKING
+from textwrap import dedent
 
 import hou
 
 from menuet.builders.houdini import HoudiniXmlMainMenuBuilder, InsertBefore
 from menuet.demo import demo_model
 
-if TYPE_CHECKING:
-    from collections.abc import Callable
 
-
-def to_string_command_factory(model: str) -> Callable[[str], str]:
-    """Generate `to_string_command` argument from a `Model` reference."""
-
-    def inner(action: str) -> str:
-        from textwrap import dedent
-
-        return dedent(f"""\
-        from importlib.metadata import EntryPoint
-        model_loader = EntryPoint(name="", group="", value='{model}').load()
-        model = model_loader()
-        model.get_action('{action}').cb()
-        """)
-
-    return inner
+def action_script(action: str, /, model: str) -> str:
+    return dedent(f"""\
+    from importlib.metadata import EntryPoint
+    model_loader = EntryPoint(name="", group="", value='{model}').load()
+    model = model_loader()
+    model.get_action('{action}').cb()
+    """)
 
 
 # build and write menu xml file
@@ -38,7 +29,7 @@ model = demo_model()
 builder = HoudiniXmlMainMenuBuilder(
     model,
     root_menu="Demo",
-    to_string_command=to_string_command_factory("menuet.demo:demo_model"),
+    to_string_command=partial(action_script, model="menuet.demo:demo_model"),
     position=InsertBefore("help_menu"),
 )
 menu_file = Path("startup/MainMenuCommon.xml")
