@@ -92,7 +92,7 @@ MARKS: dict[str, MarkConfig] = {
         check=is_in_blender,
         paths=(
             "src/menuet/builders/blender.py",
-            "tests/test_builder_blender.py",
+            "tests/test_builders_blender.py",
         ),
     ),
     "requires_unreal": MarkConfig(
