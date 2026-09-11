@@ -64,7 +64,10 @@ types = [
 ]
 
 [build-system]
-requires = ["hatch-vcs", "hatchling"]
+requires = [
+  "hatchling==1.32.0",
+  "uv-dynamic-versioning==0.14.1",
+]
 build-backend = "hatchling.build"
 
 [tool.coverage]
@@ -80,8 +83,7 @@ report.exclude_lines = [
 ]
 
 [tool.hatch]
-version.source = "vcs"
-version.raw-options.local_scheme = "no-local-version"
+version.source = "uv-dynamic-versioning"
 
 [tool.hed]
 changelog = "CHANGELOG.md"
@@ -199,6 +201,9 @@ cache-keys = [
   { git = { commit = true, tags = true } },
 ]
 
+[tool.uv-dynamic-versioning]
+bump = true
+pattern = "default-unprefixed"
 [tool.uv.sources]
 bpy = { index = "blender" }
 
