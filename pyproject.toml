@@ -82,6 +82,14 @@ report.exclude_lines = [
   '(^|:) *\.{3} *(#|$)',  # protocol elipsis, e.g., '...' or ': ...'
 ]
 
+[tool.creosote]
+include-deferred = true
+sections=[
+  "project.dependencies",
+  "project.optional-dependencies.copy",
+  "project.optional-dependencies.pyside6",
+]
+
 [tool.hatch]
 version.source = "uv-dynamic-versioning"
 
