@@ -1,3 +1,16 @@
+"""
+/// warning
+
+This module requires [PySide6](https://pypi.org/project/PySide6/) is required,
+which available as an extra:
+
+```console { .copy }
+pip install menuet[qt]
+```
+
+///
+"""  # noqa: D212, D415
+
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
