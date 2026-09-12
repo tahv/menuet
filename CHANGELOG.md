@@ -12,7 +12,9 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
-## [1.9.0](https://gitlab.com/tahv/menuet/-/releases/1.9.0) - 2026-08-21
+## [1.9.0](https://gitlab.com/tahv/menuet/-/releases/1.9.0)
+
+Released on 2026-08-21.
 
 ### Features
 
@@ -27,7 +29,9 @@ in the repo.
 - [!19](https://gitlab.com/tahv/menuet/-/merge_requests/19):
   Add section "Creating a custom menu builder".
 
-## [1.8.0](https://gitlab.com/tahv/menuet/-/releases/1.8.0) - 2026-08-19
+## [1.8.0](https://gitlab.com/tahv/menuet/-/releases/1.8.0)
+
+Released on 2026-08-19.
 
 ### Features
 
@@ -44,7 +48,9 @@ in the repo.
 - [!15](https://gitlab.com/tahv/menuet/-/merge_requests/15):
   Menu is considered configured if `Menu.extra` is not empty.
 
-## [1.7.0](https://gitlab.com/tahv/menuet/-/releases/1.7.0) - 2026-08-15
+## [1.7.0](https://gitlab.com/tahv/menuet/-/releases/1.7.0)
+
+Released on 2026-08-15.
 
 ### Enhancements
 
@@ -54,7 +60,9 @@ in the repo.
 - [!12](https://gitlab.com/tahv/menuet/-/merge_requests/12):
   Add `menuet.builders.maya.MayaMarkingMenuBuilder`.
 
-## [1.6.0](https://gitlab.com/tahv/menuet/-/releases/1.6.0) - 2026-08-07
+## [1.6.0](https://gitlab.com/tahv/menuet/-/releases/1.6.0)
+
+Released on 2026-08-07.
 
 ### Enhancements
 
@@ -75,7 +83,9 @@ in the repo.
 - [!10](https://gitlab.com/tahv/menuet/-/merge_requests/10):
   Maya `QMenuBuilder` example.
 
-## [1.5.0](https://gitlab.com/tahv/menuet/-/releases/1.5.0) - 2026-07-18
+## [1.5.0](https://gitlab.com/tahv/menuet/-/releases/1.5.0)
+
+Released on 2026-07-18.
 
 ### Breaking changes
 
@@ -88,14 +98,18 @@ in the repo.
 - [!8](https://gitlab.com/tahv/menuet/-/merge_requests/8):
   Add `menuet.builders.houdini.HoudiniXmlMainMenuBuilder`.
 
-## [1.4.0](https://gitlab.com/tahv/menuet/-/releases/1.4.0) - 2026-05-06
+## [1.4.0](https://gitlab.com/tahv/menuet/-/releases/1.4.0)
+
+Released on 2026-05-06.
 
 ### Enhancements
 
 - [!5](https://gitlab.com/tahv/menuet/-/merge_requests/5):
   Add `MaxDynamicMenuBuilder`.
 
-## [1.3.0](https://gitlab.com/tahv/menuet/-/releases/1.3.0) - 2026-04-27
+## [1.3.0](https://gitlab.com/tahv/menuet/-/releases/1.3.0)
+
+Released on 2026-04-27.
 
 ### Enhancements
 
@@ -106,13 +120,17 @@ in the repo.
 - Fix `MayaMenuBuilder`: creating menu in main menu bar would fail
   because menu long name was incorrect.
 
-## [1.2.0](https://gitlab.com/tahv/menuet/-/releases/1.2.0) - 2026-04-24
+## [1.2.0](https://gitlab.com/tahv/menuet/-/releases/1.2.0)
+
+Released on 2026-04-24.
 
 ### Enhancements
 
 - Add `MayaMenuBuilder`; build a menu with `maya.cmds`.
 
-## [1.1.0](https://gitlab.com/tahv/menuet/-/releases/1.1.0) - 2026-04-15
+## [1.1.0](https://gitlab.com/tahv/menuet/-/releases/1.1.0)
+
+Released on 2026-04-15.
 
 ### Enhancements
 
@@ -124,7 +142,9 @@ in the repo.
 - Add `menuet.demo` module and **Examples** page.
 - Add recipes for building model with code and entry points.
 
-## [1.0.0](https://gitlab.com/tahv/menuet/-/releases/1.0.0) - 2026-04-06
+## [1.0.0](https://gitlab.com/tahv/menuet/-/releases/1.0.0)
+
+Released on 2026-04-06.
 
 ### Enhancements
 
