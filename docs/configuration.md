@@ -235,8 +235,8 @@ The following schemes are available:
     /// warning
 
     The `copy` scheme requires the
-    [copykitten](https://github.com/klavionik/copykitten) package,
-    available as an extra:
+    [copykitten](https://pypi.org/project/copykitten/) package,
+    which is available as an extra:
 
     ```console { .copy }
     pip install menuet[copy]
