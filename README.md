@@ -176,6 +176,7 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 ## Alternatives
 
 - [hannesdelbeke/unimenu](https://github.com/hannesdelbeke/unimenu)
+- [Colorbleed/scriptsmenu](https://github.com/Colorbleed/scriptsmenu)
 
 <!--
 
