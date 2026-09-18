@@ -78,7 +78,7 @@ class _Passthrough:
 
     Exposed as a class to control `repr` display in API documentation.
 
-    Example:
+    Examples:
         >>> assert passthrough() is None
         >>> assert repr(passthrough) == 'no-op'
     """

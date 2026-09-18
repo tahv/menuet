@@ -14,7 +14,7 @@ __all__ = ("demo_model",)
 def demo_model() -> Model:
     """An example model to demonstrate what menuet can do.
 
-    Example:
+    Examples:
         ```python
         >>> from menuet.demo import demo_model
         >>> from menuet.builders.text import Render, TextMenuBuilder

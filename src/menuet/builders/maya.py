@@ -363,7 +363,7 @@ def _to_maya_name(s: str) -> str:
     Note:
         Returned string is a **legal** name but may not be unique.
 
-    Example:
+    Examples:
         >>> _to_maya_name("abc")
         'abc'
         >>> _to_maya_name("Abc")

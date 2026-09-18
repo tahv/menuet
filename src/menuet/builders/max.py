@@ -144,7 +144,7 @@ def _populate_dynamic_menu(
 def _hex_to_ascii_lowercase(s: str) -> str:
     """Convert a `[a-fA-F0-9]+` string to `[a-v]+`.
 
-    Example:
+    Examples:
         >>> _hex_to_ascii_lowercase("abcdefABCDEF0123456789")
         'abcdefghijklmnopqrstuv'
     """
