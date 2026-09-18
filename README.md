@@ -163,7 +163,8 @@ Demo
 └── Print Hello
 ```
 
-For more information and examples, visit the documentation at
+For more information and examples,
+visit the documentation at
 [tahv.gitlab.io/menuet](https://tahv.gitlab.io/menuet).
 
 ## Contributing
