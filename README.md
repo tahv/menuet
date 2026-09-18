@@ -185,8 +185,19 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
 - [ ] Tests: menuet.builders.maya.MayaMenuBuilder
 - [ ] Tests: menuet.builders.unreal.UnrealMenuBuilder
 - [ ] Tests: menuet.builders.max.MaxDynamicMenuBuilder
-- [ ] Builder: 3ds Max MenuMan System
+- [ ] Builder: `menuet.builders.max.MaxMenuSystemBuilder`
+      https://help.autodesk.com/view/MAXDEV/2025/ENU/?guid=menu_system
 - [ ] Icon path should be relative to file
 - [ ] Error: passthrough expected 0 argument, received 1 argument
+- [ ] Define __slots__ in Action and Menu
+- [ ] extra shoud be frozendict
+- [ ] Builder: MayaShelfBuilder (takes a model and a list of actions ids)
+      https://nate-maxwell.github.io/maya-custom-shelf/
+- [ ] Filter out actions in builders with 'action.if'.
+      Action still added to the model, raise an error when called, filtered out of builders
+      https://dotter-documentation.vercel.app/docs/config-structure#conditional-files-with-if
+      https://docs.gitlab.com/ci/jobs/job_rules/#cicd-variable-expressions
+      `if = ["{dcc} =~ maya|max|mobu && {environment} != production"]`
+- [ ] Search Bar
 
 -->
