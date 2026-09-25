@@ -1,14 +1,11 @@
 <div align="center">
+
   <h1>menuet</h1>
+
   <p>
-    <a href="https://pypi.org/project/menuet">
-      <img alt="PyPI" src="https://img.shields.io/pypi/v/menuet?style=for-the-badge&logo=python&logoColor=white">
-    </a>
-    <a href="https://www.buymeacoffee.com/tgambier">
-      <img alt="Buy Me a Coffee" style="height: 28px;" height="28" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png">
-    </a>
+    <b>Declarative menu builder for DCC applications</b>
   </p>
-  <p><b>Declarative menu builder for DCC applications</b></p>
+
   <p>
     <a href="https://tahv.gitlab.io/menuet/">Documentation</a>
     • <a href="https://pypi.org/project/menuet">PyPI</a>
@@ -17,90 +14,42 @@
     • <a href="https://gitlab.com/tahv/menuet/-/blob/main/CHANGELOG.md">Changelog</a>
     • <a href="https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md">Contributing</a>
   </p>
-</div>
 
----
+  <p align="center">
+    <a href="https://pypi.org/project/menuet"><img alt="PyPI" src="https://img.shields.io/pypi/v/menuet?style=for-the-badge&logo=python&logoColor=white"></a>
+    <a href="https://www.buymeacoffee.com/tgambier"><img alt="Buy Me a Coffee" style="height: 28px;" height="28" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"></a>
+    <a href="https://gitlab.com/tahv/menuet/-/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/menuet?style=for-the-badge" alt="License MIT"></a>
+  </p>
+
+</div>
 
 <table width="100%">
   <tr>
-    <th>Blender</th>
-    <th>3ds Max</th>
+    <td width="50%" style="padding: 5px;"><p align="center"><b>Blender</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-blender.png" /></td>
+    <td width="50%" style="padding: 5px;"><p align="center"><b>3ds Max</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-max.png" /></td>
   </tr>
   <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-blender.png" />
-    </td>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-max.png" />
-    </td>
+    <td style="padding: 5px;"><p align="center"><b>Maya</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya.png" /></td>
+    <td style="padding: 5px;"><p align="center"><b>Maya Marking Menu</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya-marking-menu.png" /></td>
   </tr>
   <tr>
-    <th>Maya</th>
-    <th>macOS Native</th>
+    <td style="padding: 5px;"><p align="center"><b>macOS</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-macos.png" /></td>
+    <td style="padding: 5px;"><p align="center"><b>macOS Native</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-macos-native.png" /></td>
   </tr>
   <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya.png" />
-    </td>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-macos-native.png" />
-    </td>
+    <td style="padding: 5px;"><p align="center"><b>Windows</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-windows.png" /></td>
+    <td style="padding: 5px;"><p align="center"><b>MotionBuilder</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-motionbuilder.png" /></td>
   </tr>
   <tr>
-    <th>macOS</th>
-    <th>Windows</th>
+    <td style="padding: 5px;"><p align="center"><b>Unreal Engine</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-unreal.png" /></td>
+    <td style="padding: 5px;"><p align="center"><b>Houdini</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-houdini.png" /></td>
   </tr>
   <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-macos.png" />
-    </td>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-qtapp-windows.png" />
-    </td>
+    <td style="padding: 5px;"><p align="center"><b>Substance Painter</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-painter.png" /></td>
+    <td style="padding: 5px;"><p align="center"><b>Substance Designer</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-designer.png" /></td>
   </tr>
   <tr>
-    <th>Unreal Engine</th>
-    <th>Houdini</th>
-  </tr>
-  <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-unreal.png" />
-    </td>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-houdini.png" />
-    </td>
-  </tr>
-  <tr>
-    <th>Substance Painter</th>
-    <th>Substance Designer</th>
-  </tr>
-  <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-painter.png" />
-    </td>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-designer.png" />
-    </td>
-  </tr>
-  <tr>
-    <th>MotionBuilder</th>
-    <th>Maya Marking Menu</th>
-  </tr>
-  <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-motionbuilder.png" />
-    </td>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-maya-marking-menu.png" />
-    </td>
-  </tr>
-  <tr>
-    <th>Nuke</th>
-  </tr>
-  <tr>
-    <td width="50%" style="padding: 5px;">
-      <img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-nuke.png" />
-    </td>
+    <td style="padding: 5px;"><p align="center"><b>Nuke</b></p><img src="https://gitlab.com/tahv/menuet/-/raw/main/docs/assets/demo-nuke.png" /></td>
   </tr>
 </table>
 
