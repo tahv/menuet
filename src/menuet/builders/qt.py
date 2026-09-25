@@ -1,7 +1,7 @@
 """
 /// warning
 
-This module requires [PySide6](https://pypi.org/project/PySide6/) is required,
+This module requires [PySide6](https://pypi.org/project/PySide6/),
 which available as an extra:
 
 ```console { .copy }
