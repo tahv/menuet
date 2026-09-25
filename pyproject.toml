@@ -169,6 +169,9 @@ per-file-ignores."changelog.d/*.md" = [
 per-file-ignores."CONTRIBUTING.md" = [
   "MD033",  # Inline HTML found
 ]
+per-file-ignores.".gitlab/merge_request_templates/Default.md" = [
+  "MD041",  # First line in file should be a level 1 heading
+]
 per-file-ignores."README.md" = [
   "MD033",  # Inline HTML found
   "MD041",  # First line in file should be a level 1 heading
