@@ -20,3 +20,4 @@ to indicate that there isn't anything left to do.
 - [ ] Changes have **news fragments** in `changelog.d`.
 
 /assign me
+/draft
