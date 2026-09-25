@@ -84,7 +84,7 @@ report.exclude_lines = [
 
 [tool.creosote]
 include-deferred = true
-sections=[
+sections = [
   "project.dependencies",
   "project.optional-dependencies.copy",
   "project.optional-dependencies.pyside6",
