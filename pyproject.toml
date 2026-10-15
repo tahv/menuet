@@ -122,6 +122,7 @@ project-includes = ["src/**/*.py", "tests/**/*.py", "docs/**/*.py"]
 [tool.pytest]
 addopts = [
   "--doctest-modules",
+  "--doctest-report=ndiff",
   "--durations-min=0.005",
   "--durations=0",
 ]
