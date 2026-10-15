@@ -211,7 +211,7 @@ class MayaMarkingMenuBuilder:
         sort_key: Customize the sort order of menu items.
         modifier: Which set of modifiers must be presset to trigger the marking menu.
             Default to no required modifier keys.
-        get_rp: Callable that accept an [Action][menuet.Action] or [Menu][menu.Menu]
+        get_rp: Callable that accept an [Action][menuet.Action] or [Menu][menuet.Menu]
             and return its radial position.
             If the callable returns `None`, the item is put in the menu list
             below the radial items.
