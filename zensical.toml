@@ -15,14 +15,12 @@ nav = [
   { "Contributing" = "https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
 ]
 repo_url = "https://gitlab.com/tahv/menuet"
-# edit_uri = "_edit/main/docs/"
 repo_name = "tahv/menuet"
 extra_css = ["stylesheets/extra.css"]
 use_directory_urls = true
 
 # tombi: lint.rules.table-key-required.disabled = true
 [project.theme]
-# custom_dir = "overrides"
 favicon = "assets/favicon.svg"
 language = "en"
 features = [
