@@ -175,7 +175,9 @@ The following schemes are available:
 
     ```toml
     icon = "icons/settings.png"
+    ```
 
+    ```toml
     icon = "path:icons/settings.png"
     ```
 
