@@ -213,7 +213,7 @@ model.add_menu(
 )
 ```
 
-## Build model from Entry Points
+## Entry Points Plugin Framework
 
 In this example, the `myapp` packages build a menu that's populated by plugins,
 discovered through
@@ -256,13 +256,13 @@ def _load_entry_points(model: menuet.Model, group: str) -> None:
         try:
             func = ep.load()
         except Exception:
-            logger.exception("Failed to load entry point: %s", ep)
+            logger.exception("Failed to load %r", ep)
             continue
 
         try:
             actions = func()
         except Exception:
-            logger.exception("Failed to call entry point: %s", ep)
+            logger.exception("Failed to call %r", ep)
             continue
 
         if not isinstance(actions, list):
@@ -276,9 +276,11 @@ def _load_entry_points(model: menuet.Model, group: str) -> None:
                 model.add_action(item)
             else:
                 logger.error(
-                    "Expected 'Action' or 'Menu' type, found %s: %s",
-                    type(item),
+                    "Expected %r item to be a 'bolero.Action' or 'bolero.Menu' type, "
+                    "got %r that is a %r",
                     ep,
+                    item,
+                    type(item).__name__,
                 )
 
 
