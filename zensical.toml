@@ -52,7 +52,6 @@ link = "https://gitlab.com/tahv/menuet"
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.markdown_extensions]
-github-callouts = {}
 toc.permalink = true
 pymdownx.blocks.admonition.types = [
   "example",
