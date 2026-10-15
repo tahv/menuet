@@ -125,6 +125,7 @@ addopts = [
   "--doctest-report=ndiff",
   "--durations-min=0.005",
   "--durations=0",
+  "--import-mode=importlib",
 ]
 minversion = "9.0"
 testpaths = ["src", "tests"]
