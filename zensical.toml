@@ -10,12 +10,9 @@ nav = [
   { "Examples" = "examples.md" },
   { "Recipes" = "recipes.md" },
   { "API Reference" = "api.md" },
-  { "Meta" = [
-    { "PyPI" = "https://pypi.org/project/menuet" },
-    { "Changelog" = "https://gitlab.com/tahv/menuet/-/blob/main/CHANGELOG.md" },
-    { "Contributing" = "https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
-    { "Releases" = "https://gitlab.com/tahv/menuet/-/releases" },
-  ] },
+  { "Changelog" = "changelog.md" },
+  { "PyPI" = "https://pypi.org/project/menuet" },
+  { "Contributing" = "https://gitlab.com/tahv/menuet/-/blob/main/CONTRIBUTING.md" },
 ]
 repo_url = "https://gitlab.com/tahv/menuet"
 # edit_uri = "_edit/main/docs/"
