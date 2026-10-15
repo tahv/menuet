@@ -52,15 +52,11 @@ link = "https://gitlab.com/tahv/menuet"
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.markdown_extensions]
-[project.markdown_extensions.github-callouts]
-
-[project.markdown_extensions.toc]
-permalink = true
-
-# https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
-[project.markdown_extensions.pymdownx.blocks.admonition]
-types = [
+github-callouts = {}
+toc.permalink = true
+pymdownx.blocks.admonition.types = [
   "example",
+  "info",
   "note",
   "tip",
   "version-added",
@@ -70,30 +66,17 @@ types = [
   "warning",
   "disclosure",
 ]
-
-[project.markdown_extensions.pymdownx.blocks.details]
-
-[project.markdown_extensions.pymdownx.blocks.tab]
-alternate_style = true
-
-[project.markdown_extensions.pymdownx.blocks.html]
-
-# syntax highlighting for code blocks
-# https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
-[project.markdown_extensions.pymdownx.highlight]
-anchor_linenums = true
-line_spans = "__span"
-pygments_lang_class = true
-
-# inline code highlighter
-# https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
-[project.markdown_extensions.pymdownx.inlinehilite]
-
-# insert markdown or HTML snippets into another markdown file
-# https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
-[project.markdown_extensions.pymdownx.snippets]
-
-[project.markdown_extensions.pymdownx.superfences]
+pymdownx.blocks.details = {}
+pymdownx.blocks.tab.alternate_style = true
+pymdownx.blocks.tab.slugify.object = "pymdownx.slugs.slugify"
+pymdownx.blocks.tab.slugify.kwds.case = "lower"
+pymdownx.blocks.html = {}
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.snippets = {}
+pymdownx.superfences = {}
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.plugins.mkdocstrings.handlers.python]
@@ -102,7 +85,7 @@ inventories = [
   "https://docs.python.org/3/objects.inv",
   "https://docs.blender.org/api/5.1/objects.inv",
   "https://doc.qt.io/qtforpython-6/objects.inv",
-  "https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/objects.inv"
+  "https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/objects.inv",
 ]
 
 [project.plugins.mkdocstrings.handlers.python.options]
