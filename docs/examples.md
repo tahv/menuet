@@ -1,5 +1,5 @@
 ---
-icon: lucide/mouse-pointer-click
+icon: lucide/graduation-cap
 ---
 
 # Examples

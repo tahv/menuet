@@ -1,5 +1,5 @@
 ---
-icon: lucide/code
+icon: lucide/square-code
 ---
 
 <style>
