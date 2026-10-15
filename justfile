@@ -7,6 +7,7 @@ hed := "uvx hed@1.3.0"
 ruff := "uvx ruff@0.16.6"
 towncrier := "uvx towncrier@25.8.0"
 uvbump := "uvx --from git+https://github.com/Rezarys/uvbump@3f33228 uvbump"
+ty := "uvx ty@0.0.80"
 
 # List available recipes
 [default]
@@ -89,6 +90,10 @@ ruff *files:
 # Dry run `ruff` formatter and output diff
 fmt:
     {{ ruff }} format --check
+
+# Perform type-checking with `ty`
+ty:
+    {{ ty }} check
 
 # Perform type-checking with `mypy`
 mypy:
