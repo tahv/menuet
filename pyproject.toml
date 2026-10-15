@@ -76,10 +76,15 @@ run.branch = true
 report.show_missing = true
 report.skip_covered = true
 report.exclude_lines = [
-  "# pragma: no cover",
+  '# pragma: no cover\b',
+  '^\s*raise AssertionError\b',
+  '^\s*raise NotImplementedError\b',
+  '^\s*return NotImplemented\b',
+  '^\s*raise\s*$',
   "if (False|0|TYPE_CHECKING):",
   "if __name__ == ['\"]__main__['\"]:",
-  '(^|:) *\.{3} *(#|$)',  # protocol elipsis, e.g., '...' or ': ...'
+  '(^|:)\s*\.\.\.\s*(#|$)',
+  "-> ['\"]?NoReturn['\"]?:",
 ]
 
 [tool.creosote]
