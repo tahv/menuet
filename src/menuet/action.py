@@ -27,7 +27,7 @@ if TYPE_CHECKING:
 ID_PATTERN = r"^[a-z](?:[a-z-]*[a-z])?$"
 
 
-@define(frozen=True, kw_only=True)
+@define(frozen=True, kw_only=True, slots=True)
 class Action:
     """Runtime action definition."""
 

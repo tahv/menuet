@@ -18,7 +18,7 @@ if TYPE_CHECKING:
         from importlib.resources.abc import Traversable
 
 
-@define(frozen=True, kw_only=True)
+@define(frozen=True, kw_only=True, slots=True)
 class Menu:
     """Menu node definition."""
 
