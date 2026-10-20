@@ -14,6 +14,48 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.10.0](https://gitlab.com/tahv/menuet/-/releases/1.10.0)
+
+Released on 2026-10-20.
+
+### Enhancements
+
+- [!22](https://gitlab.com/tahv/menuet/-/merge_requests/22),
+  [!27](https://gitlab.com/tahv/menuet/-/merge_requests/27):
+  Bump project requirements.
+- [!24](https://gitlab.com/tahv/menuet/-/merge_requests/24):
+  Define `__slots__` on `Action` and `Menu` classes.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Action.desc` instance is not `str` or `None`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Menu.desc` instance is not `str` or `None`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Menu.group` instance is not `str` or `None`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Action.group` instance is not `str` or `None`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Action.label` is not `str` or `None`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Action.menu` iterable is not `tuple`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Menu.label` is not `str` or `None`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Action.extra` instance is not `Mapping`.
+- [!25](https://gitlab.com/tahv/menuet/-/merge_requests/25):
+  Raise `TypeError` if `Menu.extra` instance is not `Mapping`.
+
+### Documentation
+
+- [!29](https://gitlab.com/tahv/menuet/-/merge_requests/29):
+  Add "Builders Features" section.
+
+### Refactorings
+
+- [!20](https://gitlab.com/tahv/menuet/-/merge_requests/20):
+  Remove unused reference to `parent` in `Model` internal nodes.
+- [!23](https://gitlab.com/tahv/menuet/-/merge_requests/23):
+  Change `copykitten` import error type from `RuntimeError` to `ImportError`.
+
 ## [1.9.0](https://gitlab.com/tahv/menuet/-/releases/1.9.0)
 
 Released on 2026-08-21.
