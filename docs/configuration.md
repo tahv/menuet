@@ -284,3 +284,11 @@ root = "tool.my-menu"
 path = "https://tahv.gitlab.io/menuet/menuet.json"
 include = ["pyproject.toml"]
 ```
+
+## Builders Features
+
+{{ read_yaml('assets/builder-features.yaml') }}
+
+:lucide-check:{ .supported-yes } supported,
+:lucide-check:{ .supported-partial } partially supported,
+:lucide-x:{ .supported-no } not supported

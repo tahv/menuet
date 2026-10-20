@@ -52,6 +52,7 @@ link = "https://gitlab.com/tahv/menuet"
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.markdown_extensions]
+attr_list = {}
 toc.permalink = true
 pymdownx.blocks.admonition.types = [
   "example",
@@ -70,6 +71,8 @@ pymdownx.blocks.tab.alternate_style = true
 pymdownx.blocks.tab.slugify.object = "pymdownx.slugs.slugify"
 pymdownx.blocks.tab.slugify.kwds.case = "lower"
 pymdownx.blocks.html = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
 pymdownx.highlight.anchor_linenums = true
 pymdownx.highlight.line_spans = "__span"
 pymdownx.highlight.pygments_lang_class = true
@@ -107,3 +110,4 @@ show_root_heading = true
 annotations_path = "source"
 extensions = [{ griffe_fieldz.remove_fields_from_members = true }]
 
+[project.plugins.table-reader]

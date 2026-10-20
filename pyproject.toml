@@ -43,6 +43,7 @@ bpy = [
 ]
 docs = [
   "griffe-fieldz>=0.5.0",
+  "mkdocs-table-reader-plugin>=4.0.2",
   "mkdocstrings-python>=2.0.10",
   "ruff>=0.17.1",  # mkdocstrings-python signature
   "zensical>=0.0.71",

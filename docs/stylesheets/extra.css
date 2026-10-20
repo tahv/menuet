@@ -10,6 +10,18 @@ a.md-nav__link[href^="https:"]::before {
   content: ' ';
 }
 
+.supported-no {
+  color: #ef5552;
+}
+
+.supported-yes {
+  color: #71c174;
+}
+
+.supported-partial {
+  color: #ffa724;
+}
+
 /* Admonition: version-added */
 .md-typeset .admonition.version-added,
 .md-typeset details.version-added {
