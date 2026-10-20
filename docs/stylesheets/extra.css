@@ -1,10 +1,10 @@
 /* Mark external links as such in nav */
-a.md-nav__link[href^="https:"]::after {
+a.md-nav__link[href^="https:"]::before {
   mask-image: url('../assets/square-arrow-out-up-right.svg');
   background: var(--md-default-fg-color);
-  opacity: 0.4;
-  height: 1.2em;
-  width: 1.2em;
+  opacity: 0.5;
+  height: 1.3em;
+  width: 1.3em;
   margin-top: auto;
   margin-bottom: auto;
   content: ' ';
