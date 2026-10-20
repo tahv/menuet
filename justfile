@@ -64,7 +64,7 @@ version:
 
 # Update project dependencies
 update:
-    @{{ uvbump }} --index-url https://pypi.org/simple
+    @{{ uvbump }} --exclude bpy
 
 # Identify unused dependencies
 creosote:
