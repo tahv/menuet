@@ -210,6 +210,9 @@ type = [
 
 [tool.ty]
 analysis.respect-type-ignore-comments = false
+src.include = ["src", "tests"]
+terminal.output-format = "concise"
+terminal.error-on-warning = true
 
 [tool.uv]
 default-groups = ["dev"]
