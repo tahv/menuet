@@ -139,7 +139,6 @@ and open a [merge request](https://gitlab.com/tahv/menuet/-/merge_requests).
       https://help.autodesk.com/view/MAXDEV/2025/ENU/?guid=menu_system
 - [ ] Icon path should be relative to file
 - [ ] Error: passthrough expected 0 argument, received 1 argument
-- [ ] Define __slots__ in Action and Menu
 - [ ] extra shoud be frozendict
 - [ ] Builder: MayaShelfBuilder (takes a model and a list of actions ids)
       https://nate-maxwell.github.io/maya-custom-shelf/
