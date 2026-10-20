@@ -6,7 +6,8 @@ from textwrap import dedent
 import pytest
 
 from menuet import Model
-from menuet.builders.text import Render, TextMenuBuilder
+from menuet.builders.text import Render
+from menuet.builders.text import TextMenuBuilder
 
 DOCS_DIRECTORY = Path(__file__).parent.parent / "docs"
 

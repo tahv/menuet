@@ -4,8 +4,10 @@ from textwrap import dedent
 
 import pytest
 
-from menuet.builders.text import Render, TextMenuBuilder
-from menuet.model import Model, loads
+from menuet.builders.text import Render
+from menuet.builders.text import TextMenuBuilder
+from menuet.model import Model
+from menuet.model import loads
 
 
 @pytest.mark.parametrize(

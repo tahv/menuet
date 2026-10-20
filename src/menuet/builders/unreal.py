@@ -3,14 +3,16 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from menuet import ItemGroup
-from menuet.model import ItemAction, ItemMenu
+from menuet.model import ItemAction
+from menuet.model import ItemMenu
 
 if TYPE_CHECKING:
     from collections.abc import Callable
 
     import unreal
 
-    from menuet.model import MenuSortKey, Model
+    from menuet.model import MenuSortKey
+    from menuet.model import Model
 
 __all__ = ("UnrealMenuBuilder",)
 

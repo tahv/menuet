@@ -6,7 +6,8 @@ from typing import TYPE_CHECKING
 from PySide6.QtWidgets import QMenu
 
 from menuet.builders.qt import QMenuBuilder
-from menuet.model import Model, loads
+from menuet.model import Model
+from menuet.model import loads
 
 if TYPE_CHECKING:
     from pytestqt.qtbot import QtBot

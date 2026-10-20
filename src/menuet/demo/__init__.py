@@ -5,7 +5,8 @@
 
 from __future__ import annotations
 
-from menuet import Model, loads
+from menuet import Model
+from menuet import loads
 from menuet.utils import load_resource
 
 __all__ = ("demo_model",)

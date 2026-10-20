@@ -4,13 +4,18 @@ from __future__ import annotations
 import itertools
 import uuid
 from pathlib import Path
-from typing import TYPE_CHECKING, TypeAlias, cast
+from typing import TYPE_CHECKING
+from typing import TypeAlias
+from typing import cast
 
 import bpy
 import bpy.utils.previews
 
-from menuet import Action, Menu
-from menuet.model import ItemAction, ItemGroup, ItemMenu
+from menuet import Action
+from menuet import Menu
+from menuet.model import ItemAction
+from menuet.model import ItemGroup
+from menuet.model import ItemMenu
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -18,7 +23,8 @@ if TYPE_CHECKING:
     from bpy.stub_internal.rna_enums import OperatorReturnItems
     from bpy.utils.previews import ImagePreviewCollection
 
-    from menuet.model import MenuSortKey, Model
+    from menuet.model import MenuSortKey
+    from menuet.model import Model
 
     MenuDraw: TypeAlias = Callable[[bpy.types.Menu, bpy.types.Context], None]
 

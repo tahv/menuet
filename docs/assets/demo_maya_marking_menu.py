@@ -1,8 +1,6 @@
-from menuet.builders.maya import (
-    MayaMarkingMenuBuilder,
-    MayaMarkingMenuModifier,
-    MayaMarkingMenuMouseButton,
-)
+from menuet.builders.maya import MayaMarkingMenuBuilder
+from menuet.builders.maya import MayaMarkingMenuModifier
+from menuet.builders.maya import MayaMarkingMenuMouseButton
 from menuet.demo import demo_model
 
 model = demo_model()

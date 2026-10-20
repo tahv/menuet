@@ -134,8 +134,10 @@ format.preview = true
 include = ["src/**/*.py", "tests/**/*.py", "docs/**/*.py", "**/pyproject.toml"]
 lint.preview = false
 lint.pydocstyle.convention = "google"
-lint.flake8-tidy-imports.ban-relative-imports = "all"
+lint.isort.force-single-line = true
 lint.isort.required-imports = ["from __future__ import annotations"]
+lint.isort.no-sections = false
+lint.flake8-tidy-imports.ban-relative-imports = "all"
 lint.select = ["ALL"]
 lint.ignore = [
   "COM812",  # Trailing comma missing

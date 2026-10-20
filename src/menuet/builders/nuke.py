@@ -1,9 +1,16 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Literal, Protocol, cast
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import Literal
+from typing import Protocol
+from typing import cast
 
-from menuet.model import ItemAction, ItemGroup, ItemMenu, Model
+from menuet.model import ItemAction
+from menuet.model import ItemGroup
+from menuet.model import ItemMenu
+from menuet.model import Model
 
 if TYPE_CHECKING:
     import sys
@@ -13,7 +20,8 @@ if TYPE_CHECKING:
     from PySide6.QtGui import QAction
 
     from menuet import Action
-    from menuet.model import MenuSortKey, Model
+    from menuet.model import MenuSortKey
+    from menuet.model import Model
 
     if sys.version_info < (3, 11):
         from importlib.abc import Traversable

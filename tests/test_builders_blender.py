@@ -6,7 +6,10 @@ from unittest.mock import Mock
 import bpy
 import pytest
 
-from menuet import Action, ItemAction, ItemMenu, Menu
+from menuet import Action
+from menuet import ItemAction
+from menuet import ItemMenu
+from menuet import Menu
 from menuet.builders.blender import BlenderMenuBuilder
 from menuet.demo import demo_model
 from menuet.model import Model

@@ -10,7 +10,11 @@ import pytest
 from menuet import load
 from menuet.action import Action
 from menuet.menu import Menu
-from menuet.model import ItemAction, ItemGroup, ItemMenu, Model, loads
+from menuet.model import ItemAction
+from menuet.model import ItemGroup
+from menuet.model import ItemMenu
+from menuet.model import Model
+from menuet.model import loads
 from menuet.utils import passthrough
 
 # TODO(tga): def test_parse_action_cb_url() -> None:

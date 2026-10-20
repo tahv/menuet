@@ -15,16 +15,21 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore
+from PySide6 import QtGui
+from PySide6 import QtWidgets
 from PySide6.QtGui import QAction
 
-from menuet.model import ItemAction, ItemGroup, ItemMenu
+from menuet.model import ItemAction
+from menuet.model import ItemGroup
+from menuet.model import ItemMenu
 from menuet.utils import logger
 
 if TYPE_CHECKING:
     import sys
 
-    from menuet.model import MenuSortKey, Model
+    from menuet.model import MenuSortKey
+    from menuet.model import Model
 
     if sys.version_info < (3, 11):
         from importlib.abc import Traversable

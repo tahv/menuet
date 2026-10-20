@@ -1,7 +1,8 @@
 import json
 
 import menuet
-from menuet.builders.text import Render, TextMenuBuilder
+from menuet.builders.text import Render
+from menuet.builders.text import TextMenuBuilder
 
 document = """
 {

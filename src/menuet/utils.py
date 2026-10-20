@@ -3,10 +3,13 @@ from __future__ import annotations
 import importlib.resources
 import logging
 import webbrowser
-from collections.abc import Iterable, Mapping
+from collections.abc import Iterable
+from collections.abc import Mapping
 from functools import partial
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Final
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import Final
 
 if TYPE_CHECKING:
     import sys

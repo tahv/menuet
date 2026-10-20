@@ -5,14 +5,13 @@ from textwrap import dedent
 import pytest
 
 from menuet import Action
-from menuet.builders.houdini import (
-    HoudiniXmlMainMenuBuilder,
-    InsertAfter,
-    InsertAtIndex,
-    InsertBefore,
-    InsertPosition,
-)
-from menuet.model import Model, loads
+from menuet.builders.houdini import HoudiniXmlMainMenuBuilder
+from menuet.builders.houdini import InsertAfter
+from menuet.builders.houdini import InsertAtIndex
+from menuet.builders.houdini import InsertBefore
+from menuet.builders.houdini import InsertPosition
+from menuet.model import Model
+from menuet.model import loads
 
 
 def test_houdini_xml_main_menu() -> None:

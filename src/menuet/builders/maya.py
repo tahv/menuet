@@ -5,9 +5,14 @@ import itertools
 import string
 from functools import partial
 from pathlib import Path
-from typing import TYPE_CHECKING, Literal, TypeAlias
+from typing import TYPE_CHECKING
+from typing import Literal
+from typing import TypeAlias
 
-from menuet.model import ItemAction, ItemGroup, ItemMenu, Model
+from menuet.model import ItemAction
+from menuet.model import ItemGroup
+from menuet.model import ItemMenu
+from menuet.model import Model
 from menuet.utils import complete
 
 if TYPE_CHECKING:
@@ -16,7 +21,8 @@ if TYPE_CHECKING:
 
     from menuet.action import Action
     from menuet.menu import Menu
-    from menuet.model import MenuSortKey, Model
+    from menuet.model import MenuSortKey
+    from menuet.model import Model
 
     if sys.version_info < (3, 11):
         from importlib.abc import Traversable

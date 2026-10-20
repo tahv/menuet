@@ -5,10 +5,14 @@ from collections.abc import Callable
 from functools import reduce
 from itertools import chain
 from operator import getitem
-from typing import IO, TYPE_CHECKING, Any, NamedTuple
+from typing import IO
+from typing import TYPE_CHECKING
+from typing import Any
+from typing import NamedTuple
 
 import attr
-from attrs import define, field
+from attrs import define
+from attrs import field
 
 from menuet.action import Action
 from menuet.menu import Menu
@@ -19,7 +23,8 @@ else:
     import tomllib
 
 if TYPE_CHECKING:
-    from collections.abc import Iterable, Iterator
+    from collections.abc import Iterable
+    from collections.abc import Iterator
 
     from _typeshed import SupportsRichComparison
 

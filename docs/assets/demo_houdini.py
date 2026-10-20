@@ -11,7 +11,8 @@ from textwrap import dedent
 
 import hou
 
-from menuet.builders.houdini import HoudiniXmlMainMenuBuilder, InsertBefore
+from menuet.builders.houdini import HoudiniXmlMainMenuBuilder
+from menuet.builders.houdini import InsertBefore
 from menuet.demo import demo_model
 
 

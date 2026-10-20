@@ -1,13 +1,19 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
+from typing import Any
 
-from attrs import define, field
-from attrs.validators import deep_iterable, instance_of, optional
+from attrs import define
+from attrs import field
+from attrs.validators import deep_iterable
+from attrs.validators import instance_of
+from attrs.validators import optional
 from typing_extensions import Self
 
-from menuet.utils import extra_factory, to_icon_converter, to_tuple_converter
+from menuet.utils import extra_factory
+from menuet.utils import to_icon_converter
+from menuet.utils import to_tuple_converter
 
 if TYPE_CHECKING:
     import sys

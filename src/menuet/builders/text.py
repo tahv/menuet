@@ -6,10 +6,13 @@ from typing import TYPE_CHECKING
 
 from attrs import frozen
 
-from menuet.model import ItemAction, ItemGroup, ItemMenu
+from menuet.model import ItemAction
+from menuet.model import ItemGroup
+from menuet.model import ItemMenu
 
 if TYPE_CHECKING:
-    from menuet.model import MenuSortKey, Model
+    from menuet.model import MenuSortKey
+    from menuet.model import Model
 
 
 __all__ = ("Render", "TextMenuBuilder")

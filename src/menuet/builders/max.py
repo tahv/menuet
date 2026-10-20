@@ -7,7 +7,12 @@ from functools import partial
 from textwrap import dedent
 from typing import Protocol
 
-from menuet import Action, ItemAction, ItemGroup, ItemMenu, MenuSortKey, Model
+from menuet import Action
+from menuet import ItemAction
+from menuet import ItemGroup
+from menuet import ItemMenu
+from menuet import MenuSortKey
+from menuet import Model
 
 __all__ = ("MaxDynamicMenuBuilder",)
 
