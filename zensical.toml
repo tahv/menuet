@@ -105,6 +105,5 @@ signature_crossrefs = true
 show_bases = false
 show_root_heading = true
 annotations_path = "source"
+extensions = [{ griffe_fieldz.remove_fields_from_members = true }]
 
-[[project.plugins.mkdocstrings.handlers.python.options.extensions]]
-griffe_fieldz.remove_fields_from_members = true
