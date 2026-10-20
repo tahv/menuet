@@ -60,7 +60,7 @@ Released on 2026-10-20.
 
 Released on 2026-08-21.
 
-### Features
+### Enhancements
 
 - [!18](https://gitlab.com/tahv/menuet/-/merge_requests/18):
   Add `to_drag_menu_command`
@@ -77,7 +77,7 @@ Released on 2026-08-21.
 
 Released on 2026-08-19.
 
-### Features
+### Enhancements
 
 - [!14](https://gitlab.com/tahv/menuet/-/merge_requests/14):
   Validate `Action.menu` and `Menu.menu` items are instances of `str`.
