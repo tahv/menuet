@@ -35,7 +35,7 @@ if TYPE_CHECKING:
     ],
 )
 def test_menu_is_configured(*, kwargs: dict[str, object], expected: bool) -> None:
-    assert Menu(label="Test", **kwargs).is_configured() is expected  # type: ignore[arg-type]
+    assert Menu(label="Test", **kwargs).is_configured() is expected  # type: ignore[arg-type] # ty: ignore[invalid-argument-type]
 
 
 def test_menu_extra() -> None:
@@ -70,24 +70,6 @@ def test_menu_menu_conversion(*, value: object, expected: tuple[str, ...]) -> No
     assert Menu(label="Test", menu=value).menu == expected
 
 
-MENU_CONVERSION_PARAMS = [
-    pytest.param(1, id="wrong-type"),
-    pytest.param((1,), id="wrong-member-type"),
-]
-
-
-@pytest.mark.parametrize(("value"), MENU_CONVERSION_PARAMS)
-def test_menu_menu_validator_raise_type_error(value: object) -> None:
-    with pytest.raises(TypeError):
-        Menu(label="Test", menu=value)
-
-
-@pytest.mark.parametrize(("value"), MENU_CONVERSION_PARAMS)
-def test_action_menu_validator_raise_type_error(value: object) -> None:
-    with pytest.raises(TypeError):
-        Action(id="test", menu=value)
-
-
 ICON_CONVERSION_PARAMS = [
     pytest.param(None, None, id="none"),
     pytest.param("foo/bar.png", Path("foo/bar.png"), id="str"),
@@ -116,16 +98,76 @@ def test_action_icon_conversion(*, value: object, expected: Traversable | None) 
     assert Action(id="test", icon=value).icon == expected
 
 
-def test_menu_icon_conversion_raise_type_error() -> None:
+def test_action_cb_converter_raise_type_error() -> None:
     with pytest.raises(TypeError):
-        Menu(label="Test", icon=1)
+        Action(id="test", cb=1)
 
 
-def test_action_icon_conversion_raise_type_error() -> None:
+def test_action_menu_iterable_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Action(id="test", menu=1)
+
+
+def test_action_menu_member_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Action(id="test", menu=(1,))
+
+
+def test_action_label_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Action(id="test", label=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_action_group_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Action(id="test", group=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_action_icon_converter_raise_type_error() -> None:
     with pytest.raises(TypeError):
         Action(id="test", icon=1)
 
 
-def test_action_cb_conversion_raise_type_error() -> None:
+def test_action_desc_validator_raise_type_error() -> None:
     with pytest.raises(TypeError):
-        Action(id="test", cb=1)
+        Action(id="test", desc=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_action_extra_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Action(id="test", extra=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_menu_label_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_menu_menu_iterable_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label="Test", menu=1)
+
+
+def test_menu_menu_member_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label="Test", menu=(1,))
+
+
+def test_menu_group_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label="Test", group=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_menu_icon_converter_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label="Test", icon=1)
+
+
+def test_menu_desc_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label="Test", desc=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
+
+
+def test_menu_extra_validator_raise_type_error() -> None:
+    with pytest.raises(TypeError):
+        Menu(label="Test", extra=1)  # type: ignore[arg-type]  # ty: ignore[invalid-argument-type]
