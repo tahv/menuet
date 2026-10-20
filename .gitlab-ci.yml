@@ -184,6 +184,19 @@ test-pypi:
     UV_PUBLISH_URL: https://test.pypi.org/legacy/
   script: uv publish
 
+test-pages:
+  stage: publish
+  rules:
+    - *rule-merge-request-manual
+  needs: []
+  image: ghcr.io/astral-sh/uv:python3.14-trixie
+  interruptible: true
+  variables:
+    FORCE_COLOR: 1
+  script:
+    - uv sync --no-default-groups --group docs
+    - uv run --no-sync -m zensical build --clean --strict
+
 pages:
   stage: publish
   rules:
