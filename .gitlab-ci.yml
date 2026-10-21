@@ -215,7 +215,7 @@ pages:
     FORCE_COLOR: 1
   script:
     - uv sync --no-default-groups --group docs
-    - uv run --no-sync -m zensical build --clean
+    - uv run --no-sync -m zensical build --clean --strict
   pages:
     publish: site
 
