@@ -142,19 +142,22 @@ package:
   stage: build
   rules:
     - *rule-on-tag
-    # TODO: empty needs cannot be applied via `rules.needs`:
-    # https://gitlab.com/gitlab-org/gitlab/-/work_items/421004
+    # TODO: empty needs cannot be applied via `rules.needs`: https://gitlab.com/gitlab-org/gitlab/-/work_items/421004
     - <<: *rule-default-branch-manual
       needs: []
   image: ghcr.io/astral-sh/uv:python3.14-trixie
   interruptible: true
   variables:
-    ATTEST_BUILD_ARTIFACTS: true # TODO(tga): experimental
+    # TODO: experimental: https://docs.gitlab.com/ci/pipeline_security/slsa/level_3/
+    ATTEST_BUILD_ARTIFACTS: true
+  id_tokens:
+    SIGSTORE_ID_TOKEN:
+      aud: sigstore
   script: # derived from: https://github.com/hynek/build-and-inspect-python-package
-    # the '.gitignore' litters the provenance attestation
     - uv build --clear --no-create-gitignore --out-dir dist
     - uvx check-wheel-contents dist/*.whl
     - uvx twine check --strict dist/*
+    - uvx pypi-attestations sign dist/*
   artifacts:
     paths: ["dist/"]
 
