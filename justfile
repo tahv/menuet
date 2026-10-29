@@ -6,6 +6,7 @@ hatch := "uvx hatch@1.18.0"
 hed := "uvx hed@1.3.0"
 ruff := "uvx ruff@0.16.6"
 towncrier := "uvx towncrier@25.8.0"
+twine := "uvx twine@7.0.0"
 uvbump := "uvx --from git+https://github.com/Rezarys/uvbump@3f33228 uvbump"
 ty := "uvx ty@0.0.80"
 
@@ -26,6 +27,9 @@ nvim *args:
 build:
     uv build --no-sources --clear --no-create-gitignore
     {{ check-wheel-contents }} dist/*.whl
+    {{ twine }} check --strict dist/*
+    tar -ztvf dist/*.tar.gz
+    unzip -l dist/*.whl
 
 # Run test suite
 test *args:
