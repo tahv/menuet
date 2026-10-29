@@ -1,0 +1,27 @@
+.md-typeset :is(.admonition, details):is(.version-added) {
+  --vmod-color: #6ecf9a;
+  --vmod-icon: url('../assets/lucide-tag-plus.svg');
+}
+.md-typeset :is(.admonition, details):is(.version-changed) {
+  --vmod-color: #f0ba59;
+  --vmod-icon: url('../assets/lucide-tag.svg');
+}
+.md-typeset :is(.admonition, details):is(.version-deprecated, .version-removed) {
+  --vmod-color: #f58b88;
+  --vmod-icon: url('../assets/lucide-tag-x.svg');
+}
+.md-typeset
+:is(.admonition, details):is(.version-added, .version-changed, .version-deprecated, .version-removed) {
+  background-color: alpha(from var(--vmod-color) / 0.1);
+}
+.md-typeset
+:is(.version-added, .version-changed, .version-deprecated, .version-removed)
+:is(.admonition-title, summary) {
+  color: var(--vmod-color);
+}
+.md-typeset
+:is(.version-added, .version-changed, .version-deprecated, .version-removed)
+:is(.admonition-title, summary)::before {
+  background-color: var(--vmod-color);
+  mask-image: var(--vmod-icon);
+}

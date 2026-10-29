@@ -58,6 +58,7 @@ types = [
   "fake-bpy-module-5-0>=20260730",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "mypy>=2.4.0",
   "types-houdini>=21.0.512.3",
+  "types-markdown>=3.11.2.20261029",  # versionmodified
   "types-maya>=0.6.1",
   "types-nuke>=13.2.8.0",
   "types-pyside6>=6.10.3.0",
@@ -73,6 +74,7 @@ build-backend = "hatchling.build"
 [tool.coverage]
 run.source = ["src"]
 run.branch = true
+run.omit = ["src/versionmodified/*"]
 report.show_missing = true
 report.skip_covered = true
 report.exclude_lines = [
@@ -97,6 +99,7 @@ sections = [
 
 [tool.hatch]
 version.source = "uv-dynamic-versioning"
+build.exclude = ["src/versionmodified"]
 
 [tool.hed]
 changelog = "CHANGELOG.md"
@@ -116,6 +119,10 @@ files = ["src", "tests"]
 module = ["pymxs", "unreal"]
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = ["pymdownx.*"]
+follow_untyped_imports = true
+
 [tool.pyrefly]
 project-includes = ["src/**/*.py", "tests/**/*.py", "docs/**/*.py"]
 
@@ -126,6 +133,7 @@ addopts = [
   "--durations-min=0.005",
   "--durations=0",
   "--import-mode=importlib",
+  "--ignore=src/versionmodified",
 ]
 minversion = "9.0"
 testpaths = ["src", "tests"]

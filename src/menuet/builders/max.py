@@ -31,7 +31,7 @@ class MaxDynamicMenuBuilder:
         root_menu: Root menu name.
         sort_key: Customize the sort order of menu items.
 
-    /// version-added | Added in 1.4.0
+    /// version-added | 1.4.0
     ///
     """
 

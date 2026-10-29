@@ -33,7 +33,7 @@ class UnrealMenuBuilder:
             [string command][unreal.ToolMenuEntry.set_string_command].
         sort_key: Customize the sort order of menu items.
 
-    /// version-added | Added in 1.3.0
+    /// version-added | 1.3.0
     ///
     """
 

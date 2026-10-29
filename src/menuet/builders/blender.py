@@ -39,7 +39,7 @@ class BlenderMenuBuilder:
         root_menu: Root menu name.
         sort_key: Customize the sort order of menu items.
 
-    /// version-added | Added in 1.1.0
+    /// version-added | 1.1.0
     ///
     """
 

@@ -104,7 +104,7 @@ class NukeMenuBuilder:
             If the callable returns `None`, no shortcut is assigned to the action.
             Note that this overrides pre-existing other uses for the shortcut.
 
-    /// version-added | Added in 1.8.0
+    /// version-added | 1.8.0
     ///
     """
 

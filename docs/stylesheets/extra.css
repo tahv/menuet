@@ -22,50 +22,6 @@ a.md-nav__link[href^="https:"]::before {
   color: #ffa724;
 }
 
-/* Admonition: version-added */
-.md-typeset .admonition.version-added,
-.md-typeset details.version-added {
-  background-color: #89ff441a;
-}
-.md-typeset .version-added > .admonition-title::before,
-.md-typeset .version-added > summary::before {
-  background-color: #89ff44;
-  mask-image: url('../assets/lucide-tag-plus.svg');
-}
-
-/* Admonition: version-removed */
-.md-typeset .admonition.version-removed,
-.md-typeset details.version-removed {
-  background-color: #ff5d441a;
-}
-.md-typeset .version-removed > .admonition-title::before,
-.md-typeset .version-removed > summary::before {
-  background-color: #ff5d44;
-  mask-image: url('../assets/lucide-tag-x.svg');
-}
-
-/* Admonition: version-changed */
-.md-typeset .admonition.version-changed,
-.md-typeset details.version-changed {
-  background-color: #4489ff1a;
-}
-.md-typeset .version-changed > .admonition-title::before,
-.md-typeset .version-changed > summary::before {
-  background-color: #4489ff;
-  mask-image: url('../assets/lucide-tag.svg');
-}
-
-/* Admonition: version-deprecated */
-.md-typeset .admonition.version-deprecated,
-.md-typeset details.version-deprecated {
-  background-color: #ffba441a;
-}
-.md-typeset .version-deprecated > .admonition-title::before,
-.md-typeset .version-deprecated > summary::before {
-  background-color: #ffba44;
-  mask-image: url('../assets/lucide-tag-x.svg');
-}
-
 /* Admonition: disclosure */
 .md-typeset details.disclosure {
   background: transparent;

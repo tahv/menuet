@@ -16,7 +16,10 @@ nav = [
 ]
 repo_url = "https://gitlab.com/tahv/menuet"
 repo_name = "tahv/menuet"
-extra_css = ["stylesheets/extra.css"]
+extra_css = [
+  "stylesheets/extra.css",
+  "stylesheets/versionmodified.css",
+]
 use_directory_urls = true
 
 # tombi: lint.rules.table-key-required.disabled = true
@@ -59,10 +62,6 @@ pymdownx.blocks.admonition.types = [
   "info",
   "note",
   "tip",
-  "version-added",
-  "version-changed",
-  "version-removed",
-  "version-deprecated",
   "warning",
   "disclosure",
 ]
@@ -79,6 +78,8 @@ pymdownx.highlight.pygments_lang_class = true
 pymdownx.inlinehilite = {}
 pymdownx.snippets = {}
 pymdownx.superfences = {}
+versionmodified.release_url = "./changelog/#{version}"
+versionmodified.version_expression = "version.replace('.', '')"
 
 # tombi: lint.rules.type-mismatch.disabled = true
 [project.plugins.mkdocstrings.handlers.python]

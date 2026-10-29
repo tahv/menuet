@@ -57,13 +57,11 @@ class MayaMenuBuilder:
             The string script will be executed when the shelf button
             is **double clicked** and should call the `Action.cb`.
 
-    /// version-added | Added in 1.2.0
+    /// version-added | 1.2.0
     ///
 
-    /// version-changed | Changed in 1.9.0
-
+    /// version-changed | 1.9.0
     Added `to_drag_menu_command` and `to_drag_double_click_command` arguments.
-
     ///
     """
 
@@ -222,7 +220,7 @@ class MayaMarkingMenuBuilder:
             If the callable returns `None`, the item is put in the menu list
             below the radial items.
 
-    /// version-added | Added in 1.7.0
+    /// version-added | 1.7.0
     ///
     """
 

@@ -71,7 +71,7 @@ class HoudiniXmlMainMenuBuilder:
         sort_key: Customize the sort order of menu items.
         position: Insert menu at position.
 
-    /// version-added | Added in 1.5.0
+    /// version-added | 1.5.0
     ///
     """
 

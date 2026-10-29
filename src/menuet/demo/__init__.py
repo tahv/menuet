@@ -1,5 +1,5 @@
 """
-/// version-added | Added in 1.1.0
+/// version-added | 1.1.0
 ///
 """  # noqa: D205, D212, D415
 

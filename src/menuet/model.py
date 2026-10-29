@@ -74,10 +74,8 @@ def load(
             Other examples includes [`json.load`][json.load] or `yaml.safe_load`
             from the [PyYAML](https://pypi.org/project/PyYAML/) library.
 
-    /// version-changed | Changed in 1.6.0
-
+    /// version-changed | 1.6.0
     The `parser` parameter was added.
-
     ///
     """
     parser = parser or tomllib.load
@@ -105,10 +103,8 @@ def loads(
             Other examples includes [`json.loads`][json.loads] or `yaml.safe_load`
             from the [PyYAML](https://pypi.org/project/PyYAML/) library.
 
-    /// version-changed | Changed in 1.6.0
-
+    /// version-changed | 1.6.0
     The `parser` parameter was added.
-
     ///
     """
     parser = parser or tomllib.loads
