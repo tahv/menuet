@@ -169,6 +169,28 @@ Example
 
 ## Load multiple files in a Model
 
+It is possible to load multiple files into the same model.
+
+```toml { title="menu.toml", .copy }
+[[menu]]
+label = "Sub-Menu"
+menu = ["My App"]
+group = "Separator"
+
+[[action]]
+id = "open-gui"
+label = "Open GUI"
+cb = "import myapp; myapp.open_gui()"
+menu = ["My App", "Sub-Menu"]
+```
+
+```toml { title="menu-extension.toml", .copy }
+[[action]]
+id = "print-hello"
+label =  "Print Hello"
+cb = 'print("Hello")'
+```
+
 ```python { .copy }
 from pathlib import Path
 
@@ -177,48 +199,29 @@ from menuet.builders.text import TextMenuBuilder
 
 model = menuet.Model()
 loads(Path("menu.toml").read_text(), model)
-loads(Path("other-menu.toml").read_text(), model)
+loads(Path("menu-extension.toml").read_text(), model)
+
+print(TextMenuBuilder(model, root_menu="Example", render=Render.UTF8).build())
 ```
 
-## Build model from code
+/// html | div.result
 
-```python { .copy }
-from functools import partial
-from importlib.metadata import version
-from pathlib import Path
-
-import menuet
-
-model = menuet.Model()
-model.add_action(
-    menuet.Action(
-        id="hello-world",
-        label="Hello World",
-        cb="print('Hello World !')",
-    ),
-)
-model.add_action(
-    menuet.Action(
-        id="myapp-version",
-        label=f"myapp, v{version('myapp')}",
-        cb=partial(version, "myapp"),
-        menu=("Version",)
-    ),
-)
-model.add_menu(
-    menuet.Menu(
-        label="Version",
-        icon=Path(__file__).parent / "icon.svg",
-    ),
-)
+```text
+Example
+├── My App
+│   ├── Separator ───
+│   └── Sub-Menu
+│       └── Open GUI
+└── Print Hello
 ```
+
+///
 
 ## Entry Points Plugin Framework
 
 In this example, the `myapp` packages build a menu that's populated by plugins,
 discovered through
 [entry points](https://packaging.python.org/en/latest/specifications/entry-points/).
-
 The `main` function initialize the [Model][menuet.Model]
 and lookup the `myapp.menu` entry point group to discover its
 [Actions][menuet.Action].
