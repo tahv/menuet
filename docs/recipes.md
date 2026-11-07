@@ -309,6 +309,13 @@ setup(
 
 ///
 
+/// tab | entry_points.txt
+```ini
+[myapp.menu]
+myplugin = myplugin.actions:actions
+```
+///
+
 The `actions` hook function returns a list of [Actions][menuet.Action]
 and [Menus][menuet.Menu] to add to `myapp` menu.
 
