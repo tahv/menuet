@@ -34,34 +34,11 @@ Hello World
 
 ///
 
-## Root keys
+## Load menu from a `pyproject.toml`
 
-The [`load`][menuet.load]
-and [`loads`][menuet.loads] functions accepts a `root_keys` argument
-which can be used to parse a menu configuration from a sub-table.
-
-```python { .copy }
-from textwrap import dedent
-
-import menuet
-
-model = menuet.Model()
-menuet.loads(
-    dedent("""\
-    [[path.to.my-menu.action]]
-    id = "print-version"
-    label = "Print Version"
-    cb = "from importlib.metadata import version; print(version('myapp'))"
-    """),
-    model,
-    root_keys=("path", "to", "my-menu"),
-)
-```
-
-### Menu in `pyproject.toml`
-
-Loading menu from a sub-table can be used to define a menu in a
-`pyproject.toml`.
+The `root_keys` argument on the [load][menuet.load]
+and [loads][menuet.loads] functions lets you define a menu inside a sub-table
+such as the `[tool]` table of a `pyproject.toml`.
 
 ```toml  { title="pyproject.toml", .copy }
 [project]
@@ -97,9 +74,11 @@ Hello World
 
 ///
 
-### Multiple menus in the same file
+## Define multiple menus in the same file
 
-Sub-table may be used to define multiple menus in the same file.
+A single file can define multiple independent menus,
+each living under its own sub-table.
+This recipe, use different `root_keys` to load the `foo` or `bar` menus.
 
 ```toml { title="menu.toml", .copy }
 [[foo.action]]
@@ -195,7 +174,7 @@ cb = 'print("Hello")'
 from pathlib import Path
 
 import menuet
-from menuet.builders.text import TextMenuBuilder
+from menuet.builders.text import Render, TextMenuBuilder
 
 model = menuet.Model()
 loads(Path("menu.toml").read_text(), model)
