@@ -14,6 +14,32 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.11.0](https://gitlab.com/tahv/menuet/-/releases/1.11.0)
+
+Released on 2026-11-07.
+
+### Enhancements
+
+- [!33](https://gitlab.com/tahv/menuet/-/merge_requests/33):
+  Add `predicate` argument to the `load` and `loads` functions.
+  Filter which action get added to the `Model`.
+
+### Documentation
+
+- [!31](https://gitlab.com/tahv/menuet/-/merge_requests/31):
+  Render Version Admonitions with a link to release notes.
+- [!33](https://gitlab.com/tahv/menuet/-/merge_requests/33):
+  Add a recipe using the `predicate` argument
+  for filtering actions based on the DCC.
+
+### Miscellaneous
+
+- [!32](https://gitlab.com/tahv/menuet/-/merge_requests/32):
+  Bump project requirements.
+- [!29](https://gitlab.com/tahv/menuet/-/merge_requests/29):
+  Produce build attestations for release files uploaded to PyPI, following
+  [PyPI guidelines](https://docs.pypi.org/attestations/producing-attestations/).
+
 ## [1.10.0](https://gitlab.com/tahv/menuet/-/releases/1.10.0)
 
 Released on 2026-10-20.
