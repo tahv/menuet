@@ -2,12 +2,12 @@ set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 
 check-wheel-contents := "uvx check-wheel-contents@0.6.3"
 creosote := "uvx creosote@5.2.0"
+ganzua := "uvx ganzua@0.4.0"
 hatch := "uvx hatch@1.18.0"
 hed := "uvx hed@1.3.0"
 ruff := "uvx ruff@0.16.6"
 towncrier := "uvx towncrier@25.8.0"
 twine := "uvx twine@7.0.0"
-uvbump := "uvx --from git+https://github.com/Rezarys/uvbump@3f33228 uvbump"
 ty := "uvx ty@0.0.80"
 
 # List available recipes
@@ -68,7 +68,8 @@ version:
 
 # Update project dependencies
 update:
-    @{{ uvbump }} --exclude bpy
+    uv lock --upgrade
+    {{ ganzua }} constraints bump --name !bpy
 
 # Identify unused dependencies
 creosote:
