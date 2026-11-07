@@ -196,6 +196,66 @@ Example
 
 ///
 
+## Filter actions added to Model
+
+This recipe shows how filter
+which [Action][menuet.Action] get added to the [Model][menuet.Model] based on a
+custom `predicate`, in this case, keeping only actions relevant in Maya.
+
+```toml { title="menu.toml", .copy }
+[[action]]
+id = "maya-tool"
+label = "Maya Tool"
+extra.dcc = ["maya"]
+
+[[action]]
+id = "max-tool"
+label = "3ds Max Tool"
+extra.dcc = ["max"]
+
+[[action]]
+id = "maya-or-mas-tool"
+label = "Maya or 3ds Max Tool"
+extra.dcc = ["maya", "max"]
+
+[[action]]
+id = "any-dcc-tool"
+label = "DCC Agnostic Tool"
+```
+
+```python { .copy }
+from pathlib import Path
+
+import menuet
+from menuet.builders.text import Render, TextMenuBuilder
+
+
+def filter_maya_actions(action: menuet.Action) -> bool:
+    dccs = action.extra.get("dcc", None)
+    return not isinstance(dccs, list) or ("maya" in dccs)
+
+
+model = menuet.Model()
+menuet.loads(
+    Path("menu.toml").read_text(),
+    model,
+    predicate=filter_maya_actions,
+)
+
+print(TextMenuBuilder(model, root_menu="Example", render=Render.UTF8).build())
+```
+
+/// html | div.result
+
+```text
+Example
+├── DCC Agnostic Tool
+├── Maya or 3ds Max Tool
+└── Maya Tool
+```
+
+///
+
 ## Entry Points Plugin Framework
 
 In this example, the `myapp` packages build a menu that's populated by plugins,

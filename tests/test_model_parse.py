@@ -256,3 +256,19 @@ def test_load_fp() -> None:
     load(wrapper.buffer, model)
     action = model.get_action("test")
     assert action.label == "Test Label"
+
+
+def test_load_predicate() -> None:
+    model = Model()
+    loads(
+        dedent("""\
+        [[action]]
+        id = "action-a"
+
+        [[action]]
+        id = "action-b"
+        """),
+        model,
+        predicate=lambda a: a.id != "action-a",
+    )
+    assert list(model.iter(recursive=True)) == [ItemAction(Action(id="action-b"))]

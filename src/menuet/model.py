@@ -57,6 +57,7 @@ def load(
     fp: IO[bytes],
     model: Model,
     root_keys: tuple[str, ...] | None = None,
+    predicate: Callable[[Action], bool] | None = None,
     *,
     parser: Callable[[IO[bytes]], dict[str, Any]] | None = None,
 ) -> None:
@@ -69,6 +70,7 @@ def load(
         root_keys: The sequence of keys that lead to the root configuration structure.
             For example, a `[tool.myapp.mymenu]` table (`("tool", "myapp", "mymenu")`)
             in `pyproject.toml`.
+        predicate: Filter which [Action][menuet.Action] get added to the model.
         parser: A callable that takes a binary file document and parses it into a dict.
             Default to [`tomllib.load`][tomllib.load] if not specified.
             Other examples includes [`json.load`][json.load] or `yaml.safe_load`
@@ -77,16 +79,21 @@ def load(
     /// version-changed | 1.6.0
     The `parser` parameter was added.
     ///
+
+    /// version-changed | 1.11.0
+    The `predicate` parameter was added.
+    ///
     """
     parser = parser or tomllib.load
     config = parser(fp)
-    deserialize(config, model, root_keys)
+    deserialize(config, model, root_keys, predicate)
 
 
 def loads(
     s: str,
     model: Model,
     root_keys: tuple[str, ...] | None = None,
+    predicate: Callable[[Action], bool] | None = None,
     *,
     parser: Callable[[str], dict[str, Any]] | None = None,
 ) -> None:
@@ -98,6 +105,7 @@ def loads(
         root_keys: The sequence of keys that lead to the root configuration structure.
             For example, a `[tool.myapp.mymenu]` table (`("tool", "myapp", "mymenu")`)
             in `pyproject.toml`.
+        predicate: Filter which [Action][menuet.Action] get added to the model.
         parser: A callable that takes a `str` document and parses it into a dict.
             Default to [`tomllib.loads`][tomllib.loads] if not specified.
             Other examples includes [`json.loads`][json.loads] or `yaml.safe_load`
@@ -106,16 +114,21 @@ def loads(
     /// version-changed | 1.6.0
     The `parser` parameter was added.
     ///
+
+    /// version-changed | 1.11.0
+    The `predicate` parameter was added.
+    ///
     """
     parser = parser or tomllib.loads
     config = parser(s)
-    deserialize(config, model, root_keys)
+    deserialize(config, model, root_keys, predicate)
 
 
 def deserialize(
     config: dict[str, Any],
     model: Model,
     root_keys: tuple[str, ...] | None = None,
+    predicate: Callable[[Action], bool] | None = None,
 ) -> None:
     """Deserialize `config` and add its content to the model.
 
@@ -125,14 +138,22 @@ def deserialize(
         root_keys: The sequence of keys that lead to the root configuration structure.
             For example, a `[tool.myapp.mymenu]` table (`("tool", "myapp", "mymenu")`)
             in `pyproject.toml`.
+        predicate: Filter which [Action][menuet.Action] get added to the model.
+
+    /// version-changed | 1.11.0
+    The `predicate` parameter was added.
+    ///
     """
+    predicate = predicate if predicate is not None else (lambda _: True)
     root_keys = root_keys if root_keys is not None else ()
     # TODO(tga): try/except KeyError
     config = reduce(getitem, root_keys, config)
     for c in config.get("menu", []):
         model.add_menu(Menu.deserialize(c))
     for c in config.get("action", []):
-        model.add_action(Action.deserialize(c))
+        action = Action.deserialize(c)
+        if predicate(action):
+            model.add_action(action)
 
 
 class ItemGroup(NamedTuple):
