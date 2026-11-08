@@ -5,6 +5,8 @@
 
 from __future__ import annotations
 
+from functools import cache
+
 from menuet import Model
 from menuet import loads
 from menuet.utils import load_resource
@@ -12,6 +14,7 @@ from menuet.utils import load_resource
 __all__ = ("demo_model",)
 
 
+@cache
 def demo_model() -> Model:
     """An example model to demonstrate what menuet can do.
 
