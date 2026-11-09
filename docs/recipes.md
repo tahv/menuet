@@ -78,7 +78,7 @@ Hello World
 
 A single file can define multiple independent menus,
 each living under its own sub-table.
-This recipe, use different `root_keys` to load the `foo` or `bar` menus.
+This recipe use different `root_keys` to load the `foo` or `bar` menus.
 
 ```toml { title="menu.toml", .copy }
 [[foo.action]]
@@ -200,7 +200,8 @@ Example
 
 This recipe shows how filter
 which [Action][menuet.Action] get added to the [Model][menuet.Model] based on a
-custom `predicate`, in this case, keeping only actions relevant in Maya.
+custom `predicate`.
+In this case, keeping only actions relevant in Maya.
 
 ```toml { title="menu.toml", .copy }
 [[action]]
