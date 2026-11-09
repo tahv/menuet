@@ -146,6 +146,7 @@ group = "My Group"           # groups related menus and actions together
 cb = "print('Hello !')"      # action callback
 desc = "Print Hello"         # tooltip
 icon = "icons/my-icon.png"   # action icon
+extra = {}                   # extra user data
 ```
 
 ## Menu Options
@@ -159,6 +160,7 @@ desc = "My App Scripts"     # tooltip
 menu = ["Parent Menu"]      # menus hierarchy leading to this menu
 group = "My Group"          # groups related menus and actions together
 icon = "icons/my-icon.png"  # menu icon
+extra = {}                  # extra user data
 ```
 
 Menus defined in `[[action]]` tables are created automatically.
