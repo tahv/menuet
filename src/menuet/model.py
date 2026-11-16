@@ -318,11 +318,10 @@ class Model:
             raise ValueError(msg)
 
         # add parent to tree
-        parent = self._menus.get(menu.menu)
-        if parent is None:
-            if menu.menu:
+        match parent := self._menus.get(menu.menu):
+            case None if menu.menu:
                 parent = self._add_menu(Menu(label=menu.menu[-1], menu=menu.menu[:-1]))
-            else:
+            case None:
                 parent = self._menus[()]
 
         # add leaf to tree
