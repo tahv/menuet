@@ -47,9 +47,7 @@
             "title": "Extra",
             "description": "Extra user data.",
             "patternProperties": {
-              "^[a-zA-Z](?:[a-z0-9-]*[a-z0-9])?$": {
-                "type": "string"
-              }
+              "^[a-zA-Z](?:[a-z0-9-]*[a-z0-9])?$": {}
             }
           }
         }
@@ -109,9 +107,7 @@
             "title": "Extra",
             "description": "Extra user data.",
             "patternProperties": {
-              "^[a-zA-Z](?:[a-z0-9-]*[a-z0-9])?$": {
-                "type": "string"
-              }
+              "^[a-zA-Z](?:[a-z0-9-]*[a-z0-9])?$": {}
             }
           }
         }
