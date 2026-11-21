@@ -152,7 +152,7 @@ class MayaMenuBuilder:
                 cmds.menuItem(
                     name,
                     label=item.inner.label or item.inner.id,
-                    command=item.inner.cb,
+                    command=complete(item.inner.cb),
                     annotation=item.inner.desc or "",
                     image=_to_maya_image(item.inner.icon),
                     parent=parent,
