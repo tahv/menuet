@@ -453,3 +453,46 @@ def example_builder(model: menuet.Model, root: MenuType) -> None:
 You will find plenty of examples in the
 [menuet/builders](https://gitlab.com/tahv/menuet/-/tree/main/src/menuet/builders?ref_type=heads)
 directory.
+
+## Qt Rich Tooltip
+
+Qt tooltips supports [Rich Text](https://doc.qt.io/qt-6/richtext.html) using a
+[limited HTML Subset](https://doc.qt.io/qt-6/richtext-html-subset.html).
+
+Rich tooltip is not limited to [QMenuBuilder][menuet.builders.qt.QMenuBuilder],
+for example, Maya `cmds.menuItem` creates a QMenu under the hood,
+meaning [MayaMenuBuilder][menuet.builders.maya.MayaMenuBuilder] supports Rich
+Tooltips.
+
+```python { hl_lines="11" .copy }
+from PySide6 import QtWidgets
+
+import menuet
+from menuet.builders.qt import QMenuBuilder
+
+document = """
+[[action]]
+id = "print-hello"
+label =  "Print Hello"
+cb = 'print("Hello")'
+desc = "Print <b>Hello</b> to the <i>console</i>"
+"""
+
+model = menuet.Model()
+menuet.loads(document, model)
+
+app = QtWidgets.QApplication([])
+
+menu = QMenuBuilder(model, root_menu="Demo").build()
+window = QtWidgets.QMainWindow()
+window.menuBar().addMenu(menu)
+window.show()
+
+app.exec()
+```
+
+/// html | div.result
+
+![Qt Rich Tooltip](./assets/qt-rich-tooltip.png)
+
+///
