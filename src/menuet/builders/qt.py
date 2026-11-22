@@ -68,6 +68,8 @@ class QMenuBuilder:
             root.clear()
         else:
             root = QtWidgets.QMenu(self._root_menu)
+            root.setToolTipsVisible(True)
+            root.setTearOffEnabled(False)
 
         menus: dict[tuple[str, ...], QtWidgets.QMenu] = {(): root}
         for item in self._model.iter(sort_key=self._sort_key, recursive=True):

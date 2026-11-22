@@ -135,6 +135,7 @@ def test_qmenu_builder_set_qactions_tooltip(qtbot: QtBot) -> None:
     qmenu = builder.build()
     qtbot.add_widget(qmenu)
 
+    assert qmenu.toolTipsVisible()
     assert len(qmenu.actions()) == 1
     assert qmenu.actions()[0].toolTip() == "Test Description"
 
