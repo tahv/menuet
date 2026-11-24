@@ -121,7 +121,7 @@ def test_qmenu_builder_set_qactions_icon(qtbot: QtBot) -> None:
     assert not qmenu.actions()[0].icon().isNull()
 
 
-def test_qmenu_builder_set_qactions_tooltip(qtbot: QtBot) -> None:
+def test_qmenu_builder_set_qactions_desc_is_tooltip(qtbot: QtBot) -> None:
     model = Model()
     loads(
         dedent("""\
@@ -138,6 +138,32 @@ def test_qmenu_builder_set_qactions_tooltip(qtbot: QtBot) -> None:
     assert qmenu.toolTipsVisible()
     assert len(qmenu.actions()) == 1
     assert qmenu.actions()[0].toolTip() == "Test Description"
+
+
+def test_qmenu_builder_set_qactions_tooltip_callback(qtbot: QtBot) -> None:
+    model = Model()
+    loads(
+        dedent("""\
+        [[action]]
+        id = "test"
+        desc = "Test Description"
+        """),
+        model,
+    )
+    builder = QMenuBuilder(
+        model,
+        root_menu="Test Menu",
+        tooltip=lambda a: f"{a.desc}\n\nid: {a.id}",
+    )
+    qmenu = builder.build()
+    qtbot.add_widget(qmenu)
+
+    assert qmenu.toolTipsVisible()
+    assert len(qmenu.actions()) == 1
+    assert qmenu.actions()[0].toolTip() == dedent("""\
+    Test Description
+
+    id: test""")
 
 
 def test_qmenu_builder_insert_dummy_separator_first(qtbot: QtBot) -> None:

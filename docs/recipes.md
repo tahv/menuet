@@ -456,30 +456,28 @@ directory.
 
 ## Qt Rich Tooltip
 
-Qt tooltips supports [Rich Text](https://doc.qt.io/qt-6/richtext.html) using a
+Qt tooltips supports [Rich Text](https://doc.qt.io/qt-6/richtext.html) with a
 [limited HTML Subset](https://doc.qt.io/qt-6/richtext-html-subset.html).
 
-Rich tooltip is not limited to [QMenuBuilder][menuet.builders.qt.QMenuBuilder],
-for example, Maya `cmds.menuItem` creates a QMenu under the hood,
-meaning [MayaMenuBuilder][menuet.builders.maya.MayaMenuBuilder] supports Rich
-Tooltips.
+//// tab | Rich Tooltip
 
-```python { hl_lines="11" .copy }
+```python { hl_lines="13" .copy }
+from textwrap import dedent
 from PySide6 import QtWidgets
-
 import menuet
 from menuet.builders.qt import QMenuBuilder
 
-document = """
-[[action]]
-id = "print-hello"
-label =  "Print Hello"
-cb = 'print("Hello")'
-desc = "Print <b>Hello</b> to the <i>console</i>"
-"""
-
 model = menuet.Model()
-menuet.loads(document, model)
+menuet.loads(
+    dedent("""\
+    [[action]]
+    id = "print-hello"
+    label =  "Print Hello"
+    cb = 'print("Hello")'
+    desc = "Print <b>Hello</b> to the <i>console</i>"
+    """),
+    model,
+)
 
 app = QtWidgets.QApplication([])
 
@@ -496,3 +494,63 @@ app.exec()
 ![Qt Rich Tooltip](./assets/qt-rich-tooltip.png)
 
 ///
+
+////
+
+//// tab | Tooltip Formatter
+
+[QMenuBuilder][menuet.builders.qt.QMenuBuilder] accept a `tooltip` argument to
+further customize the tooltip.
+
+```python { hl_lines="11-20 30 37" .copy }
+from textwrap import dedent
+
+from PySide6 import QtWidgets
+from PySide6.QtCore import Qt
+
+import menuet
+from menuet import Action
+from menuet.builders.qt import QMenuBuilder
+
+
+def tooltip(action: Action) -> str:
+    """Format `action` tooltip."""
+    text = ""
+    if action.label:
+        text += f"<h2>{action.label}</h2>\n"
+    text += f"<b>id:</b> <code>{action.id}</code>\n"
+    if action.desc:
+        text += "<h3>Description</h3>\n"
+        text += "<p>{}</p>\n".format(action.desc.replace("\n", "<br>"))
+    return text
+
+
+model = menuet.Model()
+menuet.loads(
+    dedent("""\
+    [[action]]
+    id = "print-hello"
+    label =  "Print Hello"
+    cb = 'print("Hello")'
+    desc = "Print <b>Hello</b> to the <i>console</i>"
+    """),
+    model,
+)
+
+app = QtWidgets.QApplication([])
+
+menu = QMenuBuilder(model, root_menu="Demo", tooltip=tooltip).build()
+window = QtWidgets.QMainWindow()
+window.menuBar().addMenu(menu)
+window.show()
+
+app.exec()
+```
+
+/// html | div.result
+
+![Formatted Qt Tooltip](./assets/qt-format-tooltip.png)
+
+///
+
+////

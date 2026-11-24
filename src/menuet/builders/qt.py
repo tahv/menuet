@@ -27,7 +27,9 @@ from menuet.utils import logger
 
 if TYPE_CHECKING:
     import sys
+    from collections.abc import Callable
 
+    from menuet import Action
     from menuet.model import MenuSortKey
     from menuet.model import Model
 
@@ -48,6 +50,12 @@ class QMenuBuilder:
             All existing actions in the menu are removed during `build`.
             If a `str` is provided, a new `QMenu` will be created.
         sort_key: Customize the sort order of menu items.
+        tooltip: Callable that accept an `Action` and return its tooltip.
+            Default to the `Action.desc`.
+
+    /// version-changed | 1.12.0
+    Added `tooltip` argument.
+    ///
     """
 
     def __init__(
@@ -56,10 +64,12 @@ class QMenuBuilder:
         *,
         root_menu: QtWidgets.QMenu | str,
         sort_key: MenuSortKey | None = None,
+        tooltip: Callable[[Action], str | None] | None = None,
     ) -> None:
         self._model: Model = model
         self._sort_key = sort_key
         self._root_menu = root_menu
+        self._tooltip = tooltip or (lambda a: a.desc)
 
     def build(self) -> QtWidgets.QMenu:
         """Build menu."""
@@ -92,7 +102,7 @@ class QMenuBuilder:
                 action.setText(item.inner.label or item.inner.id)
                 action.setIconVisibleInMenu(True)
                 action.setIcon(_qicon_from_file(item.inner.icon))
-                action.setToolTip(item.inner.desc or "")
+                action.setToolTip(self._tooltip(item.inner) or "")
                 action.triggered.connect(item.inner.cb)
                 action.setParent(parent)
                 parent.addAction(action)
