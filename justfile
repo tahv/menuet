@@ -43,10 +43,12 @@ coverage *args:
     uv run -m coverage report
 
 # Serve documentation on http://127.0.0.1:8000
+[env("PYTHONPATH", "docs/markdown_extensions")]
 serve:
     uv run -m zensical serve
 
 # Build documentation
+[env("PYTHONPATH", "docs/markdown_extensions")]
 docs:
     uv run zensical build --clean
 

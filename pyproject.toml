@@ -74,7 +74,6 @@ build-backend = "hatchling.build"
 [tool.coverage]
 run.source = ["src"]
 run.branch = true
-run.omit = ["src/versionmodified/*"]
 report.show_missing = true
 report.skip_covered = true
 report.exclude_lines = [
@@ -99,7 +98,6 @@ sections = [
 
 [tool.hatch]
 version.source = "uv-dynamic-versioning"
-build.exclude = ["src/versionmodified"]
 
 [tool.hed]
 changelog = "CHANGELOG.md"
@@ -133,7 +131,6 @@ addopts = [
   "--durations-min=0.005",
   "--durations=0",
   "--import-mode=importlib",
-  "--ignore=src/versionmodified",
 ]
 minversion = "9.0"
 testpaths = ["src", "tests"]

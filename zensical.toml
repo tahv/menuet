@@ -21,6 +21,9 @@ extra_css = [
   "stylesheets/versionmodified.css",
 ]
 use_directory_urls = true
+exclude_docs = """
+/markdown_extensions/
+"""
 
 # tombi: lint.rules.table-key-required.disabled = true
 [project.theme]

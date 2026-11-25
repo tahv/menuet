@@ -196,6 +196,7 @@ test-pages:
   interruptible: true
   variables:
     FORCE_COLOR: 1
+    PYTHONPATH: docs/markdown_extensions
   script:
     - uv sync --no-default-groups --group docs
     - uv run --no-sync -m zensical build --clean --strict
@@ -213,6 +214,7 @@ pages:
   image: ghcr.io/astral-sh/uv:python3.14-trixie
   variables:
     FORCE_COLOR: 1
+    PYTHONPATH: docs/markdown_extensions
   script:
     - uv sync --no-default-groups --group docs
     - uv run --no-sync -m zensical build --clean --strict
