@@ -44,21 +44,21 @@ bpy = [
 docs = [
   "griffe-fieldz>=0.5.0",
   "mkdocs-table-reader-plugin>=4.0.2",
-  "mkdocstrings-python>=2.0.10",
-  "ruff>=0.17.3",  # mkdocstrings-python signature
-  "zensical>=0.0.74",
+  "mkdocstrings-python>=2.0.11",
+  "ruff>=0.17.6",  # mkdocstrings-python signature
+  "zensical>=0.1.3",
 ]
 test = [
   "coverage>=7.16.2",
   "pytest>=9.2.0",
   "pytest-qt>=4.5.0",
-  "pyyaml>=6.0.3",
+  "pyyaml>=6.0.4",
 ]
 types = [
   "fake-bpy-module-5-0>=20260730",  # TODO(tga): https://github.com/nutti/fake-bpy-module/issues/433
   "mypy>=2.4.1",
-  "types-houdini>=21.0.512.3",
-  "types-markdown>=3.11.2.20261029",  # versionmodified
+  "types-houdini==21.0.512.3",
+  "types-markdown>=3.11.3.20261122",  # versionmodified
   "types-maya>=0.6.1",
   "types-nuke>=13.2.8.0",
   "types-pyside6>=6.10.3.0",
