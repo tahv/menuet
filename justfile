@@ -2,7 +2,7 @@ set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 
 check-wheel-contents := "uvx check-wheel-contents@0.6.3"
 creosote := "uvx creosote@5.2.0"
-ganzua := "uvx ganzua@0.4.0"
+ganzua := "uvx ganzua@0.5.0"
 hatch := "uvx hatch@1.18.0"
 hed := "uvx hed@1.3.0"
 ruff := "uvx ruff@0.16.6"
@@ -68,10 +68,14 @@ hed version:
 version:
     @{{ hatch }} version
 
-# Update project dependencies
-update:
+# Upgrade project dependencies
+upgrade:
     uv lock --upgrade
-    {{ ganzua }} constraints bump --name !bpy
+    {{ ganzua }} constraints bump --filter '!group:bpy'
+
+# Compare local `uv.lock` to HEAD
+diff:
+    {{ ganzua }} diff HEAD:uv.lock uv.lock --format markdown
 
 # Identify unused dependencies
 creosote:
