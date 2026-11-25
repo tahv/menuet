@@ -14,6 +14,38 @@ in the repo.
 
 <!-- towncrier release notes start -->
 
+## [1.12.0](https://gitlab.com/tahv/menuet/-/releases/1.12.0)
+
+Released on 2026-11-25.
+
+### Enhancements
+
+- [!38](https://gitlab.com/tahv/menuet/-/merge_requests/38):
+  `QMenuBuilder` accept a `tooltip` argument to customize ToolTip format.
+
+### Bug fixes
+
+- [!35](https://gitlab.com/tahv/menuet/-/merge_requests/35):
+  MayaMenuBuilder failed to execute command
+  because Maya pass a bool argument to the `Action.cb`.
+- [!36](https://gitlab.com/tahv/menuet/-/merge_requests/36):
+  Enable tooltips on the root `QMenu` created by a `QMenuBuilder` menu.
+
+### Documentation
+
+- [!37](https://gitlab.com/tahv/menuet/-/merge_requests/37):
+  Add **Qt Rich Tooltip** recipe.
+
+### Refactorings
+
+- [!34](https://gitlab.com/tahv/menuet/-/merge_requests/34):
+  Add `@functools.cache` decorator to `demo_model`.
+
+### Miscellaneous
+
+- [!39](https://gitlab.com/tahv/menuet/-/merge_requests/39):
+  Bump project requirements.
+
 ## [1.11.0](https://gitlab.com/tahv/menuet/-/releases/1.11.0)
 
 Released on 2026-11-07.
