@@ -3,7 +3,7 @@
 - [Python-markdown Extension API](https://python-markdown.github.io/extensions/api/)
 - [Blocks Extension API](https://facelessuser.github.io/pymdown-extensions/extensions/blocks/api/)
 - [Admonition](https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/)
-"""
+"""  # noqa: INP001
 
 from __future__ import annotations
 
